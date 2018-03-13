@@ -1,0 +1,8 @@
+<figure class="fullsize" style="background-image: url('/assets/img/{{ include.name }}');">
+	{% if include.title or include.caption %}
+	<figcaption>
+		{% if include.title %}<h1>{{ include.title }}</h1>{% endif %}
+		{% if include.caption %}<p>{{ include.caption }}</p>{% endif %}
+	</figcaption>
+	{% endif %}
+</figure>

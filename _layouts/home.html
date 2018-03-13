@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<div class="gallery">
+{% if site.posts.size > 0 %}
+    {% for post in site.posts %}
+        <figure>
+            <a class="post-link" href="{{ post.url | relative_url }}">
+				<img src="{{ post.featured-img }}">
+			</a>
+        </figure>
+    {% endfor %}
+{% endif %}
+</div>

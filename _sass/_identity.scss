@@ -1,0 +1,14 @@
+$identity-size:  6em !default;
+$identity-color: $brand-color !default;
+
+.logo
+{
+	display:  block;
+	position: fixed;
+	bottom:   0;
+	right:    0;
+	width:    $identity-size;
+	height:   $identity-size;
+	z-index:  100;
+	margin:   $spacing-unit;
+}
