@@ -7,7 +7,16 @@ layout: default
 		{% if page.featured-img %}
 		<figure class="fullsize" style="background-image: url('{{ page.featured-img }}');">
 			<figcaption>
-				<h1>{{ page.title }}</h1>
+				<h1>
+					{{ page.title }}
+					<br>
+					<small>
+						{% for category in page.categories %}
+						<a href="{{site.baseurl}}/categories/#{{category|slugize}}" class="category">{{category}}</a>
+						{% unless forloop.last %}&nbsp;{% endunless %}
+						{% endfor %}
+					</small>
+				</h1>
 				{% if page.excerpt %}
 				<p>{{ page.excerpt }}</p>
 				{% endif %}
