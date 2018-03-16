@@ -1,5 +1,9 @@
-<header class="wrapper nav">
-	<a class="logo" rel="author" href="{{ "/" | relative_url }}">
-		<img src="/assets/brim.svg">
-	</a>
-</header>
+<nav class="menu">
+	<img src="/assets/brim.svg" class="logo toggle">
+	<ul class="nav">
+    {% assign categories = site.categories | sort %}
+    {% for category in categories %}
+        <li><a href="#{{ category | first | slugify }}">{{ category[0] | replace:'-', ' ' }}</a></li>
+    {% endfor %}
+	</ul>
+</nav>

@@ -2,7 +2,7 @@
 layout:       post
 title:        "Righteous Clothing Agency"
 date:         2018-02-16 13:21:52 -0800
-category:     Branding
+category:     Corporate-Identity
 featured-img: /assets/img/RC0413-Logo-mock.jpg
 excerpt:      ""
 ---

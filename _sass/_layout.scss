@@ -17,11 +17,11 @@ $media-size-md: 800px;
 	}
 	@media ( min-width: $media-size-md ) and ( max-width: $media-size-lg )
 	{
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat( 2, 1fr );
 	}
 	@media ( min-width: $media-size-lg )
 	{
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat( 3, 1fr );
 	}
 	figure
 	{
@@ -41,13 +41,13 @@ figure
 		background-position: center;
 		height:              100vh;
 		position:            relative;
-		z-index:             10;
+		z-index:             $caption-z;
 		figcaption
 		{
 			background-color: #ffffff;
 			bottom:           0;
-			margin:           3em;
-			padding:          3em;
+			margin:           $spacing-unit;
+			padding:          $spacing-unit;
 			position:         absolute;
 			width:            auto;
 			@media ( min-width: $media-size-md )
@@ -64,7 +64,7 @@ figure
 					text-transform: uppercase;
 					a
 					{
-						color: $text-color;
+						color: $grey-color-dark;
 					}
 				}
 			}
@@ -74,7 +74,7 @@ figure
 			figcaption
 			{
 				left:  auto;
-				right: ( $identity-size + 1.875em );
+				right: ( $identity-size + ( $spacing-unit * 2 ) );
 			}
 		}
 	}
