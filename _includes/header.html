@@ -1,9 +1,10 @@
 <nav class="menu">
 	<img src="/assets/brim.svg" class="logo toggle">
 	<ul class="nav">
-    {% assign categories = site.categories | sort %}
+		<li><a href="{{ "/" | relative_url }}">All</a></li>
+		{% assign categories = site.categories | sort %}
     {% for category in categories %}
-        <li><a href="#{{ category | first | slugify }}">{{ category[0] | replace:'-', ' ' }}</a></li>
+        <li><a href="{{site.baseurl}}/category/{{ category | first | slugize | downcase }}">{{ category[0] | replace:'-', ' ' }}</a></li>
     {% endfor %}
 	</ul>
 </nav>

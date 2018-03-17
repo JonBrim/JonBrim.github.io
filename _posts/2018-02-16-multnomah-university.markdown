@@ -5,6 +5,7 @@ date:         2018-02-16 13:21:52 -0800
 categories:   Apparel
 featured-img: /assets/img/MU0312-Multnomah-closeup-Big.jpg
 excerpt:      "This shirt was designed for Multnomah University, located in the heart of Portland. I included a cityscape of the Portland skyline."
+permalink:    "multnomah"
 ---
 
 {% include image.html

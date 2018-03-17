@@ -5,6 +5,7 @@ date:         2018-02-16 13:21:52 -0800
 category:     Corporate-Identity
 featured-img: /assets/img/RC0413-Logo-mock.jpg
 excerpt:      ""
+permalink:    "righteous-clothing" 
 ---
 
 {% include image.html

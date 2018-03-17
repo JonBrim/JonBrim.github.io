@@ -12,7 +12,7 @@ layout: default
 					<br>
 					<small>
 						{% for category in page.categories %}
-						<a href="{{site.baseurl}}/categories/{{category|slugize}}" class="category">{{category | replace:'-', ' '}}</a>
+						<a href="{{site.baseurl}}/category/{{ category | slugize | downcase }}" class="category">{{category | replace:'-', ' '}}</a>
 						{% unless forloop.last %}&nbsp;{% endunless %}
 						{% endfor %}
 					</small>
