@@ -1,12 +1,28 @@
-@mixin transform( $values ) {
+@mixin transform( $values )
+{
 	transform:         $values;
 	-ms-transform:     $values;
 	-moz-transform:    $values;
 	-webkit-transform: $values;
 }
 
-@mixin transition( $values ) {
+@mixin transition( $values )
+{
 	transition:         $values;
 	-moz-transition:    $values;
 	-webkit-transition: $values;
+}
+
+@mixin column( $column: 'auto' )
+{
+    column-count: $column;
+    -moz-column-count: $column;
+	-webkit-column-count: $column;
+}
+
+@mixin column-gap( $column-gap: 'normal' )
+{
+    column-gap: $column-gap;
+    -moz-column-gap: $column-gap;
+	-webkit-column-gap: $column-gap;
 }
