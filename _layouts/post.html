@@ -2,28 +2,31 @@
 layout: default
 ---
 
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-	<main itemprop="articleBody">
-		{% if page.featured-img %}
-		<figure class="fullsize" style="background-image: url('{{ page.featured-img }}');">
-			<figcaption>
-				<h1>
-					{{ page.title }}
-					<br>
-					<small>
-						{% for category in page.categories %}
-						<a href="{{site.baseurl}}/category/{{ category | slugize | downcase }}" class="category">{{category | replace:'-', ' '}}</a>
-						{% unless forloop.last %}&nbsp;{% endunless %}
-						{% endfor %}
-					</small>
-				</h1>
-				{% if page.excerpt %}
-				<p>{{ page.excerpt }}</p>
-				{% endif %}
-			</figcaption>
-		</figure>
-		{% endif %}
-		{{ content }}
-	</main>
-	<a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+<article itemprop="articleBody" class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	{% if page.featured-img %}
+	<figure class="fullsized">
+		<img src="{{ page.featured-img }}" alt="{{ page.title }}">
+	</figure>
+	<section class="section">
+		<header class="columns">
+			<h1>
+				{{ page.title }}
+				<br>
+			<small>
+				{% for category in page.categories %}
+				<a href="{{site.baseurl}}/category/{{ category | slugize | downcase }}" class="category">{{category | replace:'-', ' '}}</a>
+				{% unless forloop.last %}&nbsp;{% endunless %}
+				{% endfor %}
+			</small>
+			</h1>
+		</header>
+		<summary class="columns">
+			{% if page.excerpt %}
+			<p>{{ page.excerpt }}</p>
+			{% endif %}
+		</summary>
+	</section>
+	{% endif %}
+	{{ content }}
 </article>
+<a class="u-url" href="{{ page.url | relative_url }}" hidden></a>

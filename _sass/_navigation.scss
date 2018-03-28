@@ -1,46 +1,59 @@
+
+$navigation-background:       $background-color !default;
+$navigation-background-hover: $brand-color !default;
+$navigation-link:             $grey-color !default;
+$navigation-link-hover:       $background-color !default;
+$navigation-speed:            .225s !default;
+$navigation-width:            14em !default;
+$navigation-z:                100 !default;
+
 .logo
 {
-
-	display:  block;
-	width:    $identity-size;
-	height:   $identity-size;
 	cursor:   pointer;
+	display:  block;
+	height:   $identity-size;
+	width:    $identity-size;
 }
 
-
-.menu {
-	width:        $navigation-width;
+.navigation
+{
 	bottom:       0;
 	height:       auto;
 	position:     fixed;
+	right:        -$navigation-width - ( $spacing-unit / 2 );
+	width:        $navigation-width;
 	z-index:      $navigation-z;
-	right:        -$navigation-width;
-	@include transition( all $navigation-time );
+	@include transition( all $navigation-speed );
 	&.open
 	{
-		@include transform( translate( -$navigation-width ) );
+		@include transform( translate( -$navigation-width + ( $spacing-unit / 2 ) ) );
 	}
 	.logo
 	{
 		bottom:   $spacing-unit;
-		left:     -( $identity-size + $spacing-unit );
+		left:     -( $identity-size + $spacing-unit + ( $spacing-unit / 2 ) );
 		position: absolute;
 	}
-	.nav {
-		min-width:        $navigation-width;
-		position:         absolute;
-		bottom:           0;
-		margin:           0;
-		padding:          0;
-		background-color: $navigation-background;
+	ul
+	{
+		bottom:     0;
+		box-shadow: 0 0 ( $spacing-unit / 2 ) rgba(0,0,0,0.65);
+		margin:     0;
+		min-width:  $navigation-width;
+		padding:    0;
+		position:   absolute;
 		li {
-			padding:         ( $spacing-unit / 2 ) $spacing-unit;
 			list-style-type: none;
 			a {
-				display:         block;
-				text-decoration: none;
-				&:hover { 
-					color: $navigation-color-hover;
+				background-color: $navigation-background;
+				color:            $navigation-link;
+				display:          block;
+				padding:          ( $spacing-unit / 2 ) $spacing-unit;
+				text-decoration:  none;
+				&:hover 
+				{
+					background-color: $navigation-background-hover;
+					color:            $navigation-link-hover;
 				}
 			}
 		}
