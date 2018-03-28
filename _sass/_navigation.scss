@@ -1,3 +1,4 @@
+
 $navigation-background:       $background-color !default;
 $navigation-background-hover: $brand-color !default;
 $navigation-link:             $grey-color !default;
@@ -6,7 +7,6 @@ $navigation-speed:            .225s !default;
 $navigation-width:            14em !default;
 $navigation-z:                100 !default;
 
-
 .logo
 {
 	cursor:   pointer;
@@ -14,7 +14,6 @@ $navigation-z:                100 !default;
 	height:   $identity-size;
 	width:    $identity-size;
 }
-
 
 .navigation
 {

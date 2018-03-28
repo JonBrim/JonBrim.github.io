@@ -31,7 +31,6 @@ $identity-size:          6em !default;
 $caption-background:     $background-color !default;
 $caption-z:              10 !default;
 
-
 @mixin media-query( $device ) 
 {
   @media screen and ( max-width: $device ) 
