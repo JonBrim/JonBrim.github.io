@@ -3,7 +3,8 @@ layout:       post
 title:        "XIM"
 date:         2018-02-16 13:21:52 -0800
 category:     UI
-featured-img: /assets/img/
+featured-img: /assets/img/XIM18-website-zoom.jpg
 excerpt:      ""
 permalink:    "xim"
 ---
+{% include image.html name="XIM18-website.jpg" %}
