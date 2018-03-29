@@ -1,0 +1,9 @@
+---
+layout:       post
+title:        "XIM"
+date:         2018-02-16 13:21:52 -0800
+category:     UI
+featured-img: /assets/img/
+excerpt:      ""
+permalink:    "xim"
+---
