@@ -1,7 +1,21 @@
-
+<footer class="section">
+  <li class="p-name">
+    {% if site.author %}
+      {{ site.author | escape }}
+    {% else %}
+      {{ site.title | escape }}
+    {% endif %}
+    </li>
+    {% if site.email %}
+    <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+    {% endif %}
+</footer>
+{% comment %}
 <footer class="site-footer">
 
   <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+
 
   <div class="wrapper">
 
@@ -35,4 +49,4 @@
   </div>
 
 </footer>
-
+{% endcomment %}
