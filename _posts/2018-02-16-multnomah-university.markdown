@@ -8,6 +8,5 @@ excerpt:      "This piece was part of a collection of projects for Multnomah Uni
 permalink:    "multnomah"
 ---
 
-{% include image.html
-	name="MU0212-City.jpg"
-%}
+{% include image.html name="MU18-sketch.jpg" %}
+{% include image.html name="MU0212-City.jpg" %}

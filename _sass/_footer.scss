@@ -1,0 +1,40 @@
+.footer
+{
+	display:                 grid;
+	justify-items:           stretch;
+	margin-bottom:           $identity-size + ( $spacing-unit * 2 );
+	grid-template-columns:   repeat( 2, 1fr );
+	.email
+	{
+		grid-column:         span 2;
+		order:               3;
+	}
+	a
+	{
+		text-align:          center;
+		padding:             $spacing-unit * 2;
+		&:hover
+		{
+			background-color: $grey-color-light;
+		}
+	}
+	@media ( min-width: $media-size-md )
+	{
+		grid-template-columns: repeat( 3, 1fr );
+		.prev
+		{
+			order: 1;
+
+		}
+		.next
+		{
+			order: 3;
+
+		}
+		.email
+		{
+			grid-column: 2 / span 1;
+			order:       2;
+		}
+	}
+}
