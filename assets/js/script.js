@@ -3,5 +3,5 @@ $( ".toggle" ).click( function(){
 	return false;
 });
 $(document).click(function() {
-  $('.navigation').removeClass('open');
+	$( ".navigation" ).removeClass( "open" );
 });
