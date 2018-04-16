@@ -12,6 +12,11 @@ $navigation-z:                100 !default;
 	display:  block;
 	height:   $identity-size;
 	width:    $identity-size;
+	@include transition( transform $navigation-speed );
+	&:hover
+	{
+		@include transform( scale( 1.1 ) );
+	}
 }
 
 .navigation
@@ -22,7 +27,7 @@ $navigation-z:                100 !default;
 	right:        -$navigation-width - ( $spacing-unit / 2 );
 	width:        $navigation-width;
 	z-index:      $navigation-z;
-	@include transition( all $navigation-speed );
+	@include transition( transform $navigation-speed );
 	&.open
 	{
 		@include transform( translate( -$navigation-width + ( $spacing-unit / 2 ) ) );
