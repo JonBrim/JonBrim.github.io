@@ -4,8 +4,8 @@ layout: page
 <div class="gallery">
 {% if site.categories[page.category].size > 0 %}
     {% for post in site.categories[page.category] %}
-        <figure>
-            <a class="post-link" href="{{ post.url | relative_url }}">
+		<figure>
+			<a class="post-link" href="{{ post.url | relative_url }}">
 				<img src="{{ post.featured-img }}">
 				<figcaption>
 					<section>
@@ -14,7 +14,7 @@ layout: page
 					</section>
 				</figcaption>
 			</a>
-        </figure>
+		</figure>
     {% endfor %}
 {% endif %}
 </div>
