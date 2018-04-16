@@ -34,7 +34,7 @@ $gallery-caption-speed: .225s !default;
 			left:             0;
 			opacity:          0;
 			z-index:          5;
-			@include transition( opacity $gallery-caption-speed );
+			@include transition( all ( $gallery-caption-speed * 1.5 ) );
 			section
 			{
 				z-index:    10;

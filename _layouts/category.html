@@ -6,8 +6,14 @@ layout: page
     {% for post in site.categories[page.category] %}
         <figure>
             <a class="post-link" href="{{ post.url | relative_url }}">
-      				<img src="{{ post.featured-img }}">
-      			</a>
+				<img src="{{ post.featured-img }}">
+				<figcaption>
+					<section>
+						<h1>{{ post.title }}</h1>
+						{{ post.categories | join:', ' | replace:'-', ' ' | append:' ' }}
+					</section>
+				</figcaption>
+			</a>
         </figure>
     {% endfor %}
 {% endif %}
