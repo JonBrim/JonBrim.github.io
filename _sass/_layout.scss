@@ -1,4 +1,8 @@
-$gallery-caption-speed: .225s !default;
+$caption-background: $background-color !default;
+$caption-speed:      .225s !default;
+$caption-img-z:      1 !default;
+$caption-z:          5 !default;
+$caption-section-z:  10 !default;
 
 .gallery
 {
@@ -19,36 +23,36 @@ $gallery-caption-speed: .225s !default;
 		{
 			height:  100%;
 			width:   100%;
-			z-index: 1;
-			@include transition( transform $gallery-caption-speed);
+			z-index: $caption-img-z;
+			@include transition( transform $caption-speed);
 		}
 		figcaption
 		{
+			background-color: rgba( $caption-background, 0.90 );
 			cursor:           pointer;
 			position:         absolute;
-			background-color: rgba( white, 0.90 );
-			width:            100%;
 			height:           100%;
-			max-width:        100%;
-			top:              0;
 			left:             0;
+			max-width:        100%;
 			opacity:          0;
-			z-index:          5;
-			@include transition( all ( $gallery-caption-speed * 1.5 ) );
+			top:              0;
+			width:            100%;
+			z-index:          $caption-z;
+			@include transition( all ( $caption-speed * 1.5 ) );
 			section
 			{
-				z-index:    10;
+				bottom:     0;
 				position:   absolute;
 				padding:    $spacing-unit;
-				bottom:     0;
 				right:      0;
 				text-align: right;
+				z-index:    $caption-section-z;
 			}
 		}
 		&:hover 
 		{
 			img{
-				@include transform( scale( 1.15 ) );
+				@include transform( scale( 1.1 ) );
 			}
 			figcaption
 			{
