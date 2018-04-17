@@ -12,12 +12,12 @@ layout: default
 			<h1>
 				{{ page.title }}
 				<br>
-			<small>
-				{% for category in page.categories %}
-				<a href="{{site.baseurl}}/category/{{ category | slugize | downcase }}" class="category">{{category | replace:'-', ' '}}</a>
-				{% unless forloop.last %}&nbsp;{% endunless %}
-				{% endfor %}
-			</small>
+				<small>
+					{% for category in page.categories %}
+					<a href="{{site.baseurl}}/category/{{ category | slugize | downcase }}" class="category">{{category | replace:'-', ' '}}</a>
+					{% unless forloop.last %}&nbsp;{% endunless %}
+					{% endfor %}
+				</small>
 			</h1>
 		</header>
 		<summary>
