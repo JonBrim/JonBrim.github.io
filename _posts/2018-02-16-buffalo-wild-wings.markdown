@@ -4,7 +4,12 @@ title:        "Buffalo Wild Wings"
 date:         2018-02-16 13:22:52 -0800
 categories:   [ UI ]
 featured-img: /assets/img/BWW18-product.jpg
-excerpt:      "This t-shirt was worn by all Buffalo Wild Wings employees at the 2013 Buffalo Wild Wings Bowl in Tempe, Arizona."
+excerpt:      "<h5>Objective:</h5>
+<ul>
+<li></li>
+</ul>
+<h5>Outcome:</h5>
+<p></p>"
 permalink:    "buffalo-wild-wings"
 ---
 

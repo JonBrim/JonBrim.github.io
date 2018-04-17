@@ -4,7 +4,12 @@ title:        "Tire Life"
 date:         2018-02-15 13:21:52 -0800
 category:     Corporate-Identity
 featured-img: /assets/img/TL18-logo.jpg
-excerpt:      ""
+excerpt:      "<h5>Objective:</h5>
+<ul>
+<li></li>
+</ul>
+<h5>Outcome:</h5>
+<p></p>"
 permalink:    "tire-life"
 ---
 
