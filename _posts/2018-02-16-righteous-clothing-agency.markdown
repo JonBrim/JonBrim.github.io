@@ -9,6 +9,7 @@ permalink:    "righteous-clothing"
 ---
 
 {% include image.html name="RC18-id-guides.jpg" %}
+{% include image.html name="RC18-id-compare.jpg" %}
 {% include image.html name="RC18-id-type.jpg" %}
 {% include image.html name="RC18-id-color.jpg" %}
 {% include image.html name="RC0413-Stationary.jpg" %}
