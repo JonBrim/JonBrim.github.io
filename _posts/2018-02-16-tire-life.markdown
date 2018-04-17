@@ -8,4 +8,7 @@ excerpt:      ""
 permalink:    "tire-life"
 ---
 
+{% include image.html name="TL18-guides.jpg" %}
+{% include image.html name="TL18-alt.jpg" %}
+{% include image.html name="TL18-color.jpg" %}
 {% include image.html name="TL18-Bucket.jpg" %}
