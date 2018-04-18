@@ -1,8 +1,6 @@
 $caption-background: $background-color !default;
 $caption-speed:      .225s !default;
-$caption-img-z:      1 !default;
-$caption-z:          5 !default;
-$caption-section-z:  10 !default;
+$caption-z:          1 !default;
 
 .gallery
 {
@@ -23,7 +21,7 @@ $caption-section-z:  10 !default;
 		{
 			height:  100%;
 			width:   100%;
-			z-index: $caption-img-z;
+			z-index: $caption-z;
 			@include transition( transform $caption-speed);
 		}
 		figcaption
@@ -37,7 +35,7 @@ $caption-section-z:  10 !default;
 			opacity:          0;
 			top:              0;
 			width:            100%;
-			z-index:          $caption-z;
+			z-index:          ( $caption-z + 1 );
 			@include transition( all ( $caption-speed * 1.5 ) );
 			section
 			{
@@ -46,7 +44,7 @@ $caption-section-z:  10 !default;
 				padding:    $spacing-unit;
 				right:      0;
 				text-align: right;
-				z-index:    $caption-section-z;
+				z-index:    ( $caption-z + 2 );
 			}
 		}
 		&:hover 
