@@ -3,7 +3,7 @@ layout:       post
 title:        "Righteous Clothing Agency"
 date:         2018-02-16 13:21:52 -0800
 categories:   [ Corporate-Identity, Page-Layout ]
-featured-img: /assets/img/RC0413-Logo-mock.jpg
+featured-img: RC0413-Logo-mock
 excerpt:      "<h5>Objective:</h5>
 <ul>
 <li>Reflect ideals of established brand</li>

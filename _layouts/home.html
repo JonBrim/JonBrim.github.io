@@ -7,7 +7,14 @@ layout: default
     {% for post in site.posts %}
 	<figure>
 		<a class="post-link" href="{{ post.url | relative_url }}">
-			<img src="{{ post.featured-img }}">
+			<img
+        src="/assets/img/{{ post.featured-img }}"
+        srcset="/assets/img/{{ post.featured-img }}-large.jpg 1600w,
+          /assets/img/{{ post.featured-img }}-medium.jpg 640w,
+          /assets/img/{{ post.featured-img }}-small.jpg 320w"
+        sizes="(min-width: 576px) 33.3vw, 1600px"
+        alt="{{ post.title }}"
+      >
 			<figcaption>
 				<section>
 					<h1>{{ post.title }}</h1>

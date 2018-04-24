@@ -3,7 +3,7 @@ layout:       post
 title:        "Buffalo Wild Wings"
 date:         2018-02-16 13:22:52 -0800
 categories:   [ UI ]
-featured-img: /assets/img/BWW18-product.jpg
+featured-img: BWW18-product
 excerpt:      "<h5>Objective:</h5>
 <ul>
 <li>Easy checkout experience</li>
