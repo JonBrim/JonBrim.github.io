@@ -1,7 +1,7 @@
 ---
 layout:       post
 title:        "Tire Life"
-date:         2018-02-15 13:21:52 -0800
+date:         2018-02-14 13:21:52 -0800
 category:     Corporate-Identity
 featured-img: TL18-Logo
 excerpt:      "<h5>Objective:</h5>

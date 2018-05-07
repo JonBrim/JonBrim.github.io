@@ -1,9 +1,9 @@
 ---
 layout:       post
 title:        "XIM Tech"
-date:         2018-02-13 13:21:52 -0800
+date:         2018-02-15 13:21:52 -0800
 category:     UI
-featured-img: XIM18-website-mac
+featured-img: XIM18-logo
 excerpt:      "<h5>Objective:</h5>
 <ul>
 <li>Make site mobile responsive</li>
