@@ -4,7 +4,14 @@ title:        "XIM Tech"
 date:         2018-02-13 13:21:52 -0800
 category:     UI
 featured-img: XIM18-website-mac
-excerpt:      ""
+excerpt:      "<h5>Objective:</h5>
+<ul>
+<li>Make site mobile responsive</li>
+<li>Develop consistent visual style</li>
+<li>Utilize Wordpress for easy content updates</li>
+</ul>
+<h5>Outcome:</h5>
+<p>I designed and coded a custom, responsive Wordpress theme and assets with a unified art style. I migrated and reorganized the content onto the Wordpress CMS.</p>"
 permalink:    "xim"
 ---
 

@@ -6,10 +6,12 @@ category:     Corporate-Identity
 featured-img: TL18-Logo
 excerpt:      "<h5>Objective:</h5>
 <ul>
-<li></li>
+<li>Revitalize branding</li>
+<li>Design a secondary logo</li>
+<li>Develop brand standards</li>
 </ul>
 <h5>Outcome:</h5>
-<p></p>"
+<p>I simplified and modernized the existing Tire Life logo while retaining its rugged industrial aesthetic. Under this design umbrella, I created an additional logo using the Tire Life initials for smaller imprints. I generated color, scale and spacing guidelines for the entire corporate identity to maintain consistency and accuracy across all applications.</p>"
 permalink:    "tire-life"
 ---
 
