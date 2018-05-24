@@ -16,6 +16,9 @@ permalink:    "buffalo-wild-wings"
 ---
 
 {% include image.html
+	name="BWW18-wireframe.jpg"
+%}
+{% include image.html
 	name="BWW18-checkout-process.jpg"
 %}
 {% include image.html
