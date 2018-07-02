@@ -14,7 +14,9 @@ excerpt:      "<h5>Objective:</h5>
 <p>My design solution streamlines the existing online store usability, condensing UX from 8 steps to 3 steps, and is now enjoyable on mobile devices. Color and graphic elements reinforce the Buffalo Wild Wings experience.</p>"
 permalink:    "buffalo-wild-wings"
 ---
-
+{% include image.html
+	name="BWW18-sketches.jpg"
+%}
 {% include image.html
 	name="BWW18-wireframe.jpg"
 %}

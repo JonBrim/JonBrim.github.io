@@ -15,5 +15,6 @@ excerpt:      "<h5>Objective:</h5>
 permalink:    "xim"
 ---
 
+{% include image.html name="XIM18-website-sketch.jpg" %}
 {% include image.html name="XIM18-website-code.jpg" %}
 {% include image.html name="XIM18-website.jpg" %}
