@@ -28,6 +28,8 @@ $table-text-align:       left !default;
 $identity-color:         $brand-color !default;
 $identity-size:          6em !default;
 
+$underline-color:        $grey-color !default;
+
 
 @mixin media-query( $device ) 
 {

@@ -66,11 +66,12 @@ $caption-z:          1 !default;
 	justify-content:  center;
 	padding-top:      $spacing-unit;
 	padding-bottom:   $spacing-unit;
-	background-color: white;
+	background-color: darken( $identity-color, 10% );
+	color:            lighten( $identity-color, 20% );
 	h1
 	{
-		color: $identity-color;
-		@include text-underline();
+		color: white;
+		@include text-underline( white );
 	}
 }
 

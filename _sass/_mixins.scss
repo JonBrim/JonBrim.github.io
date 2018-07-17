@@ -34,10 +34,10 @@
 	-webkit-column-break-inside: $column-break;
 }
 
-@mixin text-underline()
+@mixin text-underline( $color: $underline-color )
 {
 	&:after {
-		background: $grey-color;
+		background: $color;
 		content:    "";
 		display:    block;
 		height:     3px;
