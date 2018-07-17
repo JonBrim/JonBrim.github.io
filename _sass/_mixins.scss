@@ -33,3 +33,15 @@
     page-break-inside:           $column-break;
 	-webkit-column-break-inside: $column-break;
 }
+
+@mixin text-underline()
+{
+	&:after {
+		background: $grey-color;
+		content:    "";
+		display:    block;
+		height:     3px;
+		margin-top: ( $spacing-unit / 4 );
+		width:      100%;
+	}
+}

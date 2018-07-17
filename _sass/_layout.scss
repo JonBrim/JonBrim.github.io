@@ -60,6 +60,20 @@ $caption-z:          1 !default;
 	}
 }
 
+#about-me
+{
+	display:          grid;
+	justify-content:  center;
+	padding-top:      $spacing-unit;
+	padding-bottom:   $spacing-unit;
+	background-color: white;
+	h1
+	{
+		color: $identity-color;
+		@include text-underline();
+	}
+}
+
 .fullsized
 {
 	position:            relative;
@@ -103,14 +117,7 @@ $caption-z:          1 !default;
 	}
 	header {
 		h1 {
-			&:after {
-				background: $grey-color-light;
-				content:    "";
-				display:    block;
-				height:     3px;
-				margin-top: ( $spacing-unit / 4 );
-				width:      100%;
-			}
+			@include text-underline();
 		}
 	}
 }
