@@ -30,16 +30,15 @@ $identity-size:          6em !default;
 
 $underline-color:        $grey-color !default;
 
-
-@mixin media-query( $device ) 
+@mixin media-query( $device )
 {
-  @media screen and ( max-width: $device ) 
+  @media screen and ( max-width: $device )
   {
     @content;
   }
 }
 
-@mixin relative-font-size( $ratio ) 
+@mixin relative-font-size( $ratio )
 {
   font-size: $base-font-size * $ratio;
 }

@@ -47,7 +47,7 @@ $caption-z:          1 !default;
 				z-index:    ( $caption-z + 2 );
 			}
 		}
-		&:hover 
+		&:hover
 		{
 			img{
 				@include transform( scale( 1.1 ) );
@@ -60,18 +60,46 @@ $caption-z:          1 !default;
 	}
 }
 
+.avatar
+{
+	border-radius: 50%;
+	width:         15%;
+	margin-left:   auto;
+	margin-right:  auto;
+	display: block;
+}
+
 #about-me
 {
 	display:          grid;
 	justify-content:  center;
-	padding-top:      $spacing-unit;
-	padding-bottom:   $spacing-unit;
+	padding:          $spacing-unit ( $identity-size + ( $spacing-unit * 2 ) );
 	background-color: darken( $identity-color, 10% );
 	color:            lighten( $identity-color, 20% );
-	h1
+	header {
+		@include text-underline( lighten( $identity-color, 5% ) );
+		h1
+		{
+			color:         white;
+			text-align:    center;
+			margin-bottom: 0;
+		}
+		small
+		{
+			font-weight:   $headings-font-weight;
+			font-family:   $headings-font-family;
+			line-height:   $headings-line-height;
+			color:         inherit;
+			text-align:    center;
+			@include relative-font-size( 1.25 );
+			padding:       0;
+			margin:        0;
+			display:       block;
+		}
+	}
+	summary
 	{
-		color: white;
-		@include text-underline( white );
+		@include column( 2 );
 	}
 }
 
