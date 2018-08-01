@@ -63,7 +63,7 @@ $caption-z:          1 !default;
 .avatar
 {
 	border-radius: 50%;
-	width:         15%;
+	width:         ( $identity-size * 2 );
 	margin-left:   auto;
 	margin-right:  auto;
 	display: block;
@@ -73,9 +73,13 @@ $caption-z:          1 !default;
 {
 	display:          grid;
 	justify-content:  center;
-	padding:          $spacing-unit ( $identity-size + ( $spacing-unit * 2 ) );
+	padding:          $spacing-unit;
 	background-color: darken( $identity-color, 10% );
 	color:            lighten( $identity-color, 20% );
+	@media ( min-width: $media-size-md )
+	{
+			padding: $spacing-unit ( $identity-size + ( $spacing-unit * 2 ) );
+	}
 	header {
 		@include text-underline( lighten( $identity-color, 5% ) );
 		h1
@@ -99,7 +103,10 @@ $caption-z:          1 !default;
 	}
 	summary
 	{
-		@include column( 2 );
+		@media ( min-width: $media-size-md )
+		{
+			@include column( 2 );
+		}
 	}
 }
 
