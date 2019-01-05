@@ -28,16 +28,20 @@ $table-text-align:       left !default;
 $identity-color:         $brand-color !default;
 $identity-size:          6em !default;
 
+$underline-size:              3px;
+$underline-color:             $grey-color-light !default;
+$underline-margin-vertical:   $spacing-unit !default;
+$underline-margin-horizontal: 0 !default;
 
-@mixin media-query( $device ) 
+@mixin media-query( $device )
 {
-  @media screen and ( max-width: $device ) 
+  @media screen and ( max-width: $device )
   {
     @content;
   }
 }
 
-@mixin relative-font-size( $ratio ) 
+@mixin relative-font-size( $ratio )
 {
   font-size: $base-font-size * $ratio;
 }

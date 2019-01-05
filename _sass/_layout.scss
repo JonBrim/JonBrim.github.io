@@ -47,7 +47,7 @@ $caption-z:          1 !default;
 				z-index:    ( $caption-z + 2 );
 			}
 		}
-		&:hover 
+		&:hover
 		{
 			img{
 				@include transform( scale( 1.1 ) );
@@ -56,6 +56,60 @@ $caption-z:          1 !default;
 			{
 				opacity: 1;
 			}
+		}
+	}
+}
+
+.avatar
+{
+	border-radius: 50%;
+	width:         ( $identity-size * 2 );
+	margin-left:   auto;
+	margin-right:  auto;
+	display: block;
+}
+
+#about-me
+{
+	display:          grid;
+	justify-content:  center;
+	padding:          $spacing-unit;
+	background-color: darken( $identity-color, 10% );
+	color:            lighten( $identity-color, 20% );
+	@media ( min-width: $media-size-md )
+	{
+			padding: ( $spacing-unit * 4 ) ( $identity-size + ( $spacing-unit * 2 ) );
+	}
+	header {
+		@include text-underline( lighten( $identity-color, 5% ) );
+		figure
+		{
+			margin-bottom: ( $spacing-unit / 2 );
+		}
+		h1
+		{
+			color:         white;
+			text-align:    center;
+			margin:        0;
+		}
+		small
+		{
+			font-weight:   $headings-font-weight;
+			font-family:   $headings-font-family;
+			line-height:   $headings-line-height;
+			color:         inherit;
+			text-align:    center;
+			@include relative-font-size( 1.25 );
+			padding:       0;
+			margin-bottom: ( $spacing-unit / 2 );
+			display:       block;
+		}
+	}
+	summary
+	{
+		@media ( min-width: $media-size-md )
+		{
+			@include column( 2 );
 		}
 	}
 }
@@ -102,15 +156,9 @@ $caption-z:          1 !default;
 		}
 	}
 	header {
+		@include text-underline();
 		h1 {
-			&:after {
-				background: $grey-color-light;
-				content:    "";
-				display:    block;
-				height:     3px;
-				margin-top: ( $spacing-unit / 4 );
-				width:      100%;
-			}
+			margin-bottom: 0;
 		}
 	}
 }
