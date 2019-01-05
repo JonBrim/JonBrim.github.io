@@ -40,8 +40,8 @@
 		background: $color;
 		content:    "";
 		display:    block;
-		height:     3px;
-		margin-top: ( $spacing-unit / 4 );
+		height:     $underline-size;
+		margin:     $underline-margin-vertical $underline-margin-horizontal;
 		width:      100%;
 	}
 }

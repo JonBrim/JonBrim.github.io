@@ -11,14 +11,13 @@ layout: default
 		<header>
 			<h1>
 				{{ page.title }}
-				<br>
-				<small>
-					{% for category in page.categories %}
-					<a href="{{site.baseurl}}/category/{{ category | slugize | downcase }}" class="category">{{category | replace:'-', ' '}}</a>
-					{% unless forloop.last %}&nbsp;{% endunless %}
-					{% endfor %}
-				</small>
 			</h1>
+			<small>
+				{% for category in page.categories %}
+				<a href="{{site.baseurl}}/category/{{ category | slugize | downcase }}" class="category">{{category | replace:'-', ' '}}</a>
+				{% unless forloop.last %}&nbsp; | &nbsp;{% endunless %}
+				{% endfor %}
+			</small>
 		</header>
 		<summary>
 			{% if page.excerpt %}

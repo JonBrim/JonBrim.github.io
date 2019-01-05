@@ -78,15 +78,19 @@ $caption-z:          1 !default;
 	color:            lighten( $identity-color, 20% );
 	@media ( min-width: $media-size-md )
 	{
-			padding: $spacing-unit ( $identity-size + ( $spacing-unit * 2 ) );
+			padding: ( $spacing-unit * 4 ) ( $identity-size + ( $spacing-unit * 2 ) );
 	}
 	header {
 		@include text-underline( lighten( $identity-color, 5% ) );
+		figure
+		{
+			margin-bottom: ( $spacing-unit / 2 );
+		}
 		h1
 		{
 			color:         white;
 			text-align:    center;
-			margin-bottom: 0;
+			margin:        0;
 		}
 		small
 		{
@@ -97,7 +101,7 @@ $caption-z:          1 !default;
 			text-align:    center;
 			@include relative-font-size( 1.25 );
 			padding:       0;
-			margin:        0;
+			margin-bottom: ( $spacing-unit / 2 );
 			display:       block;
 		}
 	}
@@ -152,8 +156,9 @@ $caption-z:          1 !default;
 		}
 	}
 	header {
+		@include text-underline();
 		h1 {
-			@include text-underline();
+			margin-bottom: 0;
 		}
 	}
 }
