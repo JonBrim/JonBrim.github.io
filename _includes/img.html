@@ -1,0 +1,24 @@
+<figure 
+    style="background-color:{{ include.background-color | default: '#d6d6d6' }}; {{ include.style | default: '' }}" 
+    class="{{ include.class | defualt: '' }}"
+    aria-label="{{ include.alt | defualt: '' }}"
+>
+    <img 
+        {% if include.set %}
+        srcset="
+            {{ include.file }}@4x.{{ include.type | default: 'jpg' }} 2550w,
+            {{ include.file }}@3x.{{ include.type | default: 'jpg' }} 1275w,
+            {{ include.file }}@2x.{{ include.type | default: 'jpg' }} 638w,
+            {{ include.file }}@1x.{{ include.type | default: 'jpg' }} 255w
+            "
+        {% endif %}
+        src="{{ include.file }}.{{ include.type | default: 'jpg' }}" 
+        alt="{{ include.alt | defualt: '' }}"
+        loading="{{ include.loading | default: 'lazy' }}"
+        />
+    {% if include.caption %}
+    <figcaption class="scrim">
+        <h4 class="title">{{ include.caption }}</h4>
+    </figcaption>
+    {% endif %}
+</figure>

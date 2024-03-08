@@ -1,0 +1,25 @@
+@keyframes fade-down {
+0% { 
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+100% { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bg-fade-down {
+  0% { 
+    background-position: 0% 0%;
+  }
+  100% { 
+    background-position: 0% 100%;
+  }
+}
+  
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

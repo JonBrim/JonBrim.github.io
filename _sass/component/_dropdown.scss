@@ -1,0 +1,16 @@
+.dropdown {
+  --background-color: var( --dropdown_background-color );
+
+  box-shadow: var( --box-shadow-depth-2 );
+  background-color: var( --background-color );
+  border: var( --dropdown_border );
+  min-width: 12rem;
+  display: flex;
+  flex-direction: column;
+  padding: var( --padding );
+  list-style-type: none;
+  & > * {
+    --padding: var( --dropdown_child_padding );
+    padding: var( --padding );
+  }
+}

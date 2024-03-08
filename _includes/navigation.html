@@ -1,10 +1,21 @@
-<nav class="navigation">
-	<img src="/assets/brim.svg" class="logo toggle">
-	<ul>
-		<li><a href="{{ "/" | relative_url }}">All</a></li>
-		{% assign categories = site.categories | sort %}
-    	{% for category in categories %}
-        <li><a href="{{site.baseurl}}/category/{{ category | first | slugize | downcase }}">{{ category[0] | replace:'-', ' ' }}</a></li>
-    	{% endfor %}
-	</ul>
+{% unless page.title == "home" %}
+<nav class="navigation" data-title="{{ page.title | escape }}">
+  <a 
+    href="{{ '/' | relative_url }}" 
+    id="home"
+    class="button_back" 
+    data-label="Home"
+    aria-label="Home">
+    <svg
+      class="icon"
+      width="1.5rem"
+      height="1.5rem"
+      viewBox="0 0 25 19"
+      aria-labelledby="home" >
+      <line x1="0" x2="9" y1="9" y2=".5"></line>
+      <line x1="0" x2="25" y1="9" y2="9"></line>
+      <line x1="0" x2="9" y1="9" y2="18.5"></line>
+    </svg>
+  </a>
 </nav>
+{% endunless %}

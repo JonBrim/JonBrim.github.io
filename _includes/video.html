@@ -1,0 +1,21 @@
+<figure 
+    style="background-color:{{ include.background-color | default: '#d6d6d6' }}; {{ include.style | default: '' }}" 
+    class="{{ include.class | defualt: '' }}"
+    aria-label="{{ include.alt | defualt: '' }}"
+>
+    <video 
+        width="100%"
+        loop
+        autoplay
+        muted
+        tabindex="-1"
+    >
+        <source src="{{ include.file }}" type="video/mp4" >
+        Your browser does not support the video tag.
+    </video>
+    {% if include.caption %}
+    <figcaption class="scrim">
+        <h4 class="title">{{ include.caption }}</h4>
+    </figcaption>
+    {% endif %}
+</figure>

@@ -1,0 +1,44 @@
+{% if page.role or page.team or page.clients or page.applications %}
+    <ul class="post_qualifications">
+        {% if page.role %}
+        <li>
+            <h3>Role</h3>
+            <ul>
+            {% for role in page.role %}
+            <li>{{ role | escape }}</li>
+            {% endfor %}
+            </ul>
+        </li>
+        {% endif %}
+        {% if page.applications %}
+        <li>
+            <h3>Applications</h3>
+            <ul>
+            {% for application in page.applications %}
+            <li>{{ application | escape }}</li>
+            {% endfor %}
+            </ul>
+        </li>
+        {% endif %}
+        {% if page.team %}
+        <li>
+            <h3>Team</h3>
+            {{ page.team | escape }}
+        </li>
+        {% endif %}
+        {% if page.clients %}
+        <li>
+            <h3>Clients</h3>
+            {% if page.clients.size > 4 %}
+            <ul class="columns">
+            {% else %}
+            <ul>
+            {% endif %}
+            {% for client in page.clients %}
+                <li>{{ client | escape }}</li>
+            {% endfor %}
+            </ul>
+        </li>
+        {% endif %}
+    </ul>
+{% endif %}

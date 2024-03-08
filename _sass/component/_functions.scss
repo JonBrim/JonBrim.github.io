@@ -1,0 +1,30 @@
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}
+
+@mixin breakpoint( $map, $breakpoints ) {
+    @each $size, $keys in $map {
+        @if ( index( $map, $size $keys ) > 1 ) {
+            @media( min-width: #{ map-get( $breakpoints, $size ) } )  {
+                @each $label, $value in $keys {
+                    #{ $label }: #{ $value };
+                }
+            }
+        } @else {
+            @each $label, $value in $keys {
+                #{ $label }: #{ $value };
+            }
+        }
+    }
+}
+
+@function contrast( $color ) {
+    @if ( lightness( $color ) > 50 ) {
+        @return $contrast_light_color;
+    } @else {
+        @return $contrast_dark_color;
+    }
+}
