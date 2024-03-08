@@ -21,7 +21,7 @@ title: "Portfolio"
       {%- endfor -%}
   {%- endif -%}
 </main>
-<header class="section" >
+<section class="section" >
   <div class="post post_static">
     <h1 class="post_title">
       Jon Brim
@@ -32,8 +32,19 @@ title: "Portfolio"
     <p>
       Hi I'm Jon. I'm experienced in creating impactful visual products in a variety of media, platforms, and devices. I love collaborating with product and development teams to design and iterate new features, explore innovative technologies, tackle challenging problems, and provide the best possible experience to users.
     </p>
+    <ul class="social_list">
+      {% if site.email %}
+      <a href="{{ site.email | prepend: 'mailto:' }}" class="social_item"><li class="social_item_content"><svg><use href="#icon_mail" /></svg>{{ site.email }}</li></a>
+      {% endif %}
+      {% if site.phone %}
+      <a href="{{ site.phone | prepend: 'tel:+' | remove: '(' | remove: ')' }}" class="social_item"><li class="social_item_content"><svg><use href="#icon_phone" /></svg> {{ site.phone }}</li></a>
+      {% endif %}
+      {% if site.linkedin %}
+      <a href="{{ site.linkedin | prepend: 'https://www.linkedin.com/in/' }}" rel="external" target="blank" class="social_item"><li class="social_item_content"><svg><use href="#icon_linkedin" /></svg> Linkedin</li></a>
+      {% endif %}
+    </ul>
   </div>
-</header>
+</section>
 <section class="clients">
   <h2>
     Clients I've worked for
@@ -48,3 +59,4 @@ title: "Portfolio"
     {% endfor %}  
   </article>
 </section>
+{% include icons.html %}

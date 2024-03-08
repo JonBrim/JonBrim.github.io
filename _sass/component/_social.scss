@@ -1,0 +1,30 @@
+.social_list {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    margin: 3rem 0 3rem 0;
+    padding: 0;
+    gap: 1rem;
+    list-style-type: none;
+    flex-wrap: wrap;
+}
+
+.social_item {
+    font-size: .9rem;
+    border-radius: 1rem;
+    padding: 0 .5rem 0 .1rem;
+    display: inline-flex;
+    text-decoration: none;
+}
+
+.social_item_content {
+    display: inline-flex;
+    gap:.65rem;
+    justify-content: center;
+    align-items: center;
+    img,
+    svg {
+        max-height: 1rem;
+        max-width: 1rem;
+    }
+}

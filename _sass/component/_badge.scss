@@ -1,9 +1,37 @@
+$badge_background-color:        transparent !default;
+$badge_background-color_hover:  var(--default-200-color) !default;
+$badge_font-color:              var(--link_font-color) !default; 
+$badge_font-color_hover:        var(--link_font-color_hover) !default;
+
 .badge {
     font-size: .8rem;
     padding: 0.25rem 1rem;
-    background-color: var(--default-color);
-    border: 1px solid var(--default-color);
+    background-color: $badge_background-color;
+    border: 1px solid var(--300-color) ;
     border-radius: 2rem;
-    color: var(--link_font-color);
+    color: $badge_font-color;
     text-decoration: none;
+    display: inline-flex;
+}
+
+a.badge {
+    transition: var( --transition );
+    &:hover,
+    &:focus {
+        background-color: $badge_background-color_hover;
+        color: $badge_font-color_hover;
+    }
+}
+
+.badge_content {
+    display: flex;
+    gap:.65rem;
+    justify-content: center;
+    align-items: center;
+    img,
+    svg {
+        max-height: 1rem;
+        max-width: 1rem;
+        fill: $badge_font-color;
+    }
 }
