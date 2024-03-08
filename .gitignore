@@ -1,8 +1,8 @@
 
 _site/
+_drafts/
+assets/images/PSD/
+assets/images/png/
 .sass-cache/
-404.html
-about.md
-index.md
 Gemfile
 Gemfile.lock

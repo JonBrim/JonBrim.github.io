@@ -1,0 +1,89 @@
+- id: cloudburst-swatches
+  palette: [ 
+    { 
+      title: "Base",
+      size: large,
+      swatches: [
+        "#1a1a1a",
+        "#333333",
+        "#4d4d4d",
+        "#666666",
+        "#808080",
+        "#999999",
+        "#b3b3b3",
+        "#cccccc",
+        "#e6e6e6"
+      ]
+    },
+    { 
+      title: "Primary",
+      size: medium,
+      swatches: [ 
+        "#1e1023",
+        "#3c1f47",
+        "#592f6a",
+        "#783d8f",
+        "#954eb1",
+        "#aa71c1",
+        "#bf95d0",
+        "#d5b8e0",
+        "#eadcef"
+      ],
+    },
+    { 
+      title: "Active",
+      swatches: [ 
+        "#0d475c",
+        "#13627e",
+        "#1b81a4",
+        "#2a9cc4",
+        "#3ab7e2",
+        "#49c7f3",
+        "#72d7fa",
+        "#a4e8ff",
+        "#ccf2ff"
+      ]
+    },
+    { 
+      title: "Success",
+      swatches: [ 
+        "#141f1c",
+        "#24423a",
+        "#2e6b5b",
+        "#36a184",
+        "#31c49d",
+        "#52e0ba",
+        "#75f0cf",
+        "#a3f5df",
+        "#d1faef"
+      ]
+    },
+    { 
+      title: "Warn",
+      swatches: [ 
+        "#674f00", 
+        "#937100", 
+        "#be9200", 
+        "#e6b300", 
+        "#fec706", 
+        "#ffd437", 
+        "#ffdd63", 
+        "#ffe999", 
+        "#fff3c8"
+      ]
+    },
+    { 
+      title: "Error",
+      swatches: [ 
+        "#300001",
+        "#660305",
+        "#910e11",
+        "#b11a1c",
+        "#cc3336",
+        "#e95053",
+        "#f67578",
+        "#ffacae",
+        "#fee5e6"
+      ]
+    }
+  ]

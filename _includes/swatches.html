@@ -1,0 +1,20 @@
+<div class="text-wrapper">
+    {% if include.title %}
+    <h2>{{ include.title }}</h2>
+    {% endif %}
+    {% if include.bodycopy %}
+    {{ include.bodycopy }}
+    {% endif %}
+    <div class="palette-container">
+    {% for swatches in include.swatches %}
+            {% for palette in swatches.palette %}
+                <ul class="palette {{ palette.size }}">
+                <h4>{{palette.title}}</h4>
+                    {% for swatch in palette.swatches %}
+                        <li class="swatch" style="background-color: {{ swatch }}" data-swatch="{{ swatch }}"></li>
+                    {% endfor %} 
+                </ul>
+            {% endfor %}  
+    {% endfor %}  
+    </div>
+</div>

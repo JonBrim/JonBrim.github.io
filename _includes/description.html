@@ -1,0 +1,12 @@
+<section class="text-block {{ include.class | defualt: '' }}">
+    <div class="text-block_wrapper">
+        {% if include.headline %}
+            <header>
+                <h2>{{ include.headline }}</h2>
+            </header>
+        {% endif %}
+        {% if include.bodycopy %}
+            {{ include.bodycopy }}
+        {% endif %}
+    </div>
+</section>

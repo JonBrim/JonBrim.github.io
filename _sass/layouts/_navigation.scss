@@ -1,0 +1,120 @@
+$navigation_padding: (
+  small:  (
+    padding: .5rem 1rem
+  ),
+  large: (
+    padding: .5rem 3rem
+  )
+);
+$button_back_icon_circle: true !default;
+
+$button_back_width:           3.5rem !default;
+$button_back_height:          $button_back_width !default;
+$button_back_font-weight:     $font-weight !default;
+$button_back_padding:         $horizontal-spacing !default;
+
+$button_back_label_font-size:   .85rem !default;
+$button_back_label_margin:      0 1rem 0 .5rem !default;
+
+$button_back_label_sticky_margin:            $button_back_label_margin !default;
+$button_back_label_sticky_font-weight:       600 !default;
+$button_back_label_sticky_font-color:        hsl( 190, 0%, 100% ) !default;
+$button_back_label_sticky_text-shadow:       0 0 0.5rem rgba(0, 0, 0, 0.65) !default;
+$button_back_label_sticky_background-color:  rgb( 0, 0, 0 ) !default;
+$button_back_label_sticky_background-scrim:  linear-gradient( 180deg, rgba( 0, 0, 0, 0.65 ) 0%, rgba( 0, 0, 0, 0.3 ) 55%, rgba( 0, 0, 0, .05 ) 85%, rgba( 0, 0, 0, 0 ) 100%) !default;
+
+$button_back_icon_background-color:       hsl( 190, 0%, 100% ) !default;
+$button_back_icon_hover_background-color: darken( $button_back_icon_background-color, 10% ) !default;
+$button_back_icon_border-width:           1px !default;
+$button_back_icon_border-style:           solid !default;
+$button_back_icon_border-color:           hsla( 190, 0%, 0%, .15 ) !default;
+$button_back_icon_box-shadow:             0 0 10px $shadow-color !default;
+$button_back_icon_border:
+  //border- width
+  $button_back_icon_border-width
+  //border style
+  $button_back_icon_border-style
+  //border color
+  $button_back_icon_border-color !default;
+$button_back_icon_transition-duration: $transition-duration;
+$button_back_icon_transition-easing:   $transition-easing;
+$button_back_icon_transition:
+  background-color
+  //transition duration
+  $button_back_icon_transition-duration
+  //transition easing
+  $button_back_icon_transition-easing !default;
+
+.navigation {
+  @include breakpoint( $navigation_padding, $breakpoints );
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  transition: var( --transition );
+  align-items: center;
+  &.is-sticky {
+    background-color: $button_back_label_sticky_background-color;
+    background: $button_back_label_sticky_background-scrim;
+    &:after {
+      content: attr( data-title );
+      display: inline-flex;
+      font-weight: $button_back_label_sticky_font-weight;
+      animation-name: fade-down;
+      animation-duration: var( --transition_duration );
+      color: $button_back_label_sticky_font-color;
+      text-shadow: $button_back_label_sticky_text-shadow;
+      margin: $button_back_label_sticky_margin;
+    }
+  }
+}
+
+
+.button_back {
+  display: flex;
+  font-weight: $button_back_font-weight;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  text-decoration: none;
+  outline: none;
+  transition:
+    color $transition-duration $transition-easing,
+    background-color $transition-duration $transition-easing;
+  &:hover,
+  &:focus {
+    .icon {
+      background-color: $button_back_icon_hover_background-color;
+    }
+  }
+  &:focus {
+    .icon {
+      box-shadow: $button_back_icon_box-shadow;
+    }
+  }
+  &:after {
+    content: attr( data-label );
+    display: inline-flex;
+    margin: $button_back_label_margin;
+    font-size: $button_back_label_font-size;
+  }
+  .is-sticky & {
+    &:after {
+      display: none;
+    }
+  }
+  .icon {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: $button_back_width;
+    height: $button_back_height;
+    padding: $button_back_padding;
+    background-color: $button_back_icon_background-color;
+    border: $button_back_icon_border;
+    transition: $button_back_icon_transition;
+    @if $button_back_icon_circle {
+      border-radius: 50%;
+    }
+  }
+}

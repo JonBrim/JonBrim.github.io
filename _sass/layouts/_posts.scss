@@ -1,0 +1,393 @@
+$post_sub-title_font-size:    var( --font-size-600 ) !default;
+$post_sub-title_font-weight:  400 !default;
+$post_sub-title_font-color:   var( --600-color ) !default;
+$post_sub-title_font-family:  $alt_font-family !default;
+$post_sub-title_line-height:  var( --sub-title_line-height ) !default;
+
+.post {
+  &_header {
+    --padding: 2.5rem 1rem 1rem 1rem;
+    @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
+      --padding: 4rem 3rem 3rem 3rem;
+    }
+    padding: var( --padding ); 
+  }
+  &_header_group {
+    @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
+      flex: 5 1 50%;
+    }
+  }
+  &_title {
+    font-size: var( --font-size-900 );
+  }
+  &_sub-title  {
+    color: $post_sub-title_font-color;
+    font-weight: $post_sub-title_font-weight;
+    font-family: $post_sub-title_font-family;
+    font-size: $post_sub-title_font-size;
+    display: var( --display );
+    line-height: $post_sub-title_line-height;
+  }
+  &_qualifications {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    list-style: none;
+    font-size: var( --font-size-100 );
+    letter-spacing: .075rem;
+    padding: initial;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    padding: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: start;
+    font-weight: 400;
+    color: var(--color);
+    margin-bottom: 1.5rem;
+    @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
+      margin: 3rem;
+      padding: 1.5rem 0;
+      margin-bottom: 3rem;
+    }
+    & h3 {
+      color: var( --header_font-color );
+      font-size: .75rem;
+      font-weight: 600;
+    }
+    & ul {
+      list-style: none;
+      padding: initial;
+      &.columns {
+        column-count: 3;
+        @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
+        column-count: 5;
+        }
+        gap: 1rem;
+      }
+    }
+  }
+  &_content {
+    --layout-post_padding: 0;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 2;
+    video,
+    img {
+      object-fit: cover;
+    }
+    video,
+    figure {
+      flex: 1 1 100%;
+    }
+    @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
+      video,
+      figure {
+        flex: 1 1 #{ map-get( $breakpoints, "medium" ) };
+      }
+      .narrow {
+        flex-basis: 33%;
+      }
+      .wide {
+        flex-basis: 66%;
+      }
+      .half {
+        flex-basis: 50%;
+      }
+      .full {
+        flex-basis: 100%;
+      }
+    }
+    .text-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex: 1 1 100%;
+      padding: 1.5rem;
+      @include breakpoint( 
+        (
+          medium: (
+            padding: 3rem 3rem,
+            flex: 1 1 33%
+          ),
+        ),
+        $breakpoints
+      );
+      &_wrapper {
+        max-width: none;
+        @include breakpoint( 
+          (
+            xlarge: (
+              max-width: 75ch
+            ),
+          ),
+          $breakpoints
+        );
+        &.columns {
+          max-width: 72rem;
+          width: 100%;
+          & > p {
+            columns: auto 24rem;
+          }
+        }
+      }
+    }
+    & > p {
+      padding: 0 1.5rem 1rem 1.5rem;
+      width: min( 100% - 3rem, 75ch );
+      @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
+        padding: 0 3rem 1.5rem 3rem;
+      }
+    }
+    blockquote {
+      @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
+        padding-left: 25%;
+        padding-right: 25%;
+      }
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      width: 100vw;
+      margin: 0;
+      padding-top: var(--layout-post_margin);
+      padding-bottom: var(--layout-post_margin);
+    }
+    img,
+    picture {
+      box-sizing: border-box;
+      width: 100%;
+      margin: 0;
+    }
+
+    .text-wrapper {
+      display: flex;
+      width: 100%;
+      padding: 3rem 0;
+      background-color: #ececec;
+      flex-direction: column;
+      align-items: center;
+      @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
+        padding: 12rem 0;
+      }
+    }
+
+    .gallery,
+    %gallery {
+      --layout-post_padding: 0;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+      //margin-bottom: var( --layout-post_margin );
+      padding: 0;
+      @media( min-width: #{ map-get( $breakpoints, "medium" ) } )  {
+        & > * {
+          flex: 1 1 33%;
+        }
+        video,
+        img {
+          object-fit: cover;
+        }
+        .wide {
+          flex: 1 2 66%;
+        }
+        .half {
+          flex: 1 2 45%;
+        }
+        .full {
+          flex: 1 3 100%;
+        }
+      }
+      .text-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        @include breakpoint( 
+          (
+            small:  (
+              padding: 1.5rem,
+            ),
+            medium: (
+              padding: 3rem 3rem,
+            ),
+          ),
+          $breakpoints
+        );
+        &_wrapper {
+          @include breakpoint( 
+            (
+              small:  (
+                max-width: none
+              ),
+              medium: (
+                max-width: 24rem
+              ),
+            ),
+            $breakpoints
+          );
+          &.columns {
+            max-width: 72rem;
+            width: 100%;
+            & > p {
+              columns: auto 24rem;
+            }
+          }
+        }
+      }
+      .grey {
+        background-color: hsl( 100, 0%, 90%);
+      }
+      .black {
+        background-color: hsl( 100, 0%, 10%);
+      }
+      &_column_2 {
+        display: grid;
+        grid-template-columns: repeat( 2, 1fr );
+      }
+      &_columns_2 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        & > * {
+          @include breakpoint( 
+            (
+              small:  (
+                width: 100%
+              ),
+              medium: (
+                width: calc( 100% / 2 )
+              ),
+            ),
+            $breakpoints
+          );
+        }
+      }
+      &_columns_3 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        & > * {
+          @include breakpoint( 
+            (
+              small:  (
+                width: 100%
+              ),
+              medium: (
+                width: calc( 100% / 2 )
+              ),
+              large: (
+                width: calc( 100% / 3 )
+              )
+            ),
+            $breakpoints
+          );
+        }
+      }
+      &_columns {
+        display: flex;
+        @include breakpoint( 
+          (
+            small:  (
+              flex-direction: column,
+            ),
+            large: (
+              flex-direction: row,
+            )
+          ),
+          $breakpoints
+        );
+        
+      }
+      &_rows {
+        display: flex;
+        flex-direction: column;
+      }
+      &_centered {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        @include breakpoint( 
+          (
+            small:  (
+              width: 100%,
+            ),
+            large: (
+              margin-left: auto,
+              margin-right: auto,
+              align-items: center,
+            )
+          ),
+          $breakpoints
+        );
+        figure {
+          width: 100%;
+          flex: 1 1 auto;
+          justify-content: center;
+          img {
+            width: 50%;
+          }
+        }
+      }
+      &_centered,
+      &_rows,
+      &_columns,
+      &_columns_2,
+      &_columns_3 {
+        &.shadow {
+          figure {
+            --padding: 2rem;
+            @media( min-width: #{ map-get( $breakpoints, "medium" ) } )  {
+              --padding: 3rem;
+            }
+            @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
+              --padding: 6rem;
+            }
+            padding: var( --padding );
+            img {
+              @include breakpoint( 
+                (
+                  large: (
+                    box-shadow: var( --box-shadow-depth-9 )
+                  )
+                ),
+                $breakpoints
+              );
+            }
+          }
+        }
+      }
+    }
+  }
+  &_footer {
+    background-color: var( --primary-color );
+    padding: var(--grid_gap);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var( --grid_gap );
+    .post_link {
+      flex-basis: 25rem;
+      .title {
+        font-size: 1.75rem;
+      }
+    }
+  }
+  .black {
+    color: white;
+    background-color: hsl( 100, 0%, 10%);
+  }
+  &_static {
+    --padding: 3rem 1.5rem 1.5rem 1.5rem;
+    @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
+      --padding: 6rem 3rem 3rem 3rem;
+    }
+    padding: var( --padding );
+    max-width: 50rem;
+    margin-left: auto;
+    margin-right: auto;
+  }  
+}

@@ -1,0 +1,16 @@
+@mixin padding_scale( $top, $left: $top, $bottom: $top, $right: $left ) {
+    --padding-top:    #{ map-get( $top, "small") };
+    --padding-left:   #{ map-get( $left, "small") };
+    --padding-bottom: #{ map-get( $bottom, "small") };
+    --padding-right:  #{ map-get( $right, "small") };
+    @media (min-width: #{ map-get( $breakpoints, "medium" ) })  {
+        --padding-top:    #{ map-get( $top, "large") };
+        --padding-left:   #{ map-get( $left, "large") };
+        --padding-bottom: #{ map-get( $bottom, "large") };
+        --padding-right:  #{ map-get( $right, "large") };
+    }
+    padding-top: var( --padding-top );
+    padding-left: var( --padding-left );
+    padding-bottom: var( --padding-bottom );
+    padding-right: var( --padding-right );
+}

@@ -1,0 +1,27 @@
+- id: clients
+  folder: /assets/images/clients/
+  client:
+  - logo: iowadot_logo.png
+    name: Iowa DOT
+  - logo: minnesotadot_logo.png
+    name: Minnesota DOT
+  - logo: KSDoT_logo.png
+    name: Kansas DOT
+  - logo: Seal_of_the_Indiana_Department_of_Transportation.svg
+    name: Indiana DOT
+  - logo: bww-logo.svg
+    name: Buffalo Wild Wings
+  - logo: Kum_&_Go_logo.svg
+    name: Kum & Go
+  - logo: Idaho511_DarkBkgd_compact.svg
+    name: Idaho DOT
+  - logo: PeaceHealth_logo.svg
+    name: Peacehealth
+  - logo: sacog-logo-regular.svg
+    name: SACOG
+  - logo: MassDOT_Logo.svg
+    name: MassDOT
+  - logo: cdot_logo.png
+    name: CDOT
+  - logo: ndot-dept-logo.png
+    name: Nebraska DOT

@@ -1,0 +1,89 @@
+.clients {
+    @include breakpoint( 
+        (
+          small:  (
+            --grid_gap: 1.5rem,
+            padding: 4rem 1.5rem,
+          ),
+          medium: (
+            --grid_gap: 1.5rem,
+          ),
+          large: (
+            --grid_gap: 3rem,
+            padding: 6rem 3rem,
+          )
+        ),
+        $breakpoints
+      );
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var( --grid_gap );
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: hsl( 252, 5%, 95% );
+    h2 {
+      display: flex;
+      justify-content: center;
+      
+      @include breakpoint( 
+        (
+          small:  (
+            font-size: 2rem
+          ),
+          large: (
+            font-size: 3rem
+          )
+        ),
+        $breakpoints
+      );
+    }
+    & > article {
+      @include breakpoint( 
+          (
+            small:  (
+              --grid_gap: 1rem,
+              --image-size: 6rem
+            ),
+          ),
+          $breakpoints
+        );
+      max-width: 45rem;
+      display: flex;
+      flex-direction: row;
+      gap: var( --grid_gap );
+      justify-content: center;
+      flex-flow: wrap;
+      figure {
+        overflow: auto;
+        width: auto;
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+        flex-direction: column;
+        gap: 0.5rem;
+        justify-content: center;
+        .caption {
+          display: flex;
+          gap: 0.5rem;
+          border-top: 1px dotted;
+          padding-top: 1rem;
+          flex-flow: wrap;
+          justify-content: center;
+          max-width: 12rem;
+        }
+        img {
+          width: var(--image-size);
+          display: flex;
+          transition: filter var(--transition_duration) var(--transition_ease);
+          filter: grayscale( 100% );
+        }
+        &:hover,
+        &:focus {
+          img {
+            filter: grayscale( 0% );
+          }
+        }
+      }
+    }
+  }
