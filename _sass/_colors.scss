@@ -6,7 +6,7 @@ $colors: (
   "success": hsl( 150, 50%, 50% ),
   "error": hsl( 10, 70%, 60% ),
   "focus": hsla( 210, 50%, 50%, .5 ),
-  "50": #fafafa,
+  "50":  #fafafa,
   "100": #f5f5f5,
   "200": #e5e5e5,
   "300": #d4d4d4,
@@ -24,3 +24,15 @@ $colors: (
     --#{ $key }-color: #{ $color };
   }
 }
+
+$grey-50-color:  #fafafa !default;
+$grey-100-color: #f5f5f5 !default;
+$grey-200-color: #e5e5e5 !default;
+$grey-300-color: #d4d4d4 !default;
+$grey-400-color: #a3a3a3 !default;
+$grey-500-color: #737373 !default;
+$grey-600-color: #525252 !default;
+$grey-700-color: #404040 !default;
+$grey-800-color: #262626 !default;
+$grey-900-color: #171717 !default;
+$grey-950-color: #0a0a0a !default;

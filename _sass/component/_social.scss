@@ -1,5 +1,5 @@
 $social_list_gap:       1rem !default;
-$social_list_border:    1px dotted var( --500-color ) !default;
+$social_list_border:    1px dotted $grey-500-color !default;
 $social_list_margin: (
     small:  (
       margin: 2rem 0
