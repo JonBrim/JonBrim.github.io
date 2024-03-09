@@ -46,7 +46,7 @@ $button_back_icon_transition:
   $button_back_icon_transition-easing !default;
 
 .navigation {
-  @include breakpoint( $navigation_padding, $breakpoints );
+  padding: 0;
   display: flex;
   position: sticky;
   top: 0;
@@ -56,6 +56,7 @@ $button_back_icon_transition:
   &.is-sticky {
     background-color: $button_back_label_sticky_background-color;
     background: $button_back_label_sticky_background-scrim;
+    @include breakpoint( $navigation_padding, $breakpoints );
     &:after {
       content: attr( data-title );
       display: inline-flex;
@@ -66,6 +67,9 @@ $button_back_icon_transition:
       text-shadow: $button_back_label_sticky_text-shadow;
       margin: $button_back_label_sticky_margin;
     }
+  }
+  &.is_button_back {
+    @include breakpoint( $navigation_padding, $breakpoints );
   }
 }
 

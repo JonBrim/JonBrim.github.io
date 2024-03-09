@@ -1,30 +1,88 @@
+$social_list_gap:       1rem !default;
+$social_list_border:    1px dotted var( --500-color ) !default;
+$social_list_margin: (
+    small:  (
+      margin: 2rem 0
+    ),
+    medium: (
+      margin: 3rem 0
+    ),
+    large: (
+      margin: 4rem 0
+    )
+) !default;
+$social_list_padding: (
+    small:  (
+      padding: 1rem 0
+    ),
+    medium: (
+      padding: 1.5rem 0
+    ),
+    large: (
+      padding: 2rem 0
+    )
+) !default;
+
+$social_item_padding:   0 .5rem 0 0 !default;
+$social_item_gap:       .65rem !default;
+$social_item_radius:    1rem !default;
+
+$social_item_icon_color:                   hsla( 256, 0%, 100%, 1) !default;
+$social_item_icon_size:                     .9rem !default;
+$social_item_icon_margin:                   .35rem !default;
+$social_item_icon_radius:                   100% !default;
+$social_item_icon_background-color:        hsla( 252, 25%, 12%, .75) !default;
+$social_item_icon_background-color_hover:  hsla( 252, 25%, 12%, 1) !default;
+
+
 .social_list {
     display: flex;
     flex-direction: row;
-    margin: 0;
-    margin: 3rem 0 3rem 0;
-    padding: 0;
-    gap: 2.5rem;
+    gap: $social_list_gap;
     list-style-type: none;
     flex-wrap: wrap;
+    border-top: $social_list_border;
+    padding: var( --padding );
+    width: 100%;
+    justify-content: space-around;
+
+    @include breakpoint( $social_list_margin, $breakpoints );
+    @include breakpoint( $social_list_padding, $breakpoints );
+    @media( min-width: #{ map-get( $breakpoints, "medium" ) } )  {
+        justify-content: space-between;
+    }
 }
 
 .social_item {
+    --icon_background-color: #{ $social_item_icon_background-color };
+
     font-size: .9rem;
-    border-radius: 1rem;
-    padding: 0 .5rem 0 .1rem;
+    border-radius: $social_item_radius;
+    padding: $social_item_padding;
     display: inline-flex;
     text-decoration: none;
+    &:hover {
+        --icon_background-color: #{ $social_item_icon_background-color_hover };
+    }
 }
 
 .social_item_content {
     display: inline-flex;
-    gap:.65rem;
+    gap: $social_item_gap;
     justify-content: center;
     align-items: center;
-    img,
+    .icon {
+        background-color: var( --icon_background-color );
+        border-radius: $social_item_icon_radius;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: var(--transition);
+    }
     svg {
-        max-height: 1rem;
-        max-width: 1rem;
+        height: $social_item_icon_size;
+        width: $social_item_icon_size;
+        margin: $social_item_icon_margin;
+        fill: $social_item_icon_color;
     }
 }

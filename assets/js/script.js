@@ -1,4 +1,4 @@
-const postHeader = document.querySelector('.post_header');
+const postHeader = document.querySelector('.sticky_trigger');
 const navigation = document.querySelector('.navigation');
 
 beholder = new IntersectionObserver( entries => {
