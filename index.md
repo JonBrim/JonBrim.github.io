@@ -37,7 +37,7 @@ title: "Portfolio"
       <a href="{{ site.email | prepend: 'mailto:' }}" class="social_item"><li class="social_item_content"><svg><use href="#icon_mail" /></svg>{{ site.email }}</li></a>
       {% endif %}
       {% if site.phone %}
-      <a href="{{ site.phone | prepend: 'tel:+' | remove: '(' | remove: ')' }}" class="social_item"><li class="social_item_content"><svg><use href="#icon_phone" /></svg> {{ site.phone }}</li></a>
+      <a href="{{ site.phone | prepend: 'tel:+1' | remove: '(' | remove: ')' | remove: '-' | remove: ' ' }}" class="social_item"><li class="social_item_content"><svg><use href="#icon_phone" /></svg> {{ site.phone }}</li></a>
       {% endif %}
       {% if site.linkedin %}
       <a href="{{ site.linkedin | prepend: 'https://www.linkedin.com/in/' }}" rel="external" target="blank" class="social_item"><li class="social_item_content"><svg><use href="#icon_linkedin" /></svg> Linkedin</li></a>
