@@ -1,13 +1,13 @@
 {% if page.role or page.team or page.clients or page.applications %}
-    <ul class="post_qualifications">
+    <ul class="post_qualifications list_items">
         {% if page.team %}
-        <li>
+        <li class="list_item">
             <h3>Team</h3>
             {{ page.team | escape }}
         </li>
         {% endif %}
         {% if page.role %}
-        <li>
+        <li class="list_item">
             <h3>Role</h3>
             <ul>
             {% for role in page.role %}
@@ -17,7 +17,7 @@
         </li>
         {% endif %}
         {% if page.applications %}
-        <li>
+        <li class="list_item">
             <h3>Applications</h3>
             <ul>
             {% for application in page.applications %}
@@ -35,7 +35,7 @@
         </li>
         {% endif %}
         {% if page.clients %}
-        <li>
+        <li class="list_item">
             <h3>Clients</h3>
             {% if page.clients.size > 4 %}
             <ul class="columns">
