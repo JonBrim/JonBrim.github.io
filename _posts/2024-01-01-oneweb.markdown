@@ -73,7 +73,7 @@ OneWeb provides real-time traffic and weather conditions, road construction and 
 {% include video.html 
     file="/assets/videos/oneweb-ev.mp4"
     class="full"
-    alt="TODO"
+    alt="Users can access information for electric vehicles"
     background-color="#f47f1a"
 %}
 {% include description.html 
@@ -90,13 +90,13 @@ OneWeb provides real-time traffic and weather conditions, road construction and 
 {% include video.html 
     file="/assets/videos/OneWeb-Camera-Hover.mp4"
     class="wide"
-    alt="TODO"
+    alt="Users can hover over map icons to view the cameras"
     background-color="#fafaea"
 %}
 {% include video.html 
     file="/assets/videos/oneweb-camera-modal.mp4"
     class="full"
-    alt="TODO"
+    alt="Users can see in detail camera views"
     background-color="#f47f1a"
 %}
 {% include img.html 

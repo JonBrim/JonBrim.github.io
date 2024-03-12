@@ -27,12 +27,12 @@ $social_item_padding:   0 .5rem 0 0 !default;
 $social_item_gap:       .65rem !default;
 $social_item_radius:    1rem !default;
 
-$social_item_icon_color:                   hsla( 256, 0%, 100%, 1) !default;
+$social_item_icon_color:                   hsla( 252, 25%, 12%, .5) !default;
 $social_item_icon_size:                     .9rem !default;
 $social_item_icon_margin:                   .35rem !default;
 $social_item_icon_radius:                   100% !default;
-$social_item_icon_background-color:        hsla( 252, 25%, 12%, .75) !default;
-$social_item_icon_background-color_hover:  hsla( 252, 25%, 12%, 1) !default;
+$social_item_icon_background-color:        hsla( 252, 25%, 12%, .05) !default;
+$social_item_icon_background-color_hover:  hsla( 252, 25%, 12%, .1) !default;
 
 
 .social_list {
@@ -84,5 +84,6 @@ $social_item_icon_background-color_hover:  hsla( 252, 25%, 12%, 1) !default;
         width: $social_item_icon_size;
         margin: $social_item_icon_margin;
         fill: $social_item_icon_color;
+        stroke: transparent;
     }
 }
