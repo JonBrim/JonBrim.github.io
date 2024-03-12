@@ -67,6 +67,7 @@ $button_back_icon_transition:
     background: $button_back_label_sticky_background-scrim_sticky;
     z-index: -1;
     opacity: 0;
+    transition: opacity $button_back_icon_transition-duration $button_back_icon_transition-easing;
   }
   &.is_fixed {
     position: fixed;
