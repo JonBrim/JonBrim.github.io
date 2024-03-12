@@ -53,7 +53,6 @@ $button_back_icon_transition:
   position: sticky;
   top: 0;
   z-index: 10;
-  transition: $button_back_icon_transition;
   align-items: center;
   background: $button_back_label_sticky_background-scrim;
   @include breakpoint( $navigation_padding, $breakpoints );
