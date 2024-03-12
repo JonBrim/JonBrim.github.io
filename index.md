@@ -2,7 +2,7 @@
 layout: default
 title: "Jon Brim"
 ---
-{% include navigation.html %}
+{% include navigation.html type="fixed" %}
 <main class="home section" >
   <div class="post post_static">
     <h1 class="post_title sticky_trigger">

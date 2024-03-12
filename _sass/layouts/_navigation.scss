@@ -16,12 +16,14 @@ $button_back_padding:         $horizontal-spacing !default;
 $button_back_label_font-size:   .85rem !default;
 $button_back_label_margin:      0 1rem 0 .5rem !default;
 
-$button_back_label_sticky_margin:            $button_back_label_margin !default;
-$button_back_label_sticky_font-weight:       600 !default;
-$button_back_label_sticky_font-color:        hsl( 190, 0%, 100% ) !default;
-$button_back_label_sticky_text-shadow:       0 0 0.5rem rgba(0, 0, 0, 0.65) !default;
-$button_back_label_sticky_background-color:  rgb( 0, 0, 0 ) !default;
-$button_back_label_sticky_background-scrim:  linear-gradient( 180deg, rgba( 0, 0, 0, 0.65 ) 0%, rgba( 0, 0, 0, 0.3 ) 55%, rgba( 0, 0, 0, .05 ) 85%, rgba( 0, 0, 0, 0 ) 100%) !default;
+$button_back_label_sticky_margin:                   $button_back_label_margin !default;
+$button_back_label_sticky_font-weight:              600 !default;
+$button_back_label_sticky_font-color:             hsl( 190, 0%, 100% ) !default;
+$button_back_label_sticky_text-shadow:              0 0 0.5rem rgba(0, 0, 0, 0.65) !default;
+$button_back_label_sticky_background-color:       rgb( 0, 0, 0 ) !default;
+$button_back_label_sticky_background-scrim_sticky:  linear-gradient( 180deg, rgba( 0, 0, 0, 0.75 ) 0%, rgba( 0, 0, 0, 0.3 ) 55%, rgba( 0, 0, 0, 0.1 ) 85%, rgba( 0, 0, 0, 0 ) 100%) !default;
+$button_back_label_sticky_background-scrim:         linear-gradient( 180deg, rgba( 256, 0, 256, 0 ) 0%, rgba( 256, 256, 256, 0 ) 55%, rgba( 256, 256, 256, 0 ) 85%, rgba( 256, 256, 256, 0 ) 100%) !default;
+
 
 $button_back_icon_background-color:       hsl( 190, 0%, 100% ) !default;
 $button_back_icon_hover_background-color: darken( $button_back_icon_background-color, 10% ) !default;
@@ -36,10 +38,10 @@ $button_back_icon_border:
   $button_back_icon_border-style
   //border color
   $button_back_icon_border-color !default;
-$button_back_icon_transition-duration: $transition-duration;
+$button_back_icon_transition-duration: .75s;
 $button_back_icon_transition-easing:   $transition-easing;
 $button_back_icon_transition:
-  background-color
+  all
   //transition duration
   $button_back_icon_transition-duration
   //transition easing
@@ -51,11 +53,29 @@ $button_back_icon_transition:
   position: sticky;
   top: 0;
   z-index: 10;
-  transition: var( --transition );
+  transition: $button_back_icon_transition;
   align-items: center;
+  background: $button_back_label_sticky_background-scrim;
+  @include breakpoint( $navigation_padding, $breakpoints );
+  &::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: $button_back_label_sticky_background-scrim_sticky;
+    z-index: -1;
+    opacity: 0;
+  }
+  &.is_fixed {
+    position: fixed;
+    width: 100%;
+  }
+  &.is_sticky {
+    position: sticky;
+  }
   &.is-sticky {
-    background-color: $button_back_label_sticky_background-color;
-    background: $button_back_label_sticky_background-scrim;
     @include breakpoint( $navigation_padding, $breakpoints );
     &:after {
       content: attr( data-title );
@@ -67,9 +87,9 @@ $button_back_icon_transition:
       text-shadow: $button_back_label_sticky_text-shadow;
       margin: $button_back_label_sticky_margin;
     }
-  }
-  &.is_button_back {
-    @include breakpoint( $navigation_padding, $breakpoints );
+    &::before {
+      opacity: 1;
+    }
   }
 }
 
@@ -102,7 +122,8 @@ $button_back_icon_transition:
     margin: $button_back_label_margin;
     font-size: $button_back_label_font-size;
   }
-  .is-sticky & {
+  .is-sticky &,
+  .is-fixed & {
     &:after {
       display: none;
     }

@@ -1,5 +1,5 @@
 {% unless page.title == "home" %}
-<nav class="navigation {% if include.type == 'back' %}is_button_back{% endif %}" data-title="{{ page.title | escape }}">
+<nav class="navigation {% if include.type == 'fixed' %}is_fixed{% endif %} {% if include.type == 'back' %}is_button_back{% endif %}" data-title="{{ page.title | escape }}">
   {% if include.type == "back" %}
   <a 
     href="{{ '/' | relative_url }}" 
