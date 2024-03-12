@@ -8,7 +8,7 @@ thumbnail: "/assets/images/Oneweb-Responsive-suite@2x.jpg"
 thumbnail_background-color: "#f47f1a"
 role: [ UI/UX Designer ]
 team: "Castle Rock Associates"
-applications: [ Adobe XD, Figma, Adobe Photoshop, Adobe Illustrator ]
+applications: [ Adobe XD, Adobe Photoshop, Adobe Illustrator, Figma ]
 ---
 I had the opportunity at Castle Rock to work on various Department of Transportation-related products. It was a pleasure to redesign a Traveler Information System known internally as OneWeb.
 

@@ -1,5 +1,11 @@
 {% if page.role or page.team or page.clients or page.applications %}
     <ul class="post_qualifications">
+        {% if page.team %}
+        <li>
+            <h3>Team</h3>
+            {{ page.team | escape }}
+        </li>
+        {% endif %}
         {% if page.role %}
         <li>
             <h3>Role</h3>
@@ -15,15 +21,17 @@
             <h3>Applications</h3>
             <ul>
             {% for application in page.applications %}
-            <li>{{ application | escape }}</li>
+            <li>
+                {% if application == "Adobe Fresco" %}<img src="/assets/images/applications/adobe-fresco.svg" />{% endif %}
+                {% if application == "Adobe Illustrator" %}<img src="/assets/images/applications/adobe-illustrator.svg" />{% endif %}
+                {% if application == "Adobe InDesign" %}<img src="/assets/images/applications/adobe-indesign.svg" />{% endif %}
+                {% if application == "Adobe Photoshop" %}<img src="/assets/images/applications/adobe-photoshop.svg" />{% endif %}
+                {% if application == "Adobe XD" %}<img src="/assets/images/applications/adobe-xd.svg" />{% endif %}
+                {% if application == "Figma" %}<img src="/assets/images/applications/figma-icon.svg" />{% endif %}
+                {% if application == "Visual Studio Code" %}<img src="/assets/images/applications/vscode.svg" />{% endif %}
+                {{ application | escape }}</li>
             {% endfor %}
             </ul>
-        </li>
-        {% endif %}
-        {% if page.team %}
-        <li>
-            <h3>Team</h3>
-            {{ page.team | escape }}
         </li>
         {% endif %}
         {% if page.clients %}

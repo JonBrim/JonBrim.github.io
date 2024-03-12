@@ -8,7 +8,7 @@ thumbnail: "/assets/images/Dallas-Fortworth-Book@2x.jpg"
 thumbnail_background-color: "#483550"
 role: [ Illustrator ]
 team: "Castle Rock Associates"
-applications: [ Adobe Fresco, Adobe Photoshop ]
+applications: [ Adobe Fresco, Adobe Photoshop, Adobe InDesign ]
 ---
 In the highly competitive domain of Traveler Information Systems, Castle Rock aimed to enhance the effectiveness of their Request for Proposals (RFPs) by incorporating a visual narrative that would deeply connect with stakeholders. The task at hand involved seamlessly merging the distinct geographic locations for each state's Department of Transportation with the various activities that the offered service is designed to support in a vintage national parks poster style.
 {% include img.html 
