@@ -29,6 +29,7 @@
     & ul {
       list-style: none;
       padding: initial;
+      gap: 1rem;
       &.columns {
         column-count: 3;
         @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
