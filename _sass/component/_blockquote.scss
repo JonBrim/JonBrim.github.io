@@ -5,10 +5,111 @@ $blockquote_font-color:   var( --600-color ) !default;
 $blockquote_font-family:  $alt_font-family !default;
 $blockquote_font-weight:  600 !default;
 
+$blockquote_footer_font-size:   var( --font-size-500 ) !default;
+$blockquote_footer_font-family: var( --font-family ) !default;
+$blockquote_footer_font-weight: 400 !default;
+
 blockquote {  
-    color: $blockquote_font-color;
+    //color: $blockquote_font-color;
     margin: var( --blockquote_margin );
     font-size: $blockquote_font-size;
     font-family: $blockquote_font-family;
     font-weight: $blockquote_font-weight;
 }
+
+.quote-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 100%;
+    padding: 1.5rem;
+    @include breakpoint( 
+        (
+            medium: (
+                padding: 3rem 3rem,
+                flex: 1 1 33%
+            ),
+        ),
+        $breakpoints
+    );
+    &_wrapper {
+        max-width: none;
+        @include breakpoint( 
+                (
+                    xlarge: (
+                        max-width: 75ch
+                    ),
+                ),
+                $breakpoints
+        );
+        &.columns {
+            max-width: 72rem;
+            width: 100%;
+            & > p {
+                columns: auto 24rem;
+            }
+        }
+
+        &.quote-size_9 {
+            & > main {
+                font-size: var( --font-size-900 );
+            }
+        }
+        &.quote-size_8 {
+            & > main {
+                font-size: var( --font-size-800 );
+            }
+        }
+        &.quote-size_7 {
+            & > main {
+                font-size: var( --font-size-700 );
+            }
+        }
+        &.quote-size_6 {
+            & > main {
+                font-size: var( --font-size-600 );
+            }
+        }
+        &.quote-size_5 {
+            & > main {
+                font-size: var( --font-size-500 );
+            }
+        }
+        &.quote-size_4 {
+            & > main {
+                font-size: var( --font-size-400 );
+            }
+        }
+        &.quote-size_3 {
+            & > main {
+                font-size: var( --font-size-300 );
+            }
+        }
+        &.quote-size_2 {
+            & > main {
+                font-size: var( --font-size-200 );
+            }
+        }
+        &.quote-size_1 {
+            & > main {
+                font-size: var( --font-size-100 );
+            }
+        }
+        & > footer {
+            font-size: $blockquote_footer_font-size;
+            font-family: $blockquote_footer_font-family;
+            font-weight: $blockquote_footer_font-weight
+        }
+        &[quote="true"] {
+            & > main {
+                &::before {
+                    content: "\201C";
+                }
+                &::after {
+                    content: "\201D";
+                }
+            }
+        }
+    }
+  }

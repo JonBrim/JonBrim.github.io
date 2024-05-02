@@ -5,7 +5,6 @@ $alt_font-family: 'Lora', serif;
 @import "transitions.scss";
 @import "component/functions.scss";
 @import "component/padding.scss";
-@import "component/blockquote.scss";
 
 @import url('https://fonts.googleapis.com/css?family=Lora:400i&display=swap');
 
@@ -213,6 +212,7 @@ a {
 @import "component/palette.scss";
 @import "component/social.scss";
 @import "component/list_items.scss";
+@import "component/blockquote.scss";
 
 .section {
   position: relative;

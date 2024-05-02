@@ -99,6 +99,12 @@ OneWeb provides real-time traffic and weather conditions, road construction and 
     alt="Users can see in detail camera views"
     background-color="#f47f1a"
 %}
+{% include quote.html 
+    background-color="#292b2a"
+    font-color="#b9b9b9"
+    source="Minnesota OneWeb User"
+    bodycopy="Great job on updating traffic and links!!!!!!!! Love the bigger camera views"
+%}
 {% include img.html 
     file="/assets/images/oneweb-commercial-vehicles"
     alt="Commercial vehicles toggle"

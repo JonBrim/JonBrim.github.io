@@ -1,0 +1,20 @@
+<section 
+    class="quote-block {{ include.class | defualt: '' }}"
+    style="background-color:{{ include.background-color | default: 'transparent' }}; {{ include.style | default: '' }} color:{{ include.font-color | default: 'var( --600-color )' }}"
+>
+    <blockquote 
+        class="quote-block_wrapper quote-size_{{ include.fontsize | default: '7' }}" 
+        quote="{{ include.quote | default: 'true' }}" 
+    >
+        <main>
+            {% if include.bodycopy %}
+            {{ include.bodycopy }}
+            {% endif %}
+            {% if include.source %}
+        </main>
+        <footer>
+            - {{ include.source }}
+        </footer>
+        {% endif %}
+    </blockquote>
+</section>
