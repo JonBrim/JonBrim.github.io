@@ -16,6 +16,7 @@ In the highly competitive domain of Traveler Information Systems, Castle Rock ai
     alt="Dallas Fortworth RFP Cover"
     loading="eager"
     set="true"
+    set-size="medium"
     class="wide"
     background-color="#483550"
 %}
@@ -24,6 +25,7 @@ In the highly competitive domain of Traveler Information Systems, Castle Rock ai
     alt="Dallas Fortworth RFP Cover"
     loading="eager"
     set="true"
+    set-size="medium"
     class="narrow"
     background-color="#d16a43"
 %}
@@ -41,6 +43,7 @@ In the highly competitive domain of Traveler Information Systems, Castle Rock ai
     alt="Dallas Fortworth RFP Cover"
     loading="eager"
     set="true"
+    set-size="medium"
     class="narrow"
     background-color="#552749"
 %}
@@ -49,6 +52,7 @@ In the highly competitive domain of Traveler Information Systems, Castle Rock ai
     alt="Dallas Fortworth RFP Cover"
     loading="eager"
     set="true"
+    set-size="medium"
     class="wide"
     background-color="#2f2a48"
 %}
@@ -65,6 +69,7 @@ In the highly competitive domain of Traveler Information Systems, Castle Rock ai
     alt="Pennsylvania RFP Cover: detailed view of snowplow"
     loading="lazy"
     set="true"
+    set-size="medium"
     class="wide"
     background-color="#bcb4dc"
 %}
@@ -87,6 +92,7 @@ In the highly competitive domain of Traveler Information Systems, Castle Rock ai
         file="/assets/images/Idaho-Cover"
         alt="Idaho RFP Cover"
         set="true"
+        set-size="small"
         background-color="#be6c0d"
     %}
 </div>
@@ -95,6 +101,7 @@ In the highly competitive domain of Traveler Information Systems, Castle Rock ai
         file="/assets/images/Utah-Cover"
         alt="Utah RFP Cover"
         set="true"
+        set-size="small"
         background-color="#c7258b"
     %}
 </div>
@@ -103,6 +110,7 @@ In the highly competitive domain of Traveler Information Systems, Castle Rock ai
         file="/assets/images/Georgia-Cover"
         alt="Georgia RFP Cover"
         set="true"
+        set-size="small"
         background-color="#472db7"
     %}
 </div>
@@ -111,6 +119,7 @@ In the highly competitive domain of Traveler Information Systems, Castle Rock ai
         file="/assets/images/Colorado-Cover"
         alt="Colorado RFP Cover"
         set="true"
+        set-size="small"
         background-color="#fcf25b"
     %}
 </div>
@@ -119,6 +128,7 @@ In the highly competitive domain of Traveler Information Systems, Castle Rock ai
         file="/assets/images/Virginia-Cover"
         alt="Virginia RFP Cover"
         set="true"
+        set-size="small"
         background-color="#dd6438"
     %}
 </div>
@@ -127,6 +137,7 @@ In the highly competitive domain of Traveler Information Systems, Castle Rock ai
         file="/assets/images/Mass-Cover"
         alt="Massachusetts RFP Cover"
         set="true"
+        set-size="small"
         background-color="#77e9d5"
     %}
 </div>

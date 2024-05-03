@@ -109,6 +109,7 @@ OneWeb provides real-time traffic and weather conditions, road construction and 
     file="/assets/images/oneweb-commercial-vehicles"
     alt="Commercial vehicles toggle"
     set="true"
+    set-size="medium"
     class="wide"
     background-color="#fafaea"
 %}
