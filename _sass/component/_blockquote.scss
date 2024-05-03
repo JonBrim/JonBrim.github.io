@@ -15,6 +15,8 @@ blockquote {
     font-size: $blockquote_font-size;
     font-family: $blockquote_font-family;
     font-weight: $blockquote_font-weight;
+    padding-top: var(--layout-post_margin);
+    padding-bottom: var(--layout-post_margin);
 }
 
 .quote-block {
@@ -24,33 +26,11 @@ blockquote {
     align-items: center;
     flex: 1 1 100%;
     padding: 1.5rem;
-    @include breakpoint( 
-        (
-            medium: (
-                padding: 3rem 3rem,
-                flex: 1 1 33%
-            ),
-        ),
-        $breakpoints
-    );
+    @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
+        padding: 3rem 3rem;
+    }
     &_wrapper {
-        max-width: none;
-        @include breakpoint( 
-                (
-                    xlarge: (
-                        max-width: 75ch
-                    ),
-                ),
-                $breakpoints
-        );
-        &.columns {
-            max-width: 72rem;
-            width: 100%;
-            & > p {
-                columns: auto 24rem;
-            }
-        }
-
+        max-width: 25ch;
         &.quote-size_9 {
             & > main {
                 font-size: var( --font-size-900 );

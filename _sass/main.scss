@@ -200,6 +200,7 @@ a {
 }
 
 @import "component/button.scss";
+@import "component/blockquote.scss";
 @import "component/dropdown.scss";
 @import "grid/columns.scss";
 @import "layouts/navigation.scss";
@@ -212,7 +213,7 @@ a {
 @import "component/palette.scss";
 @import "component/social.scss";
 @import "component/list_items.scss";
-@import "component/blockquote.scss";
+
 
 .section {
   position: relative;

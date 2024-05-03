@@ -71,15 +71,10 @@ $post_sub-title_line-height:  var( --sub-title_line-height ) !default;
       align-items: center;
       flex: 1 1 100%;
       padding: 1.5rem;
-      @include breakpoint( 
-        (
-          medium: (
-            padding: 3rem 3rem,
-            flex: 1 1 33%
-          ),
-        ),
-        $breakpoints
-      );
+      @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
+        padding: 3rem 3rem;
+        flex: 1 1 33%;
+      }
       &_wrapper {
         max-width: none;
         @include breakpoint( 
@@ -107,18 +102,6 @@ $post_sub-title_line-height:  var( --sub-title_line-height ) !default;
         padding: 0 3rem 1.5rem 3rem;
       }
     }
-    blockquote {
-      @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
-        padding-left: 25%;
-        padding-right: 25%;
-      }
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-      width: 100vw;
-      margin: 0;
-      padding-top: var(--layout-post_margin);
-      padding-bottom: var(--layout-post_margin);
-    }
     img,
     picture {
       box-sizing: border-box;
@@ -137,7 +120,7 @@ $post_sub-title_line-height:  var( --sub-title_line-height ) !default;
         padding: 12rem 0;
       }
     }
-
+    /*
     .gallery,
     %gallery {
       --layout-post_padding: 0;
@@ -374,7 +357,7 @@ $post_sub-title_line-height:  var( --sub-title_line-height ) !default;
           }
         }
       }
-    }
+    }*/
   }
   &_footer {
     background-color: var( --primary-color );
