@@ -1,7 +1,7 @@
 <figure 
     style="background-color:{{ include.background-color | default: '#d6d6d6' }}; {{ include.style | default: '' }}" 
-    class="{{ include.class | defualt: '' }}"
-    aria-label="{{ include.alt | defualt: '' }}"
+    class="{{ include.class | default: '' }}"
+    aria-label="{{ include.alt | default: '' }}"
 >
     <img 
         {% if include.set %}
@@ -28,6 +28,7 @@
                     srcset="
                     {{ include.file }}@1x.{{ include.type | default: 'jpg' }} 255w
                     "
+                {% when "none" %}
                 {% else %}
                     srcset="
                     {{ include.file }}@4x.{{ include.type | default: 'jpg' }} 2550w,
@@ -38,7 +39,7 @@
             {% endcase %}
         {% endif %}
         src="{{ include.file }}.{{ include.type | default: 'jpg' }}" 
-        alt="{{ include.alt | defualt: '' }}"
+        alt="{{ include.alt | default: '' }}"
         loading="{{ include.loading | default: 'lazy' }}"
         />
     {% if include.caption %}

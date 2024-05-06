@@ -1,7 +1,7 @@
-<section class="text-block {{ include.class | defualt: '' }}">
+<section class="text-block {{ include.class | default: '' }}">
     <div class="text-block_wrapper">
         {% if include.headline %}
-            <header>
+            <header id="{{ include.headline | replace: ' ', '-' | downcase }}" >
                 <h2>{{ include.headline }}</h2>
             </header>
         {% endif %}
