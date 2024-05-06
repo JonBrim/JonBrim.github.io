@@ -40,6 +40,10 @@ $breakpoints: (
 
 $shadow-color: rgb( 0, 0, 0 );
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
 }

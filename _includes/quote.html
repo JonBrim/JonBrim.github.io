@@ -1,6 +1,8 @@
 <section 
     class="quote-block {{ include.class | default: '' }}"
-    style="background-color:{{ include.background-color | default: 'transparent' }}; {{ include.style | default: '' }} color:{{ include.font-color | default: 'var( --600-color )' }}"
+    style="
+        background-color:{{ include.background-color | default: 'transparent' }}; {{ include.style | default: '' }}
+        color:{{ include.font-color | default: 'var( --600-color )' }}"
 >
     <blockquote 
         class="quote-block_wrapper quote-size_{{ include.fontsize | default: '7' }}" 

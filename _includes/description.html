@@ -1,7 +1,14 @@
+{% if include.headline %}
+<section
+    id="{{ include.headline | replace: ' ', '-' | downcase }}"
+    class="text-block {{ include.class | default: '' }}"
+>
+{% else %}
 <section class="text-block {{ include.class | default: '' }}">
+{% endif %}
     <div class="text-block_wrapper">
         {% if include.headline %}
-            <header id="{{ include.headline | replace: ' ', '-' | downcase }}" >
+            <header>
                 <h2>{{ include.headline }}</h2>
             </header>
         {% endif %}
