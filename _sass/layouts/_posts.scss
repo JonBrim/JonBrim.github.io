@@ -74,6 +74,19 @@ $post_sub-title_line-height:  var( --sub-title_line-height ) !default;
       @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
         padding: 3rem 3rem;
         flex: 1 1 33%;
+
+        &.narrow {
+          flex-basis: 33%;
+        }
+        &.wide {
+          flex-basis: 66%;
+        }
+        &.half {
+          flex-basis: 50%;
+        }
+        &.full {
+          flex-basis: 100%;
+        }
       }
       &_wrapper {
         max-width: none;
