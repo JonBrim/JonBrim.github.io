@@ -20,6 +20,7 @@ OneWeb provides real-time traffic and weather conditions, road construction and 
     alt="Responsive Design showcasing OneWeb on Desktop, Tablet, and Phone"
     loading="eager"
     set="true"
+    set-size="large"
     class="full"
     background-color="#f47f1a"
 %}

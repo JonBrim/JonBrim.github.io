@@ -17,20 +17,17 @@
             {% case include.set-size %}
                 {% when "large" %}
                     srcset="
-                    {{ include.file }}@4x.{{ include.type | default: 'jpg' }} 2550w,
                     {{ include.file }}@3x.{{ include.type | default: 'jpg' }} 1275w,
                     {{ include.file }}@2x.{{ include.type | default: 'jpg' }} 638w,
                     {{ include.file }}@1x.{{ include.type | default: 'jpg' }} 255w
                     "
                 {% when "medium" %}
                     srcset="
-                    {{ include.file }}@3x.{{ include.type | default: 'jpg' }} 1275w,
                     {{ include.file }}@2x.{{ include.type | default: 'jpg' }} 638w,
                     {{ include.file }}@1x.{{ include.type | default: 'jpg' }} 255w
                     "
                 {% when "small" %}
                     srcset="
-                    {{ include.file }}@2x.{{ include.type | default: 'jpg' }} 638w,
                     {{ include.file }}@1x.{{ include.type | default: 'jpg' }} 255w
                     "
                 {% when "tiny" %}
@@ -40,8 +37,6 @@
                 {% when "none" %}
                 {% else %}
                     srcset="
-                    {{ include.file }}@4x.{{ include.type | default: 'jpg' }} 2550w,
-                    {{ include.file }}@3x.{{ include.type | default: 'jpg' }} 1275w,
                     {{ include.file }}@2x.{{ include.type | default: 'jpg' }} 638w,
                     {{ include.file }}@1x.{{ include.type | default: 'jpg' }} 255w
                     "
@@ -57,3 +52,10 @@
     </figcaption>
     {% endif %}
 </figure>
+
+{% comment %}
+{{ include.file }}@4x.{{ include.type | default: 'jpg' }} 2550w,
+{{ include.file }}@3x.{{ include.type | default: 'jpg' }} 1275w,
+{{ include.file }}@2x.{{ include.type | default: 'jpg' }} 638w,
+{{ include.file }}@1x.{{ include.type | default: 'jpg' }} 255w
+{% endcomment %}
