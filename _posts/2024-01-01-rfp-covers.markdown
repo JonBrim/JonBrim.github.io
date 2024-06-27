@@ -74,7 +74,6 @@ In the highly competitive domain of Traveler Information Systems, Castle Rock ai
     id="Pennsylvania RFP Details"
     file="/assets/images/pennsylvania-cover-zoom-details"
     alt="Pennsylvania RFP Cover: detailed view of snowplow"
-    loading="lazy"
     set="true"
     set-size="medium"
     class="wide"
@@ -87,6 +86,15 @@ In the highly competitive domain of Traveler Information Systems, Castle Rock ai
     class="narrow"
     background-color="#dce5f8"
 %}
+<div class="gallery_centered shadow">
+    {% include img.html 
+        id="Iowa RFP Cover"
+        file="/assets/images/Iowa-Cover"
+        alt="Iowa RFP Cover" 
+        set="true"
+        background-color="#720101"
+    %}
+</div>
 <div class="gallery_centered shadow">
     {% include img.html 
         id="Nevada RFP Cover"

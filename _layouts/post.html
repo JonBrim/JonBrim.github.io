@@ -16,7 +16,7 @@ layout: default
   <main class="post_content" itemprop="articleBody">
     {{ content }}
   </main>
-  <footer class="post_footer">
+  <footer id="additional-projects" class="post_footer">
     {% for post in site.related_posts limit:4 %}
       <a class="post_link" href="{{ post.url | relative_url }}">
         <img 
