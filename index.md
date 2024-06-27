@@ -29,8 +29,8 @@ title: "Jon Brim"
       {% endif %}
     </ul>
   </div>
-  {%- if site.posts.size > 0 -%}
-      {%- for post in site.posts -%}
+  {%- if site.project.size > 0 -%}
+      {%- for post in site.project -%}
           <a 
             id="{{ post.title | replace: ' ', '-' | downcase }}" 
             class="post post_link" 
