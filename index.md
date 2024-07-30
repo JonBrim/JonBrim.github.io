@@ -19,7 +19,7 @@ title: "Jon Brim"
       <a href="{{ site.linkedin | prepend: 'https://www.linkedin.com/in/' }}" rel="external" target="blank" class="social_item"><li class="social_item_content"><span class="icon"><svg><use href="#icon_linkedin" /></svg></span> Linkedin</li></a>
       {% endif %}
       {% if site.resume %}
-      <a href="{{ site.resume }}" class="social_item"><li class="social_item_content"><span class="icon"><svg><use href="#icon_resume" /></svg></span> Resume</li></a>
+      <a href="{{ site.resume }}" target="blank" class="social_item"><li class="social_item_content"><span class="icon"><svg><use href="#icon_resume" /></svg></span> Resume</li></a>
       {% endif %}
       {% if site.email %}
       <a href="{{ site.email | prepend: 'mailto:' }}" class="social_item"><li class="social_item_content"><span class="icon"><svg><use href="#icon_mail" /></svg></span>{{ site.email }}</li></a>
