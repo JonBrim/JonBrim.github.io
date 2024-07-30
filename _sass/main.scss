@@ -198,10 +198,16 @@ a {
   font-family: var( --font-family );
   font-weight: var( --font-weight );
   transition: var( --transition );
+  text-decoration: none;
   &:hover {
     --font-color: var( --link_font-color_hover );
   }
 }
+::-moz-selection,
+::selection {
+  background: $grey-300-color;
+}
+
 
 @import "component/button.scss";
 @import "component/blockquote.scss";
