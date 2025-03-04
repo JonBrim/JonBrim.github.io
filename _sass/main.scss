@@ -209,7 +209,7 @@ a {
 @import "component/social.scss";
 @import "component/list_items.scss";
 @import "component/qualifications.scss";
-/*
+
 .section {
   position: relative;
   background-color: var( --background-color );
@@ -255,4 +255,4 @@ a {
   width: #{ map-get( $spacings, "800" ) };
   height: #{ map-get( $spacings, "800" ) };
   background-color: rgb( var( --font-400-color ) );
-}*/
+}
