@@ -144,7 +144,7 @@ $button_back_icon_transition:
     width: $button_back_width;
     height: $button_back_height;
     padding: $button_back_padding;
-    background-color: var( --default-900-color );
+    background-color: var( --white-color );
     border: rgba( var( --100-rgb-color ), 0.1 );
     transition: $button_back_icon_transition;
     @if $button_back_icon_circle {
