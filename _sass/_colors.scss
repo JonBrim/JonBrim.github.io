@@ -1,6 +1,5 @@
 $colors: (
   "default": hsla( 210, 20%, 80%, .35 ),
-  "default-200": hsla( 210, 20%, 80%, .25 ),
   "primary": hsl( 252, 0%, 10% ),
   "secondary": hsl( 210, 90%, 50% ),
   "success": hsl( 150, 50%, 50% ),
@@ -28,13 +27,12 @@ $colors: (
   "default-700-rgb": unquote("61, 61, 73"),
   "default-800": #2b2b35,
   "default-800-rgb": unquote("43, 43, 53"),
-  "default-default-900": #19191a,
+  "default-900": #19191a,
   "default-900-rgb": unquote("25, 25, 26"),
 ) !default;
 
 $dark-mode_colors: (
   "default": hsla(220, 3%, 22%, 0.35),
-  "default-200": hsla( 210, 20%, 80%, .25 ),
   "primary": hsl( 252, 0%, 10% ),
   "secondary": hsl( 210, 90%, 50% ),
   "success": hsl( 150, 50%, 50% ),
@@ -46,7 +44,6 @@ $dark-mode_colors: (
   "font-800": unquote("209, 205, 223"),
   "white": unquote("209, 205, 223"),
   "black": unquote("23, 23, 27"),
-  rgb(23, 23, 27)
   "default-100": rgb(14, 14, 17),
   "default-100-rgb": unquote("17, 17, 20"),
   "default-200": #16161a,
