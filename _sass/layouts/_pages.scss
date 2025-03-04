@@ -114,7 +114,7 @@ $page_sub-title_line-height:  var( --sub-title_line-height ) !default;
         map-get( $spacings, "500" )
         map-get( $spacings, "400" )
         map-get( $spacings, "500" );
-      width: min( 100% - map-get( $spacings, "500" ) - map-get( $spacings, "500" ), 75ch );
+      width: min( 100% - calc( map-get( $spacings, "500" ) * 2 ), 75ch );
       @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
         padding: 
           0 
