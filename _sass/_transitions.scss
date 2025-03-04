@@ -1,7 +1,7 @@
 @keyframes fade-down {
   0% { 
       opacity: 0;
-      transform: translateY(calc( -1 * #{ map-get( $spacings, "600" ) } ));
+      transform: translateY(-2rem);
     }
   100% { 
       opacity: 1;
