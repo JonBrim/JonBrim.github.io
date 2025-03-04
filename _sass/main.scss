@@ -1,5 +1,5 @@
 @import "colors.scss";
-@import "sizes.scss";
+/*@import "sizes.scss";
 @import "transitions.scss";
 @import "component/functions.scss";
 @import "component/padding.scss";
@@ -250,4 +250,4 @@ a {
   width: #{ map-get( $spacings, "800" ) };
   height: #{ map-get( $spacings, "800" ) };
   background-color: rgb( var( --font-400-color ) );
-}
+}*/
