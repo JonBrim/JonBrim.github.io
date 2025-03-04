@@ -47,11 +47,14 @@ body {
   animation-fill-mode: forwards; 
 } 
 
-body {
+:root {
   @include build-variables( $colors );
   @media (prefers-color-scheme: dark) {
     @include build-variables( $dark-mode_colors );
   }
+}
+
+body {
   --font-color:       #{ $font-color };
   --font-size:        20px;
   --font-line-height: 1.5;
