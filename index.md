@@ -70,4 +70,3 @@ title: "Jon Brim"
   </article>
 </section>
 {% include icons.html %}
-{% include excerpts.html %}
