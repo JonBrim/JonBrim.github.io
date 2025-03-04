@@ -136,7 +136,7 @@ $page_sub-title_line-height:  var( --sub-title_line-height ) !default;
       padding:
         map-get( $spacings, "800" )
         0;
-      background-color: rgb( var( --100-rgb-color) );
+      background-color: rgb( var( --default-100-rgb-color) );
       flex-direction: column;
       align-items: center;
       @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {

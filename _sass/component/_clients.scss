@@ -21,7 +21,7 @@
   gap: var( --grid_gap );
   align-items: center;
   flex-wrap: wrap;
-  background-color: rgba( var( --900-rgb-color ), 0.04 );
+  background-color: rgba( var( --default-900-rgb-color ), 0.04 );
   h2 {
     display: flex;
     justify-content: center;

@@ -18,7 +18,7 @@ $font-weights: (
 $horizontal-spacing: 1rem;
 $vertical-spacing:   0.75rem;
 
-$border-color: rgba( var( --900-rgb-color ), 0.1 );
+$border-color: rgba( var( --default-900-rgb-color ), 0.1 );
 
 $transition-duration: 0.25s;
 $transition-easing:   ease-in-out;
@@ -96,7 +96,7 @@ body {
   --layout-page_margin:  8rem;
 
   --fill_color: none;
-  --stroke_color: rgb(var( --100-rgb-color ));
+  --stroke_color: rgb(var( --default-100-rgb-color ));
 
   --border-color: #{ $border-color };
 
@@ -126,7 +126,7 @@ body {
     0 0px 100px hsla( 0, 0%, 0%, .35 );
 
 
-  --background-color: rgb(var(--100-rgb-color));
+  --background-color: rgb(var(--default-100-rgb-color));
 
   --title_font-size: 2.5rem;
   --sub-title_font-size: 1.75rem;
@@ -187,7 +187,7 @@ a {
 
 ::-moz-selection,
 ::selection {
-  background: rgba( var( --400-rgb-color ), 0.5 );
+  background: rgba( var( --default-400-rgb-color ), 0.5 );
 }
 
 

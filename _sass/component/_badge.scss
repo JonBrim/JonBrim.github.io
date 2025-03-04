@@ -10,7 +10,7 @@ $badge_font-color_hover:        var( --link_font-color_hover ) !default;
         #{ map-get( $spacings, "400" ) }
     );
     background-color: $badge_background-color;
-    border: 1px solid rgb( var( --300-rgb-color ) );
+    border: 1px solid rgb( var( --default-300-rgb-color ) );
     border-radius: 2rem;
     color: $badge_font-color;
     text-decoration: none;
