@@ -40,6 +40,9 @@ collections:
     output: true
     permalink: /project/:path/
 
+sass:
+  style: expanded       # You can use 'expanded' for development and 'compressed' for production
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
