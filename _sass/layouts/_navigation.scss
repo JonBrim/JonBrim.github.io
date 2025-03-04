@@ -34,11 +34,11 @@ $button_back_label_sticky_background-scrim_sticky:  linear-gradient( 180deg, rgb
 $button_back_label_sticky_background-scrim:         linear-gradient( 180deg, rgba( 256, 0, 256, 0 ) 0%, rgba( 256, 256, 256, 0 ) 55%, rgba( 256, 256, 256, 0 ) 85%, rgba( 256, 256, 256, 0 ) 100%) !default;
 
 
-$button_back_icon_background-color:       rgb(var(--900-rgb-color)) !default;
-$button_back_icon_hover_background-color: rgb(var(--800-rgb-color)) !default; //darken( $button_back_icon_background-color, 10% ) !default;
+$button_back_icon_background-color:       rgb( var( --900-rgb-color ) ) !default;
+$button_back_icon_hover_background-color: rgb( var( --800-rgb-color ) ) !default; //darken( $button_back_icon_background-color, 10% ) !default;
 $button_back_icon_border-width:           1px !default;
 $button_back_icon_border-style:           solid !default;
-$button_back_icon_border-color:           rgba(var(--100-rgb-color), 0.1) !default;
+$button_back_icon_border-color:           rgba( var( --100-rgb-color ), 0.1 ) !default;
 $button_back_icon_box-shadow:             0 0 10px $shadow-color !default;
 $button_back_icon_border:
   //border- width
