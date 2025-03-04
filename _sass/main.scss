@@ -195,6 +195,7 @@ a {
 @import "component/icon.scss";
 @import "component/figure.scss";
 @import "component/post_link.scss";
+/*
 @import "layouts/pages.scss";
 @import "layouts/posts.scss";
 @import "layouts/home.scss";
@@ -204,7 +205,7 @@ a {
 @import "component/social.scss";
 @import "component/list_items.scss";
 @import "component/qualifications.scss";
-/*
+
 .section {
   position: relative;
   background-color: var( --background-color );
