@@ -117,7 +117,7 @@ $button_back_icon_transition:
   &:hover,
   &:focus {
     .icon {
-      background-color: $button_back_icon_hover_background-color;
+      background-color: #{ $button_back_icon_hover_background-color };
     }
   }
   &:focus {
@@ -144,8 +144,8 @@ $button_back_icon_transition:
     width: $button_back_width;
     height: $button_back_height;
     padding: $button_back_padding;
-    background-color: $button_back_icon_background-color;
-    border: $button_back_icon_border;
+    background-color: #{ $button_back_icon_background-color };
+    border: #{ $button_back_icon_border };
     transition: $button_back_icon_transition;
     @if $button_back_icon_circle {
       border-radius: 50%;
