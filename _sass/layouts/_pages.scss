@@ -5,6 +5,7 @@ $page_sub-title_font-family:  $alt_font-family !default;
 $page_sub-title_line-height:  var( --sub-title_line-height ) !default;
 
 .page {
+  /*
   &_header {
     --padding: 2.5rem 0 1rem 1rem;
     @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
@@ -405,6 +406,7 @@ $page_sub-title_line-height:  var( --sub-title_line-height ) !default;
     color: white;
     background-color: hsl( 100, 0%, 10%);
   }
+    */
   &_static {
     --padding: 3rem 1.5rem 1.5rem 1.5rem;
     @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
