@@ -1,5 +1,3 @@
-$alt_font-family: 'Lora', serif;
-
 @import "colors.scss";
 @import "sizes.scss";
 @import "transitions.scss";
@@ -8,37 +6,32 @@ $alt_font-family: 'Lora', serif;
 
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
-$font-weight: 400;
+$alt_font-family: 'Lora', serif;
+$font-weight:     400 !default;
+$font-color:      rgb(var(--font-400-color)) !default;
+$font-weights: (
+  normal:   400,
+  bold:     600,
+) !default;
 
-$contrast_light_color: hsl( 252, 10%, 40% );
-$contrast_dark_color: hsl( 252, 10%, 90% );
-
-$font-color: hsl( 252, 10%, 40% );
 
 $horizontal-spacing: 1rem;
-$vertical-spacing:   .75rem;
+$vertical-spacing:   0.75rem;
 
+$border-color: rgba( var( --900-rgb-color ), 0.1 );
 
-$padding_top: 3rem !default;
-$padding_left: $padding_top !default;
-$padding_bottom: $padding_top !default;
-$padding_right: $padding_left !default;
-
-$border-color: hsla( 252, 25%, 12%, .1 );
-
-$transition-duration: .25s;
+$transition-duration: 0.25s;
 $transition-easing:   ease-in-out;
 
 $breakpoints: (
-  small: 0px,
-  medium: 640px,
-  large: 1024px,
-  xlarge: 1200px,
+  small:   0px,
+  medium:  640px,
+  large:   1024px,
+  xlarge:  1200px,
   xxlarge: 1440px,
-);
+) !default;
 
-
-$shadow-color: rgb( 0, 0, 0 );
+$shadow-color: rgb( var( --black-color ) );
 
 html {
   scroll-behavior: smooth;
@@ -49,27 +42,20 @@ html {
 }
 
 body { 
-  animation: fadeInAnimation ease-in-out .75s;
+  animation: fadeInAnimation 0.75s $transition-easing;
   animation-iteration-count: 1; 
   animation-fill-mode: forwards; 
 } 
 
-@keyframes fadeInAnimation { 
-  0% { 
-      opacity: 0; 
-  } 
-  100% { 
-      opacity: 1; 
-   } 
-}
-
 body {
   @include build-variables( $colors );
-
+  @media (prefers-color-scheme: dark) {
+    @include build-variables( $dark-mode_colors );
+  }
   --font-color:       #{ $font-color };
   --font-size:        20px;
   --font-line-height: 1.5;
-  --font-weight:      400;
+  --font-weight:      #{ map-get( $font-weights, "normal" ) };
   --font-family:      sans-serif;
   --text-align:       left;
 
@@ -85,17 +71,16 @@ body {
 
   --display: block;
 
-  --header_font-weight:      600;
+  --header_font-weight:      #{ map-get( $font-weights, "bold" ) };
   --header_font-family:      var( --font-family );
-  --header_font-color:       var( --900-color );
+  --header_font-color:       rgb( var( --font-800-color ) );
   --header_margin:           0;
   --header_font-line-height: 1;
 
-  --link_font-color:       hsla( 252, 25%, 12%, .75);
-  --link_font-color_hover: hsla( 252, 25%, 12%, 1);
-  --link_font_weight:      600;
+  --link_font-color:       rgb( var( --font-800-color ) );
+  --link_font-color_hover: rgb( var( --font-400-color ) );
 
-  --grid_gap:             1rem;
+  --grid_gap:             #{ map-get( $spacings, "400" ) };
   --grid_container:       1rem;
   --grid_flex-wrap:       nowrap;
   --grid_justify-content: flex-start;
@@ -104,21 +89,11 @@ body {
   --margin: 0;
   --padding: 0;
 
-  --layout-post_padding: 0 $horizontal-spacing $horizontal-spacing $horizontal-spacing;
-  --layout-post_margin:  8rem;
-
-  --dropdown_background-color: hsl( 190, 0%, 100%);
-  --dropdown_border:           1px solid hsla( 190, 0%, 0%, .075 );
-  --dropdown_child_padding:    .5rem 1rem;
-
-  --transition: var( --transition_attribute ) var( --transition_duration ) var( --transition_ease ) var( --transition_delay );
-  --transition_attribute: all;
-  --transition_duration: .25s;
-  --transition_ease: ease-in-out;
-  --transition_delay: 0;
+  --layout-page_padding: 0 $horizontal-spacing $horizontal-spacing $horizontal-spacing;
+  --layout-page_margin:  8rem;
 
   --fill_color: none;
-  --stroke_color: var( --font-color );
+  --stroke_color: rgb(var( --100-rgb-color ));
 
   --border-color: #{ $border-color };
 
@@ -148,7 +123,7 @@ body {
     0 0px 100px hsla( 0, 0%, 0%, .35 );
 
 
-  --background-color: hsl( 190, 25%, 98% );
+  --background-color: rgb(var(--100-rgb-color));
 
   --title_font-size: 2.5rem;
   --sub-title_font-size: 1.75rem;
@@ -156,7 +131,7 @@ body {
 
   background-color: var( --background-color );
   overflow-x: hidden;
-  color: var( --font-color );
+  color: $font-color;
 
   --font-size: var(--font-size-400);
   font: {
@@ -178,78 +153,101 @@ h3,
 h4,
 h5,
 h6 {
-  --font-color:       var( --header_font-color );
-  --margin:           var( --header_margin );
+  $font-color:        var( --header_font-color );
+  $font-line-height:  var( --header_font-line-height );
+  $margin:            var( --header_margin );
+
   --font-family:      var( --header_font-family );
   --font-weight:      var( --header_font-weight );
-  --font-line-height: var( --header_font-line-height );
   
-  color: var( --font-color );
-  line-height: var( --font-line-height );
-  margin: var( --margin );
+  color: $font-color;
+  line-height: $font-line-height;
+  margin: $margin;
 }
 
 a {
+  $link-font-weight: #{ map-get( $font-weights, "bold" ) } !default;
+  $link-font-family: var( --font-family ) !default;
+
   --font-color:  var( --link_font-color );
-  --font-weight: var( --link_font_weight );
 
   color: var( --font-color );
   font-size: var( --font-size );
-  font-family: var( --font-family );
-  font-weight: var( --font-weight );
-  transition: var( --transition );
+  font-family: $link-font-family;
+  font-weight: $link-font-weight;
   text-decoration: none;
+  transition: color $transition-duration $transition-easing;
   &:hover {
     --font-color: var( --link_font-color_hover );
   }
 }
+
 ::-moz-selection,
 ::selection {
-  background: $grey-300-color;
+  background: rgba( var( --400-rgb-color ), 0.5 );
 }
 
 
 @import "component/button.scss";
 @import "component/blockquote.scss";
-@import "component/dropdown.scss";
 @import "grid/columns.scss";
 @import "layouts/navigation.scss";
 @import "component/icon.scss";
 @import "component/figure.scss";
 @import "component/post_link.scss";
+@import "layouts/pages.scss";
 @import "layouts/posts.scss";
+@import "layouts/home.scss";
 @import "component/badge.scss";
 @import "component/clients.scss";
 @import "component/palette.scss";
 @import "component/social.scss";
 @import "component/list_items.scss";
-
+@import "component/qualifications.scss";
 
 .section {
   position: relative;
   background-color: var( --background-color );
   z-index: 2;
 }
-.home {
-  display: flex;
-  justify-items: stretch;
-  flex-wrap: wrap;
-  @media( min-width: #{ map-get( $breakpoints, "medium" ) } )  {
-    & > .post_link {
-      flex: 1 3 40%;
-      &:nth-child(4n+1) {
-        flex: 3 1 60%;
-      }
-      &:nth-child(4n+4) {
-        flex: 3 1 60%;
-      }
-    }
-  }
-}
 
-.thumbnail {
-  max-width: 100%;
-  display: block;
-  min-height: 20rem;
-  object-fit: cover;
+.spacing-1 {
+  width: #{ map-get( $spacings, "100" ) };
+  height: #{ map-get( $spacings, "100" ) };
+  background-color: rgb( var( --font-400-color ) );
+}
+.spacing-2 {
+  width: #{ map-get( $spacings, "200" ) };
+  height: #{ map-get( $spacings, "200" ) };
+  background-color: rgb( var( --font-400-color ) );
+}
+.spacing-3 {
+  width: #{ map-get( $spacings, "300" ) };
+  height: #{ map-get( $spacings, "300" ) };
+  background-color: rgb( var( --font-400-color ) );
+}
+.spacing-4 {
+  width: #{ map-get( $spacings, "400" ) };
+  height: #{ map-get( $spacings, "400" ) };
+  background-color: rgb( var( --font-400-color ) );
+}
+.spacing-5 {
+  width: #{ map-get( $spacings, "500" ) };
+  height: #{ map-get( $spacings, "500" ) };
+  background-color: rgb( var( --font-400-color ) );
+}
+.spacing-6 {
+  width: #{ map-get( $spacings, "600" ) };
+  height: #{ map-get( $spacings, "600" ) };
+  background-color: rgb( var( --font-400-color ) );
+}
+.spacing-7 {
+  width: #{ map-get( $spacings, "700" ) };
+  height: #{ map-get( $spacings, "700" ) };
+  background-color: rgb( var( --font-400-color ) );
+}
+.spacing-8 {
+  width: #{ map-get( $spacings, "800" ) };
+  height: #{ map-get( $spacings, "800" ) };
+  background-color: rgb( var( --font-400-color ) );
 }

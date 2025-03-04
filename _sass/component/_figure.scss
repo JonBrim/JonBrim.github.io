@@ -1,14 +1,14 @@
 
 $figure_background-color:     hsl( 252, 5%, 95% ) !default;
 $figure_scrim_background-color: adjust-color(black, $alpha: -0.6 ) !default;
-$figure_scrim_font-color:       white;
+$figure_scrim_font-color:      tomato;
 $figure_scrim_background:       linear-gradient(
-  0deg,
-  $figure_scrim_background-color 0%,
-  adjust-color( $figure_scrim_background-color, $alpha: -0.35 ) 55%,
-  adjust-color( $figure_scrim_background-color, $alpha: -1 ) 100%
-) !default;
-$figure_scrim_text-shadow:      0 0 .75rem black !default;
+                                  0deg,
+                                  $figure_scrim_background-color 0%,
+                                  adjust-color( $figure_scrim_background-color, $alpha: -0.35 ) 55%,
+                                  adjust-color( $figure_scrim_background-color, $alpha: -1 ) 100%
+                                ) !default;
+$figure_scrim_text-shadow:      0 0 0.75rem rgb( var( --black-color ) ) !default;
 $figure_scrim_font-style:       italic !default;
 $figure_scrim_font-weight:      400 !default;
 $figure_scrim_padding:          1rem !default;
@@ -19,46 +19,23 @@ img {
 }
 
 figure {
-    --background-color: #{ $figure_background-color };
-    margin: var( --margin );
-    padding: var( --padding );
-    position: relative;
-    overflow-y: hidden;
-    display: flex;
-    figcaption,
-    .scrim,
-    %scrim {
-      --background-color: #{ $figure_scrim_background-color };
-      --background:       #{ $figure_scrim_background };
-      --padding:          #{ $figure_scrim_padding };
-      --font-color:       #{ $figure_scrim_font-color };
-      --font-style:       #{ $figure_scrim_font-style };
-      --font-weight:      #{ $figure_scrim_font-weight };
-      --text-shadow:      #{ $figure_scrim_text-shadow };
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      background-color: var( --background-color );
-      background: var( --background );
-      padding: var( --padding );
-      color: var( --font-color );
-      text-shadow: var( --text-shadow );
-      font-style: var( --font-style );
-      font-weight: var( --font-weight );
-      .title {
-        color:       inherit;
-        margin-top:  auto;
-        font-weight: inherit;
-        font-style:  inherit;
-      }
-    }
-  }
+  --background-color: #{ $figure_background-color };
+  margin: var( --margin );
+  padding: var( --padding );
+  position: relative;
+  overflow-y: hidden;
+  display: flex;
+}
 
-  .post {
-    figure {
-      min-height: 15rem;
-    }
+.page {
+  figure {
+    min-height: 15rem;
   }
+}
+
+.thumbnail {
+  max-width: 100%;
+  display: block;
+  min-height: 20rem;
+  object-fit: cover;
+}

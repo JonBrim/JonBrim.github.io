@@ -4,11 +4,11 @@ title: "Jon Brim"
 ---
 {% include navigation.html type="fixed" %}
 <main class="home section" >
-  <div id="about-me" class="post post_static">
-    <h1 class="post_title sticky_trigger">
+  <div id="about-me" class="page page_static">
+    <h1 class="page_title sticky_trigger">
       Jon Brim
     </h1>
-    <span class="post_sub-title" >
+    <span class="page_sub-title" >
       UI/UX Designer
     </span>
     <p>
@@ -30,25 +30,25 @@ title: "Jon Brim"
     </ul>
   </div>
   {%- if site.project.size > 0 -%}
-      {%- for post in site.project -%}
+      {%- for page in site.project -%}
           <a 
-            id="{{ post.title | replace: ' ', '-' | downcase }}" 
-            class="post post_link" 
-            href="{{ post.url | relative_url }}" 
-            {% if post.thumbnail_background-color %} 
-              style="background-color:{{ post.thumbnail_background-color }}"
+            id="{{ page.title | replace: ' ', '-' | downcase }}" 
+            class="page page_link" 
+            href="{{ page.url | relative_url }}" 
+            {% if page.thumbnail_background-color %} 
+              style="background-color:{{ page.thumbnail_background-color }}"
             {% endif %}
           >
             <img 
-              src="{{ post.thumbnail }}"
+              src="{{ page.thumbnail }}"
               class="thumbnail"
               width="500px"
               height="300px"
-              alt="{{ post.title }}"
+              alt="{{ page.title }}"
             >
             <div class="scrim">
-              <h4 class="title">{{ post.title }}</h4>
-              <span class="sub-title">{{ post.sub-title }}</span>
+              <h4 class="title">{{ page.title }}</h4>
+              <span class="sub-title">{{ page.sub-title }}</span>
             </div>
           </a>
       {%- endfor -%}
@@ -65,7 +65,9 @@ title: "Jon Brim"
           <img src="{{ clients.folder }}{{ client.logo }}" alt="{{client.name}}">
         </figure>
       {% endfor %}  
+      
     {% endfor %}  
   </article>
 </section>
 {% include icons.html %}
+{% include excerpts.html %}

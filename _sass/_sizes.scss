@@ -1,5 +1,16 @@
 $sizes: (
-  "tiny": .6,
-  "small": .75,
+  "tiny": 0.6,
+  "small": 0.75,
   "large": 1.25,
+) !default;
+
+$spacings: (
+  "100": 0.25rem,
+  "200": 0.5rem,
+  "300": 0.75rem,
+  "400": 1rem,
+  "500": 1.25rem,
+  "600": 1.75rem,
+  "700": 2.25rem,
+  "800": 3rem,
 ) !default;

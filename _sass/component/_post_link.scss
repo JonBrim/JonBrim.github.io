@@ -1,4 +1,4 @@
-.post_link {
+.page_link {
     margin: 0;
     padding: 0;
     position: relative;
@@ -9,11 +9,11 @@
       margin: 0;
       filter: blur( 5px );
       transition:
-        filter var( --transition_duration ) var( --transition_ease );
+        filter $transition-duration $transition-easing;
     }
     .scrim {
-      --background-color: #{ $figure_scrim_background-color };
-      --font-color:       white;
+      --background-color: rgba( var( --black-color ), 0.35 );
+      --font-color:       rgb( var( --white-color ) );
       --text-shadow:      #{ $figure_scrim_text-shadow };
       --scrim-opacity:    1;
       color: var( --font-color );
@@ -30,7 +30,7 @@
       padding: var( --padding );
       background-color: var( --background-color );
       transition:
-        background-color var( --transition_duration ) var( --transition_ease );
+        background-color $transition-duration $transition-easing;
     }
   
     .title,
@@ -38,15 +38,15 @@
         opacity: var( --scrim-opacity );
         transform: translateY( 0 );
         transition:
-            opacity var( --transition_duration ) var( --transition_ease ),
-            transform .15s ease-in-out;
+            opacity $transition-duration $transition-easing,
+            transform 0.15s ease-in-out;
         color: inherit;
         text-align: center;
     }
     .title {
         font-size: 2.5rem;
-        border-bottom: 1px dotted #{ contrast( $figure_scrim_background-color ) };
-        transition-delay: .075s;
+        border-bottom: 1px dotted currentColor;
+        transition-delay: 0.075s;
     }
     .sub-title {
         font-weight: 400;

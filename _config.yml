@@ -32,8 +32,8 @@ google_analytics: G-J7TWWMHVN8
 # Build settings
 markdown: kramdown
 
-plugins:
-  - jekyll-feed
+# plugins:
+#  - jekyll-feed
 
 collections:
   project:

@@ -2,26 +2,26 @@
 layout: default
 ---
 {% include navigation.html type="back" %}
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="page" itemscope itemtype="http://schema.org/Blogpageing">
 
-  <header class="post_header sticky_trigger">
-    <h1 class="post_title" itemprop="name">{{ page.title | escape }}</h1>
+  <header class="page_header sticky_trigger">
+    <h1 class="page_title" itemprop="name">{{ page.title | escape }}</h1>
     {% if page.sub-title %}
-      <span class="post_sub-title" >
+      <span class="page_sub-title" >
         {{ page.sub-title | escape }}
       </span>
     {% endif %}
   </header>
   {% include qualifications.html %}
-  <main class="post_content" itemprop="articleBody">
+  <main class="page_content" itemprop="articleBody">
     {{ content }}
   </main>
-  <footer id="additional-projects" class="post_footer">
+  <footer id="additional-projects" class="page_footer">
     {% assign projects = site.project | sort: 'date' | reverse  %}
     {% for collection in projects limit:4 %}
     {% if collection.url != page.url %}
     <h2>{{ collection.label }}</h2>
-      <a class="post_link" href="{{ collection.url | relative_url }}">
+      <a class="page_link" href="{{ collection.url | relative_url }}">
         <img 
           src="{{ collection.thumbnail }}"
           class="thumbnail"

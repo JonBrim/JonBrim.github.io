@@ -20,11 +20,3 @@
         }
     }
 }
-
-@function contrast( $color ) {
-    @if ( lightness( $color ) > 50 ) {
-        @return $contrast_light_color;
-    } @else {
-        @return $contrast_dark_color;
-    }
-}

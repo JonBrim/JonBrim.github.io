@@ -1,5 +1,5 @@
 $social_list_gap:       1rem !default;
-$social_list_border:    1px dotted $grey-500-color !default;
+$social_list_border:    1px dotted rgb( var( --300-rgb-color ) ) !default;
 $social_list_margin: (
     small:  (
       margin: 2rem 0
@@ -24,15 +24,15 @@ $social_list_padding: (
 ) !default;
 
 $social_item_padding:   0 .5rem 0 0 !default;
-$social_item_gap:       .65rem !default;
+$social_item_gap:       0.65rem !default;
 $social_item_radius:    1rem !default;
 
-$social_item_icon_color:                   hsla( 252, 25%, 12%, .5) !default;
-$social_item_icon_size:                     .9rem !default;
-$social_item_icon_margin:                   .35rem !default;
+$social_item_icon_color:                    rgba( var( --font-800-color ), 0.5) !default;
+$social_item_icon_size:                     0.9rem !default;
+$social_item_icon_margin:                   0.35rem !default;
 $social_item_icon_radius:                   100% !default;
-$social_item_icon_background-color:        hsla( 252, 25%, 12%, .05) !default;
-$social_item_icon_background-color_hover:  hsla( 252, 25%, 12%, .1) !default;
+$social_item_icon_background-color:         rgba( var( --font-100-color ), 0.1) !default;
+$social_item_icon_background-color_hover:   rgba( var( --font-100-color ), 0.2) !default;
 
 
 .social_list {
@@ -77,7 +77,8 @@ $social_item_icon_background-color_hover:  hsla( 252, 25%, 12%, .1) !default;
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: var(--transition);
+        transition: background-color $transition-duration $transition-easing;
+
     }
     svg {
         height: $social_item_icon_size;

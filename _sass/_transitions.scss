@@ -1,33 +1,42 @@
 @keyframes fade-down {
-0% { 
-    opacity: 0;
-    transform: translateY(-2rem);
-  }
-100% { 
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes bg-fade-down {
   0% { 
-    background-position: 0% 0%;
-  }
+      opacity: 0;
+      transform: translateY(calc( -1 * #{ map-get( $spacings, "600" ) } ));
+    }
   100% { 
-    background-position: 0% 100%;
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
-}
   
-@keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-@keyframes pulse-animation {
-  0% {
-    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+  @keyframes bg-fade-down {
+    0% { 
+      background-position: 0% 0%;
+    }
+    100% { 
+      background-position: 0% 100%;
+    }
   }
-  100% {
-    box-shadow: 0 0 0 .65rem rgba(0, 0, 0, 0);
+    
+  @keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
   }
-}
+  
+  @keyframes pulse-animation {
+    0% {
+      box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+      box-shadow: 0 0 0 .65rem rgba(0, 0, 0, 0);
+    }
+  }
+  
+  @keyframes fadeInAnimation { 
+    0% { 
+        opacity: 0; 
+    } 
+    100% { 
+        opacity: 1; 
+     } 
+  }

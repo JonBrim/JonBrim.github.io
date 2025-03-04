@@ -1,7 +1,7 @@
 
 
 $blockquote_font-size:    var( --font-size-700 ) !default;
-$blockquote_font-color:   var( --600-color ) !default;
+$blockquote_font-color:   rgb( var( --600-rgb-color ) ) !default;
 $blockquote_font-family:  $alt_font-family !default;
 $blockquote_font-weight:  700 !default;
 
@@ -15,8 +15,8 @@ blockquote {
     font-size: $blockquote_font-size;
     font-family: $blockquote_font-family;
     font-weight: $blockquote_font-weight;
-    padding-top: var(--layout-post_margin);
-    padding-bottom: var(--layout-post_margin);
+    padding-top: var(--layout-page_margin);
+    padding-bottom: var(--layout-page_margin);
 }
 
 .quote-block {
@@ -25,9 +25,12 @@ blockquote {
     justify-content: center;
     align-items: center;
     flex: 1 1 100%;
-    padding: 1.5rem;
+    padding: map-get( $spacings, "500" );
     @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
-        padding: 3rem 3rem;
+        padding: (
+            map-get( $spacings, "800" )
+            map-get( $spacings, "800" )
+        );
     }
     &_wrapper {
         max-width: 25ch;

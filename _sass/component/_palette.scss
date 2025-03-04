@@ -9,7 +9,7 @@
         padding-right: 1.5rem;
     }
     h4 {
-        padding: .5rem;
+        padding: 0.5rem;
         text-align: center;
     }
 }
@@ -30,21 +30,21 @@
     &.legend {
         flex-grow: 0;
         text-align: end;
-        padding: 0 .5rem;
+        padding: 0 0.5rem;
     }
     .swatch {
         height: 3rem;
         display: flex;
-        font-size: .9rem;
-        padding: 0 .5rem;
+        font-size: 0.9rem;
+        padding: 0 0.5rem;
         align-items: center;
         position: relative;
         &:after {
             opacity: 0;
             content: attr( data-swatch );
-            color: white;
-            background-color:rgba( 0, 0, 0, 0.6 );
-            padding: .125rem .5rem;
+            color: rgb( var( --white-color ) );
+            background-color:rgba( var( --black-color ), 0.6 );
+            padding: 0.125rem 0.5rem;
             border-radius: 1rem;
             font-family: monospace;
             display: none;
@@ -56,9 +56,8 @@
             &:after {
             opacity: 1;
             transition:
-                opacity var( --transition_duration ) ease-out;
+                opacity $transition-duration $transition-easing;
             }
         }
     }
 }
-  

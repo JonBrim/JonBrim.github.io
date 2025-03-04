@@ -1,52 +1,54 @@
 {% if page.role or page.team or page.clients or page.applications %}
-    <ul id="qualifications" class="post_qualifications list_items">
-        {% if page.team %}
-        <li class="list_item">
-            <h3>Team</h3>
-            {{ page.team | escape }}
-        </li>
-        {% endif %}
-        {% if page.role %}
-        <li class="list_item">
-            <h3>Role</h3>
-            <ul>
-            {% for role in page.role %}
-            <li>{{ role | escape }}</li>
-            {% endfor %}
-            </ul>
-        </li>
-        {% endif %}
-        {% if page.applications %}
-        <li class="list_item">
-            <h3>Applications</h3>
-            <ul>
-            {% for application in page.applications %}
-            <li>
-                {% if application == "Adobe Fresco" %}<img src="/assets/images/applications/adobe-fresco.svg" />{% endif %}
-                {% if application == "Adobe Illustrator" %}<img src="/assets/images/applications/adobe-illustrator.svg" />{% endif %}
-                {% if application == "Adobe InDesign" %}<img src="/assets/images/applications/adobe-indesign.svg" />{% endif %}
-                {% if application == "Adobe Photoshop" %}<img src="/assets/images/applications/adobe-photoshop.svg" />{% endif %}
-                {% if application == "Adobe XD" %}<img src="/assets/images/applications/adobe-xd.svg" />{% endif %}
-                {% if application == "Figma" %}<img src="/assets/images/applications/figma-icon.svg" />{% endif %}
-                {% if application == "Visual Studio Code" %}<img src="/assets/images/applications/vscode.svg" />{% endif %}
-                {{ application | escape }}</li>
-            {% endfor %}
-            </ul>
-        </li>
-        {% endif %}
-        {% if page.clients %}
-        <li class="list_item">
-            <h3>Clients</h3>
-            {% if page.clients.size > 4 %}
-            <ul class="columns">
-            {% else %}
-            <ul>
+    <section class="post_qualifications">
+        <ul id="qualifications" class="list_items">
+            {% if page.applications %}
+            <li class="list_item">
+                <h3>Applications</h3>
+                <ul>
+                {% for application in page.applications %}
+                <li>
+                    {% if application == "Adobe Fresco" %}<img src="/assets/images/applications/adobe-fresco.svg" />{% endif %}
+                    {% if application == "Adobe Illustrator" %}<img src="/assets/images/applications/adobe-illustrator.svg" />{% endif %}
+                    {% if application == "Adobe InDesign" %}<img src="/assets/images/applications/adobe-indesign.svg" />{% endif %}
+                    {% if application == "Adobe Photoshop" %}<img src="/assets/images/applications/adobe-photoshop.svg" />{% endif %}
+                    {% if application == "Adobe XD" %}<img src="/assets/images/applications/adobe-xd.svg" />{% endif %}
+                    {% if application == "Figma" %}<img src="/assets/images/applications/figma-icon.svg" />{% endif %}
+                    {% if application == "Visual Studio Code" %}<img src="/assets/images/applications/vscode.svg" />{% endif %}
+                    {{ application | escape }}</li>
+                {% endfor %}
+                </ul>
+            </li>
             {% endif %}
-            {% for client in page.clients %}
-                <li>{{ client | escape }}</li>
-            {% endfor %}
-            </ul>
-        </li>
-        {% endif %}
-    </ul>
+            {% if page.role %}
+            <li class="list_item">
+                <h3>Role</h3>
+                <ul>
+                {% for role in page.role %}
+                <li>{{ role | escape }}</li>
+                {% endfor %}
+                </ul>
+            </li>
+            {% endif %}
+            {% if page.team %}
+            <li class="list_item">
+                <h3>Team</h3>
+                {{ page.team | escape }}
+            </li>
+            {% endif %}
+            {% if page.clients %}
+            <li class="list_item">
+                <h3>Clients</h3>
+                {% if page.clients.size > 4 %}
+                <ul class="columns">
+                {% else %}
+                <ul>
+                {% endif %}
+                {% for client in page.clients %}
+                    <li>{{ client | escape }}</li>
+                {% endfor %}
+                </ul>
+            </li>
+            {% endif %}
+        </ul>
+    </section>
 {% endif %}

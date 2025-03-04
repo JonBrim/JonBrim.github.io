@@ -1,44 +1,48 @@
 .list_items {
     display: flex;
     flex-direction: row;
-    gap: 1.5rem;
+    gap: map-get( $spacings, "500" );
     list-style: none;
     font-size: var( --font-size-100 );
     letter-spacing: .075rem;
     padding: initial;
-    border-bottom: 1px solid rgba(0, 0, 0, .1);
-    padding: 1.5rem;
+    padding: map-get( $spacings, "500" );
     flex-wrap: wrap;
     justify-content: start;
     font-weight: 400;
     color: var(--color);
-    margin-bottom: 1.5rem;
+    margin-bottom: map-get( $spacings, "500" );
     max-width: 960px;
     @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
-      margin: 3rem;
-      padding: 1.5rem 0;
+      margin: map-get( $spacings, "800" );
+      padding: (
+        map-get( $spacings, "500" ) 
+        0
+      );
     }
     & h3 {
       color: var( --header_font-color );
-      font-size: .75rem;
+      font-size: 0.75rem;
       font-weight: 600;
     }
     & li {
       display: flex;
     }
     & ul {
+      display: flex;
+      flex-direction: column;
       list-style: none;
       padding: initial;
-      gap: 1rem;
+      gap: map-get( $spacings, "100" );
       &.columns {
         column-count: 3;
         @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
         column-count: 5;
         }
-        gap: 1rem;
+        gap: map-get( $spacings, "400" );
       }
       li {
-        gap: .5rem;
+        gap: map-get( $spacings, "200" );
         align-items: center;
       }
     }
@@ -48,6 +52,7 @@
   .list_item {
     flex: 1 1 25%;
     flex-direction: column;
+    gap: map-get( $spacings, "200" );
     img {
         max-height: 1rem;
         max-width: 1rem;

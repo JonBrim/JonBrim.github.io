@@ -6,17 +6,65 @@ $colors: (
   "success": hsl( 150, 50%, 50% ),
   "error": hsl( 10, 70%, 60% ),
   "focus": hsla( 210, 50%, 50%, .5 ),
-  "50":  #fafafa,
-  "100": #f5f5f5,
-  "200": #e5e5e5,
-  "300": #d4d4d4,
-  "400": #a3a3a3,
-  "500": #737373,
-  "600": #525252,
-  "700": #404040,
-  "800": #262626,
-  "900": #171717,
-  "950": #0a0a0a
+  "font": unquote("96, 92, 112"),
+  "font-100": unquote("98, 95, 107"),
+  "font-400": unquote("91, 87, 102"),
+  "font-800": unquote("43, 43, 53"),
+  "white": unquote("252, 252, 252"),
+  "black": unquote("25, 25, 26"),
+  "100": #fcfcfc,
+  "100-rgb": unquote("252, 252, 252"),
+  "200": #dbdbdb,
+  "200-rgb": unquote("219, 219, 219"),
+  "300": #c6c6cf,
+  "300-rgb": unquote("198, 198, 207"),
+  "400": #a5a5b3,
+  "400-rgb": unquote("165, 165, 179"),
+  "500": #787888,
+  "500-rgb": unquote("120, 120, 136"),
+  "600": #5c5c69,
+  "600-rgb": unquote("92, 92, 105"),
+  "700": #3d3d49,
+  "700-rgb": unquote("61, 61, 73"),
+  "800": #2b2b35,
+  "800-rgb": unquote("43, 43, 53"),
+  "900": #19191a,
+  "900-rgb": unquote("25, 25, 26"),
+) !default;
+
+$dark-mode_colors: (
+  "default": hsla(220, 3%, 22%, 0.35),
+  "default-200": hsla( 210, 20%, 80%, .25 ),
+  "primary": hsl( 252, 0%, 10% ),
+  "secondary": hsl( 210, 90%, 50% ),
+  "success": hsl( 150, 50%, 50% ),
+  "error": hsl( 10, 70%, 60% ),
+  "focus": hsla( 210, 50%, 50%, .5 ),
+  "font": unquote("139, 134, 162"),
+  "font-100": unquote("117, 114, 129"),
+  "font-400": unquote("152, 149, 163"),
+  "font-800": unquote("209, 205, 223"),
+  "white": unquote("209, 205, 223"),
+  "black": unquote("23, 23, 27"),
+  rgb(23, 23, 27)
+  "100": rgb(14, 14, 17),
+  "100-rgb": unquote("17, 17, 20"),
+  "200": #16161a,
+  "200-rgb": unquote("22, 22, 26"),
+  "300": #3d3d49,
+  "300-rgb": unquote("61, 61, 73"),
+  "400": #5c5c69,
+  "400-rgb": unquote("92, 92, 105"),
+  "500": #787888,
+  "500-rgb": unquote("120, 120, 136"),
+  "600": #868196,
+  "600-rgb": unquote("165, 165, 179"),
+  "700": #9e99af,
+  "700-rgb": unquote("198, 198, 207"),
+  "800": #bab5cc,
+  "800-rgb": unquote("209, 209, 219"),
+  "900": #d1cddf,
+  "900-rgb": unquote("209, 205, 223"),
 ) !default;
 
 @mixin build-variables( $vars ) {
@@ -24,15 +72,3 @@ $colors: (
     --#{ $key }-color: #{ $color };
   }
 }
-
-$grey-50-color:  #fafafa !default;
-$grey-100-color: #f5f5f5 !default;
-$grey-200-color: #e5e5e5 !default;
-$grey-300-color: #d4d4d4 !default;
-$grey-400-color: #a3a3a3 !default;
-$grey-500-color: #737373 !default;
-$grey-600-color: #525252 !default;
-$grey-700-color: #404040 !default;
-$grey-800-color: #262626 !default;
-$grey-900-color: #171717 !default;
-$grey-950-color: #0a0a0a !default;
