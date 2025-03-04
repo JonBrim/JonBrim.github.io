@@ -109,20 +109,18 @@ $page_sub-title_line-height:  var( --sub-title_line-height ) !default;
     }
     
     & > p {
-      padding: (
+      padding: 
         0 
         map-get( $spacings, "500" )
         map-get( $spacings, "400" )
-        map-get( $spacings, "500" )
-      );
+        map-get( $spacings, "500" );
       width: min( 100% - ( map-get( $spacings, "500" ) * 2 ), 75ch );
       @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
-        padding: (
+        padding: 
           0 
           map-get( $spacings, "800" )
           map-get( $spacings, "500" )
-          map-get( $spacings, "800" )
-        );
+          map-get( $spacings, "800" );
       }
     }
     img,
@@ -135,18 +133,16 @@ $page_sub-title_line-height:  var( --sub-title_line-height ) !default;
     .text-wrapper {
       display: flex;
       width: 100%;
-      padding: (
+      padding:
         map-get( $spacings, "800" )
-        0
-      );
+        0;
       background-color: rgb( var( --100-rgb-color) );
       flex-direction: column;
       align-items: center;
       @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
-        padding: (
+        padding:
           calc( map-get( $spacings, "800" ) * 4 ) 
-          0
-        );
+          0;
       }
     }
     
@@ -188,10 +184,9 @@ $page_sub-title_line-height:  var( --sub-title_line-height ) !default;
               padding: map-get( $spacings, "500" )
             ),
             medium: (
-              padding: (
+              padding: 
                 map-get( $spacings, "800" )
-                map-get( $spacings, "800" )
-              ),
+                map-get( $spacings, "800" ),
             ),
           ),
           $breakpoints
@@ -229,10 +224,9 @@ $page_sub-title_line-height:  var( --sub-title_line-height ) !default;
               padding: map-get( $spacings, "500" )
             ),
             medium: (
-              padding: (
+              padding:
                 map-get( $spacings, "800" )
-                map-get( $spacings, "800" )
-              ),
+                map-get( $spacings, "800" ),
             ),
           ),
           $breakpoints
