@@ -2,7 +2,7 @@
 .palette-container {
     display: flex;
     align-items: center;
-    padding-top: 1.5rem;
+    //padding-top: 1.5rem;
     width: 100%;
     h2 {
         padding-left: 3rem;
@@ -21,6 +21,7 @@
     margin: 0;
     padding: 0;
     font-size: 1rem;
+    height: 100%;
     &.large {
         flex-grow: 10;
     }
@@ -33,7 +34,8 @@
         padding: 0 0.5rem;
     }
     .swatch {
-        height: 3rem;
+        height: 100%;
+        min-height: 3rem;
         display: flex;
         font-size: 0.9rem;
         padding: 0 0.5rem;

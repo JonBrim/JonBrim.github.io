@@ -105,6 +105,9 @@ $page_sub-title_line-height:  var( --sub-title_line-height ) !default;
             columns: auto 24rem;
           }
         }
+        li {
+          margin-bottom: map-get( $spacings, "400" );
+        }
       }
     }
     

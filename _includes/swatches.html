@@ -1,4 +1,7 @@
-<div class="text-wrapper">
+<div 
+    class="text-wrapper {{ include.class | default: '' }}"
+    style="{{ include.style | default: '' }}" 
+>
     {% if include.title %}
     <h2>{{ include.title }}</h2>
     {% endif %}

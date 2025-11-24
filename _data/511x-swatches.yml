@@ -1,0 +1,47 @@
+- id: 511x-swatches
+  palette: [ 
+    { 
+      title: "Light Mode",
+      size: large,
+      swatches: [
+        "#030814",
+        "#070f20",
+        "#1c2636",
+        "#313e4d",
+        "#465563",
+        "#5b6c79",
+        "#70838f",
+        "#859aa6",
+        "#9ab1bc",
+        "#afc8d2",
+        "#c4dfe8",
+        "#d0e4ec",
+        "#dbe8ef",
+        "#e6edf2",
+        "#f0f1f5",
+        "#f9fafa",
+      ]
+    },
+    { 
+      title: "Dark Mode",
+      size: large,
+      swatches: [ 
+        "#f9fafa",
+        "#f0f1f5",
+        "#e6edf2",
+        "#dbe8ef",
+        "#d0e4ec",
+        "#c4dfe8",
+        "#afc8d2",
+        "#9ab1bc",
+        "#859aa6",
+        "#70838f",
+        "#5b6c79",
+        "#465563",
+        "#313e4d",
+        "#1c2636",
+        "#070f20",
+        "#030814"
+      ],
+    },
+  ]

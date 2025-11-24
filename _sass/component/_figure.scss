@@ -1,7 +1,7 @@
 
 $figure_background-color:     hsl( 252, 5%, 95% ) !default;
 $figure_scrim_background-color: adjust-color(black, $alpha: -0.6 ) !default;
-$figure_scrim_font-color:      tomato;
+$figure_scrim_font-color:      hsl( 252, 5%, 80% ) !default;
 $figure_scrim_background:       linear-gradient(
                                   0deg,
                                   $figure_scrim_background-color 0%,
@@ -25,6 +25,17 @@ figure {
   position: relative;
   overflow-y: hidden;
   display: flex;
+  figCaption {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: $figure_scrim_padding;
+    background: $figure_scrim_background;
+    color: $figure_scrim_font-color;
+    font-style: $figure_scrim_font-style;
+    text-shadow: $figure_scrim_text-shadow;
+    font-weight: $figure_scrim_font-weight;
+  }
 }
 
 .page {

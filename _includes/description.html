@@ -2,6 +2,7 @@
 <section
     id="{{ include.headline | replace: ' ', '-' | downcase }}"
     class="text-block {{ include.class | default: '' }}"
+    style="background-color:{{ include.background-color | default: 'transparent' }}; color:{{ include.color | default: 'var(--font-color)' }}; {{ include.style | default: '' }}" 
 >
 {% else %}
 <section class="text-block {{ include.class | default: '' }}">
