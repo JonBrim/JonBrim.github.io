@@ -14,3 +14,6 @@
     {% endif %}
   </head>
   <body class="{{ page.title | downcase | replace: ' ', '-' }}-page">
+    {% if jekyll.environment == 'production' and site.google_analytics %}
+      {% include analytics.html %}
+    {% endif %}
