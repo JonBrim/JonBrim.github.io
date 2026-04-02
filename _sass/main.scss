@@ -1,37 +1,41 @@
+
 @import "colors.scss";
 @import "sizes.scss";
 @import "transitions.scss";
 @import "component/functions.scss";
 @import "component/padding.scss";
 
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
 
-$alt_font-family: 'Lora', serif;
-$font-weight:     400 !default;
-$font-color:      rgb(var(--font-400-color)) !default;
+$alt_font-family: "Lora", serif;
+$font-weight: 400 !default;
+$font-color: rgb(var(--font-400-color)) !default;
 $font-weights: (
-  normal:   400,
-  bold:     600,
+  normal: 400,
+  bold: 600,
 ) !default;
 
-
 $horizontal-spacing: 1rem;
-$vertical-spacing:   0.75rem;
+$vertical-spacing: 0.75rem;
 
-$border-color: rgba( var( --default-900-rgb-color ), 0.1 );
+$border-color: rgba(var(--default-900-rgb-color), 0.1);
 
 $transition-duration: 0.25s;
-$transition-easing:   ease-in-out;
+$transition-easing: ease-in-out;
 
 $breakpoints: (
-  small:   0px,
-  medium:  640px,
-  large:   1024px,
-  xlarge:  1200px,
+  small: 0px,
+  medium: 640px,
+  large: 1024px,
+  xlarge: 1200px,
   xxlarge: 1440px,
 ) !default;
 
-$shadow-color: rgb( var( --black-color ) );
+
+$padding: clamp(map-get( $spacings, "500" ), 3vw, map-get( $spacings, "900" )) !default;
+
+
+$shadow-color: rgb(var(--black-color));
 
 html {
   scroll-behavior: smooth;
@@ -41,113 +45,103 @@ html {
   box-sizing: border-box;
 }
 
-body { 
+body {
   animation: fadeInAnimation 0.75s $transition-easing;
-  animation-iteration-count: 1; 
-  animation-fill-mode: forwards; 
-} 
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
 
 :root {
-  @include build-variables( $colors );
+  @include build-variables($colors);
   @media (prefers-color-scheme: dark) {
-    @include build-variables( $dark-mode_colors );
+    @include build-variables($dark-mode_colors);
   }
 }
 
 body {
-  --font-color:       #{ $font-color };
-  --font-size:        20px;
+  --font-color: #{$font-color};
+  --font-size: 20px;
   --font-line-height: 1.5;
-  --font-weight:      #{ map-get( $font-weights, "normal" ) };
-  --font-family:      sans-serif;
-  --text-align:       left;
+  --font-weight: #{map-get($font-weights, "normal")};
+  --font-family: sans-serif;
+  --text-align: left;
 
-  --font-size-100: clamp(0.75rem, 0.00vw + 0.75rem, 0.75rem);
-  --font-size-200: clamp(0.80rem, 0.16vw + 0.76rem, 0.89rem);
+  --font-size-100: clamp(0.75rem, 0vw + 0.75rem, 0.75rem);
+  --font-size-200: clamp(0.8rem, 0.16vw + 0.76rem, 0.89rem);
   --font-size-300: clamp(0.95rem, 0.16vw + 0.91rem, 1.04rem);
   --font-size-400: clamp(1.11rem, 0.24vw + 1.06rem, 1.25rem);
   --font-size-500: clamp(1.25rem, 0.84vw + 1.06rem, 1.73rem);
-  --font-size-600: clamp(1.50rem, 2.12vw + 1.02rem, 2.72rem);
+  --font-size-600: clamp(1.5rem, 2.12vw + 1.02rem, 2.72rem);
   --font-size-700: clamp(2.05rem, 3.52vw + 1.26rem, 4.08rem);
-  --font-size-800: clamp(2.80rem, 5.71vw + 1.51rem, 6.09rem);
+  --font-size-800: clamp(2.8rem, 5.71vw + 1.51rem, 6.09rem);
   --font-size-900: clamp(3.73rem, 8.19vw + 1.89rem, 8.44rem);
 
   --display: block;
 
-  --header_font-weight:      #{ map-get( $font-weights, "bold" ) };
-  --header_font-family:      var( --font-family );
-  --header_font-color:       rgb( var( --font-800-color ) );
-  --header_margin:           0;
+  --header_font-weight: #{map-get($font-weights, "bold")};
+  --header_font-family: var(--font-family);
+  --header_font-color: rgb(var(--font-800-color));
+  --header_margin: 0;
   --header_font-line-height: 1;
 
-  --link_font-color:       rgb( var( --font-800-color ) );
-  --link_font-color_hover: rgb( var( --font-400-color ) );
+  --link_font-color: rgb(var(--font-800-color));
+  --link_font-color_hover: rgb(var(--font-400-color));
 
-  --grid_gap:             #{ map-get( $spacings, "400" ) };
-  --grid_container:       1rem;
-  --grid_flex-wrap:       nowrap;
+  --grid_gap: #{map-get($spacings, "400")};
+  --grid_container: 1rem;
+  --grid_flex-wrap: nowrap;
   --grid_justify-content: flex-start;
-  --grid_align-items:     stretch;
+  --grid_align-items: stretch;
 
   --margin: 0;
   --padding: 0;
 
-  --layout-page_padding: 0 $horizontal-spacing $horizontal-spacing $horizontal-spacing;
-  --layout-page_margin:  8rem;
+  --layout-page_padding: 0 $horizontal-spacing $horizontal-spacing
+    $horizontal-spacing;
+  --layout-page_margin: 8rem;
 
   --fill_color: none;
-  --stroke_color: rgb(var( --default-100-rgb-color ));
+  --stroke_color: rgb(var(--default-100-rgb-color));
 
-  --border-color: #{ $border-color };
+  --border-color: #{$border-color};
 
   --box-shadow-depth-0:
-    0 0px 1px hsla( 190, 0%, 35%, .1 ),
-    0 0px 4px hsla( 190, 0%, 35%, .1 ),
-    0 0px 7px hsla( 190, 0%, 35%, .1 ),
-    0 0px 11px hsla( 190, 0%, 35%, .1 ),
-    0 0px 15px hsla( 190, 0%, 35%, .1 );
+    0 0px 1px hsla(190, 0%, 35%, 0.1), 0 0px 4px hsla(190, 0%, 35%, 0.1),
+    0 0px 7px hsla(190, 0%, 35%, 0.1), 0 0px 11px hsla(190, 0%, 35%, 0.1),
+    0 0px 15px hsla(190, 0%, 35%, 0.1);
   --box-shadow-depth-1:
-    1px 1px 1px hsla( 190, 0%, 35%, .05 ),
-    2px 2px 2px hsla( 190, 0%, 35%, .15 );
+    1px 1px 1px hsla(190, 0%, 35%, 0.05), 2px 2px 2px hsla(190, 0%, 35%, 0.15);
   --box-shadow-depth-2:
-    0 1px 1px hsla( 190, 0%, 35%, .025 ),
-    0 4px 4px hsla( 190, 0%, 35%, .025 ),
-    0 7px 7px hsla( 190, 0%, 35%, .025 ),
-    0 11px 11px hsla( 190, 0%, 35%, .025 );
+    0 1px 1px hsla(190, 0%, 35%, 0.025), 0 4px 4px hsla(190, 0%, 35%, 0.025),
+    0 7px 7px hsla(190, 0%, 35%, 0.025), 0 11px 11px hsla(190, 0%, 35%, 0.025);
   --box-shadow-depth-3:
-    0 4px 4px hsla( 190, 0%, 35%, .025 ),
-    0 7px 7px hsla( 190, 0%, 35%, .025 ),
-    0 11px 11px hsla( 190, 0%, 35%, .025 ),
-    0 15px 15px hsla( 190, 0%, 35%, .025 );
+    0 4px 4px hsla(190, 0%, 35%, 0.025), 0 7px 7px hsla(190, 0%, 35%, 0.025),
+    0 11px 11px hsla(190, 0%, 35%, 0.025), 0 15px 15px hsla(190, 0%, 35%, 0.025);
   --box-shadow-depth-9:
-    0 0px 5px hsla(0, 0%, 0%, 0.2),
-    0 0px 10px hsla( 0, 0%, 0%, .2 ),
-    0 0px 30px hsla( 0, 0%, 0%, .2 ),
-    0 0px 100px hsla( 0, 0%, 0%, .35 );
-
+    0 0px 5px hsla(0, 0%, 0%, 0.2), 0 0px 10px hsla(0, 0%, 0%, 0.2),
+    0 0px 30px hsla(0, 0%, 0%, 0.2), 0 0px 100px hsla(0, 0%, 0%, 0.35);
 
   --background-color: rgb(var(--default-100-rgb-color));
 
   --title_font-size: 2.5rem;
   --sub-title_font-size: 1.75rem;
-  --sub-title_line-height: var( --header_font-line-height );
+  --sub-title_line-height: var(--header_font-line-height);
 
-  background-color: var( --background-color );
+  background-color: var(--background-color);
   overflow-x: hidden;
   color: $font-color;
 
   --font-size: var(--font-size-400);
   font: {
-    size: var( --font-size );
-    family: var( --font-family );
-    weight: var( --font-weight );
+    size: var(--font-size);
+    family: var(--font-family);
+    weight: var(--font-weight);
   }
   text: {
-    align: var( --text-align );
+    align: var(--text-align);
   }
-  line-height: var( --font-line-height );
-  margin: var( --margin );
-  padding: var( --padding );
+  line-height: var(--font-line-height);
+  margin: var(--margin);
 }
 
 h1,
@@ -156,40 +150,39 @@ h3,
 h4,
 h5,
 h6 {
-  $font-color:        var( --header_font-color );
-  $font-line-height:  var( --header_font-line-height );
-  $margin:            var( --header_margin );
+  $font-color: var(--header_font-color);
+  $font-line-height: var(--header_font-line-height);
+  $margin: var(--header_margin);
 
-  --font-family:      var( --header_font-family );
-  --font-weight:      var( --header_font-weight );
-  
+  --font-family: var(--header_font-family);
+  --font-weight: var(--header_font-weight);
+
   color: $font-color;
   line-height: $font-line-height;
   margin: $margin;
 }
 
 a {
-  $link-font-weight: #{ map-get( $font-weights, "bold" ) } !default;
-  $link-font-family: var( --font-family ) !default;
+  $link-font-weight: #{map-get($font-weights, "bold")} !default;
+  $link-font-family: var(--font-family) !default;
 
-  --font-color:  var( --link_font-color );
+  --font-color: var(--link_font-color);
 
-  color: var( --font-color );
-  font-size: var( --font-size );
+  color: var(--font-color);
+  font-size: var(--font-size);
   font-family: $link-font-family;
   font-weight: $link-font-weight;
   text-decoration: none;
   transition: color $transition-duration $transition-easing;
   &:hover {
-    --font-color: var( --link_font-color_hover );
+    --font-color: var(--link_font-color_hover);
   }
 }
 
 ::-moz-selection,
 ::selection {
-  background: rgba( var( --default-400-rgb-color ), 0.5 );
+  background: rgba(var(--default-400-rgb-color), 0.5);
 }
-
 
 @import "component/button.scss";
 @import "component/blockquote.scss";
@@ -211,47 +204,47 @@ a {
 
 .section {
   position: relative;
-  background-color: var( --background-color );
+  background-color: var(--background-color);
   z-index: 2;
 }
 
 .spacing-1 {
-  width: #{ map-get( $spacings, "100" ) };
-  height: #{ map-get( $spacings, "100" ) };
-  background-color: rgb( var( --font-400-color ) );
+  width: #{map-get($spacings, "100")};
+  height: #{map-get($spacings, "100")};
+  background-color: rgb(var(--font-400-color));
 }
 .spacing-2 {
-  width: #{ map-get( $spacings, "200" ) };
-  height: #{ map-get( $spacings, "200" ) };
-  background-color: rgb( var( --font-400-color ) );
+  width: #{map-get($spacings, "200")};
+  height: #{map-get($spacings, "200")};
+  background-color: rgb(var(--font-400-color));
 }
 .spacing-3 {
-  width: #{ map-get( $spacings, "300" ) };
-  height: #{ map-get( $spacings, "300" ) };
-  background-color: rgb( var( --font-400-color ) );
+  width: #{map-get($spacings, "300")};
+  height: #{map-get($spacings, "300")};
+  background-color: rgb(var(--font-400-color));
 }
 .spacing-4 {
-  width: #{ map-get( $spacings, "400" ) };
-  height: #{ map-get( $spacings, "400" ) };
-  background-color: rgb( var( --font-400-color ) );
+  width: #{map-get($spacings, "400")};
+  height: #{map-get($spacings, "400")};
+  background-color: rgb(var(--font-400-color));
 }
 .spacing-5 {
-  width: #{ map-get( $spacings, "500" ) };
-  height: #{ map-get( $spacings, "500" ) };
-  background-color: rgb( var( --font-400-color ) );
+  width: #{map-get($spacings, "500")};
+  height: #{map-get($spacings, "500")};
+  background-color: rgb(var(--font-400-color));
 }
 .spacing-6 {
-  width: #{ map-get( $spacings, "600" ) };
-  height: #{ map-get( $spacings, "600" ) };
-  background-color: rgb( var( --font-400-color ) );
+  width: #{map-get($spacings, "600")};
+  height: #{map-get($spacings, "600")};
+  background-color: rgb(var(--font-400-color));
 }
 .spacing-7 {
-  width: #{ map-get( $spacings, "700" ) };
-  height: #{ map-get( $spacings, "700" ) };
-  background-color: rgb( var( --font-400-color ) );
+  width: #{map-get($spacings, "700")};
+  height: #{map-get($spacings, "700")};
+  background-color: rgb(var(--font-400-color));
 }
 .spacing-8 {
-  width: #{ map-get( $spacings, "800" ) };
-  height: #{ map-get( $spacings, "800" ) };
-  background-color: rgb( var( --font-400-color ) );
+  width: #{map-get($spacings, "800")};
+  height: #{map-get($spacings, "800")};
+  background-color: rgb(var(--font-400-color));
 }

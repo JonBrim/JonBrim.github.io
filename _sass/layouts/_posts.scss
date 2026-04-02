@@ -6,15 +6,11 @@ $post_sub-title_line-height:  var( --sub-title_line-height ) !default;
 
 .post {
     &_header {
-        --padding: 2.5rem 0 1rem 1rem;
-        @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
-            --padding: 4rem 3rem 3rem 3rem;
-        }
-        padding: var( --padding ); 
-        }
+        padding: $padding;
         &_header_group {
-        @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
-            flex: 5 1 50%;
+          @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
+              flex: 5 1 50%;
+          }
         }
     }
     &_title {

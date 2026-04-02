@@ -1,15 +1,3 @@
-$navigation_padding: (
-  small:  (
-    padding: 
-      map-get( $spacings, "200" ) 
-      map-get( $spacings, "500" )
-  ),
-  large: (
-    padding: 
-      map-get( $spacings, "200" ) 
-      map-get( $spacings, "800" )
-  )
-);
 $button_back_icon_circle: true !default;
 
 $button_back_width:           3.5rem !default;
@@ -64,7 +52,7 @@ $button_back_icon_transition:
   z-index: 10;
   align-items: center;
   background: $button_back_label_sticky_background-scrim;
-  @include breakpoint( $navigation_padding, $breakpoints );
+  padding: clamp(map-get( $spacings, "200" ), 3vw, map-get( $spacings, "400" )) $padding;
   &::before {
     position: absolute;
     content: '';
@@ -85,7 +73,7 @@ $button_back_icon_transition:
     position: sticky;
   }
   &.is-sticky {
-    @include breakpoint( $navigation_padding, $breakpoints );
+    padding: clamp(map-get( $spacings, "200" ), 3vw, map-get( $spacings, "400" )) $padding;
     &:after {
       content: attr( data-title );
       display: inline-flex;

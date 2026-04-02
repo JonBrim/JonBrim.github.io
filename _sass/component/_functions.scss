@@ -1,22 +1,28 @@
 @function map-deep-get($map, $keys...) {
-    @each $key in $keys {
-        $map: map-get($map, $key);
-    }
-    @return $map;
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
 }
 
-@mixin breakpoint( $map, $breakpoints ) {
-    @each $size, $keys in $map {
-        @if ( index( $map, $size $keys ) > 1 ) {
-            @media( min-width: #{ map-get( $breakpoints, $size ) } )  {
-                @each $label, $value in $keys {
-                    #{ $label }: #{ $value };
-                }
-            }
-        } @else {
-            @each $label, $value in $keys {
-                #{ $label }: #{ $value };
-            }
+@mixin breakpoint($map, $breakpoints) {
+  @each $size, $keys in $map {
+    @if $size != "base" {
+      @media (min-width: #{map-get($breakpoints, $size)}) {
+        @each $label, $value in $keys {
+          #{$label}: #{$value};
         }
+      }
+    } @else {
+      @each $label, $value in $keys {
+        #{$label}: #{$value};
+      }
     }
+  }
+}
+
+@mixin build-variables($vars) {
+  @each $key, $color in $vars {
+    --#{ $key }-color: #{$color};
+  }
 }

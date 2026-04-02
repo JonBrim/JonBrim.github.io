@@ -15,8 +15,8 @@ blockquote {
     font-size: $blockquote_font-size;
     font-family: $blockquote_font-family;
     font-weight: $blockquote_font-weight;
-    padding-top: var(--layout-page_margin);
-    padding-bottom: var(--layout-page_margin);
+    padding-top: $padding;
+    padding-bottom: $padding;
 }
 
 .quote-block {
@@ -25,13 +25,7 @@ blockquote {
     justify-content: center;
     align-items: center;
     flex: 1 1 100%;
-    padding: map-get( $spacings, "500" );
-    @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
-        padding: (
-            map-get( $spacings, "800" )
-            map-get( $spacings, "800" )
-        );
-    }
+    padding: $padding;
     &_wrapper {
         max-width: 25ch;
         &.quote-size_9 {

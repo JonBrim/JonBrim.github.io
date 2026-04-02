@@ -1,34 +1,30 @@
-$page_sub-title_font-size:    var( --font-size-600 ) !default;
-$page_sub-title_font-weight:  400 !default;
-$page_sub-title_font-color:   rgb( var( --font-100-color ) ) !default;
-$page_sub-title_font-family:  $alt_font-family !default;
-$page_sub-title_line-height:  var( --sub-title_line-height ) !default;
+$page_sub-title_font-size: var(--font-size-600) !default;
+$page_sub-title_font-weight: 400 !default;
+$page_sub-title_font-color: rgb(var(--font-100-color)) !default;
+$page_sub-title_font-family: $alt_font-family !default;
+$page_sub-title_line-height: var(--sub-title_line-height) !default;
 
 .page {
   &_header {
-    --padding: 2.5rem 0 1rem 1rem;
-    @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
-      --padding: 4rem 3rem 3rem 3rem;
-    }
-    padding: var( --padding ); 
+    padding: $padding;
   }
   &_header_group {
-    @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
+    @media ( min-width: #{ map-get( $breakpoints, "large" ) } ) {
       flex: 5 1 50%;
     }
   }
   &_title {
-    font-size: var( --font-size-900 );
+    font-size: var(--font-size-900);
   }
-  &_sub-title  {
+  &_sub-title {
     color: $page_sub-title_font-color;
     font-weight: $page_sub-title_font-weight;
     font-family: $page_sub-title_font-family;
     font-size: $page_sub-title_font-size;
-    display: var( --display );
+    display: var(--display);
     line-height: $page_sub-title_line-height;
   }
-  
+
   &_content {
     --layout-page_padding: 0;
     width: 100%;
@@ -46,10 +42,10 @@ $page_sub-title_line-height:  var( --sub-title_line-height ) !default;
     figure {
       flex: 1 1 100%;
     }
-    @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
+    @media ( min-width: #{ map-get( $breakpoints, "large" ) } ) {
       video,
       figure {
-        flex: 1 1 #{ map-get( $breakpoints, "medium" ) };
+        flex: 1 1 #{map-get($breakpoints, "medium")};
       }
       .narrow {
         flex-basis: 33%;
@@ -70,9 +66,8 @@ $page_sub-title_line-height:  var( --sub-title_line-height ) !default;
       justify-content: center;
       align-items: center;
       flex: 1 1 100%;
-      padding: map-get( $spacings, "500" );
-      @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
-        padding: map-get( $spacings, "800" );
+      padding: $padding;
+      @media ( min-width: #{ map-get( $breakpoints, "large" ) } ) {
         flex: 1 1 33%;
 
         &.narrow {
@@ -90,10 +85,10 @@ $page_sub-title_line-height:  var( --sub-title_line-height ) !default;
       }
       &_wrapper {
         max-width: none;
-        @include breakpoint( 
+        @include breakpoint(
           (
             xlarge: (
-              max-width: 75ch
+              max-width: 75ch,
             ),
           ),
           $breakpoints
@@ -106,25 +101,14 @@ $page_sub-title_line-height:  var( --sub-title_line-height ) !default;
           }
         }
         li {
-          margin-bottom: map-get( $spacings, "400" );
+          margin-bottom: map-get($spacings, "400");
         }
       }
     }
-    
+
     & > p {
-      padding: 
-        0 
-        map-get( $spacings, "500" )
-        map-get( $spacings, "400" )
-        map-get( $spacings, "500" );
-      width: min( 100% - calc( map-get( $spacings, "500" ) * 2 ), 75ch );
-      @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
-        padding: 
-          0 
-          map-get( $spacings, "800" )
-          map-get( $spacings, "500" )
-          map-get( $spacings, "800" );
-      }
+      width: min(100% - calc(map-get($spacings, "500") * 2), 75ch);
+      padding: $padding;
     }
     img,
     picture {
@@ -136,19 +120,12 @@ $page_sub-title_line-height:  var( --sub-title_line-height ) !default;
     .text-wrapper {
       display: flex;
       width: 100%;
-      padding:
-        map-get( $spacings, "800" )
-        0;
-      background-color: rgb( var( --default-100-rgb-color) );
+      padding: $padding;
+      background-color: rgb(var(--default-100-rgb-color));
       flex-direction: column;
       align-items: center;
-      @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
-        padding:
-          calc( map-get( $spacings, "800" ) * 4 ) 
-          0;
-      }
     }
-    
+
     .gallery,
     %gallery {
       --layout-page_padding: 0;
@@ -157,7 +134,7 @@ $page_sub-title_line-height:  var( --sub-title_line-height ) !default;
       flex-wrap: wrap;
       margin: 0;
       padding: 0;
-      @media( min-width: #{ map-get( $breakpoints, "medium" ) } )  {
+      @media ( min-width: #{ map-get( $breakpoints, "medium" ) } ) {
         & > * {
           flex: 1 1 33%;
         }
@@ -181,67 +158,19 @@ $page_sub-title_line-height:  var( --sub-title_line-height ) !default;
         justify-content: center;
         align-items: center;
         width: 100%;
-        @include breakpoint( 
-          (
-            small:  (
-              padding: map-get( $spacings, "500" )
-            ),
-            medium: (
-              padding: 
-                map-get( $spacings, "800" )
-                map-get( $spacings, "800" ),
-            ),
-          ),
-          $breakpoints
+        padding: clamp(
+          map-get($spacings, "400"),
+          3vw,
+          map-get($spacings, "800")
         );
         &_wrapper {
-          @include breakpoint( 
+          @include breakpoint(
             (
-              small:  (
-                max-width: none
+              small: (
+                max-width: none,
               ),
               medium: (
-                max-width: 24rem
-              ),
-            ),
-            $breakpoints
-          );
-          &.columns {
-            max-width: 72rem;
-            width: 100%;
-            & > p {
-              columns: auto 24rem;
-            }
-          }
-        }
-      }
-      .quote-block {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        @include breakpoint( 
-          (
-            small:  (
-              padding: map-get( $spacings, "500" )
-            ),
-            medium: (
-              padding:
-                map-get( $spacings, "800" )
-                map-get( $spacings, "800" ),
-            ),
-          ),
-          $breakpoints
-        );
-        &_wrapper {
-          @include breakpoint( 
-            (
-              small:  (
-                max-width: none
-              ),
-              medium: (
-                max-width: 24rem
+                max-width: 24rem,
               ),
             ),
             $breakpoints
@@ -256,27 +185,27 @@ $page_sub-title_line-height:  var( --sub-title_line-height ) !default;
         }
       }
       .grey {
-        background-color: hsl( 100, 0%, 90%);
+        background-color: hsl(100, 0%, 90%);
       }
       .black {
-        background-color: hsl( 100, 0%, 10%);
+        background-color: hsl(100, 0%, 10%);
       }
       &_column_2 {
         display: grid;
-        grid-template-columns: repeat( 2, 1fr );
+        grid-template-columns: repeat(2, 1fr);
       }
       &_columns_2 {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         & > * {
-          @include breakpoint( 
+          @include breakpoint(
             (
-              small:  (
-                width: 100%
+              small: (
+                width: 100%,
               ),
               medium: (
-                width: calc( 100% / 2 )
+                width: calc(100% / 2),
               ),
             ),
             $breakpoints
@@ -288,17 +217,17 @@ $page_sub-title_line-height:  var( --sub-title_line-height ) !default;
         flex-wrap: wrap;
         justify-content: center;
         & > * {
-          @include breakpoint( 
+          @include breakpoint(
             (
-              small:  (
-                width: 100%
+              small: (
+                width: 100%,
               ),
               medium: (
-                width: calc( 100% / 2 )
+                width: calc(100% / 2),
               ),
               large: (
-                width: calc( 100% / 3 )
-              )
+                width: calc(100% / 3),
+              ),
             ),
             $breakpoints
           );
@@ -306,18 +235,17 @@ $page_sub-title_line-height:  var( --sub-title_line-height ) !default;
       }
       &_columns {
         display: flex;
-        @include breakpoint( 
+        @include breakpoint(
           (
-            small:  (
+            small: (
               flex-direction: column,
             ),
             large: (
               flex-direction: row,
-            )
+            ),
           ),
           $breakpoints
         );
-        
       }
       &_rows {
         display: flex;
@@ -327,16 +255,16 @@ $page_sub-title_line-height:  var( --sub-title_line-height ) !default;
         display: flex;
         justify-content: center;
         flex-direction: column;
-        @include breakpoint( 
+        @include breakpoint(
           (
-            small:  (
+            small: (
               width: 100%,
             ),
             large: (
               margin-left: auto,
               margin-right: auto,
               align-items: center,
-            )
+            ),
           ),
           $breakpoints
         );
@@ -345,14 +273,14 @@ $page_sub-title_line-height:  var( --sub-title_line-height ) !default;
           flex: 1 1 auto;
           justify-content: center;
           img {
-            @include breakpoint( 
+            @include breakpoint(
               (
-                small:  (
+                small: (
                   width: 100%,
                 ),
                 large: (
                   width: 50%,
-                )
+                ),
               ),
               $breakpoints
             );
@@ -366,21 +294,13 @@ $page_sub-title_line-height:  var( --sub-title_line-height ) !default;
       &_columns_3 {
         &.shadow {
           figure {
-            --padding: 2rem;
-            @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
-              --padding: 3rem;
-            }
-            @media( min-width: #{ map-get( $breakpoints, "xxlarge" ) } )  {
-              --padding: 6rem;
-            }
-            
-            padding: var( --padding );
+            padding: $padding;
             img {
-              @include breakpoint( 
+              @include breakpoint(
                 (
                   large: (
-                    box-shadow: var( --box-shadow-depth-9 )
-                  )
+                    box-shadow: var(--box-shadow-depth-9),
+                  ),
                 ),
                 $breakpoints
               );
@@ -391,12 +311,12 @@ $page_sub-title_line-height:  var( --sub-title_line-height ) !default;
     }
   }
   &_footer {
-    background-color: rgb( var( --black-color ) );
+    background-color: rgb(var(--black-color));
     padding: var(--grid_gap);
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: var( --grid_gap );
+    gap: var(--grid_gap);
     .page_link {
       flex-basis: 25rem;
       .title {
@@ -406,16 +326,11 @@ $page_sub-title_line-height:  var( --sub-title_line-height ) !default;
   }
   .black {
     color: white;
-    background-color: hsl( 100, 0%, 10%);
+    background-color: hsl(100, 0%, 10%);
   }
   &_static {
-    --padding: 3rem 1.5rem 1.5rem 1.5rem;
-    @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
-      --padding: 6rem 3rem 3rem 3rem;
-    }
-    padding: var( --padding );
     max-width: 50rem;
-    margin-left: auto;
-    margin-right: auto;
-  }  
+    margin: 0 auto;
+    padding: $padding;
+  }
 }

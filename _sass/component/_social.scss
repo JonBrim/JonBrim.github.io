@@ -11,18 +11,6 @@ $social_list_margin: (
       margin: 4rem 0
     )
 ) !default;
-$social_list_padding: (
-    small:  (
-      padding: 1rem 0
-    ),
-    medium: (
-      padding: 1.5rem 0
-    ),
-    large: (
-      padding: 2rem 0
-    )
-) !default;
-
 $social_item_padding:   0 .5rem 0 0 !default;
 $social_item_gap:       0.65rem !default;
 $social_item_radius:    1rem !default;
@@ -47,7 +35,7 @@ $social_item_icon_background-color_hover:   rgba( var( --font-100-color ), 0.2) 
     justify-content: space-around;
 
     @include breakpoint( $social_list_margin, $breakpoints );
-    @include breakpoint( $social_list_padding, $breakpoints );
+    padding: clamp(map-get( $spacings, "200" ), 3vw, map-get( $spacings, "500" )) 0px;
     @media( min-width: #{ map-get( $breakpoints, "medium" ) } )  {
         justify-content: space-between;
     }

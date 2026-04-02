@@ -1,10 +1,10 @@
 $colors: (
-  "default": hsla( 210, 20%, 80%, .35 ),
-  "primary": hsl( 252, 0%, 10% ),
-  "secondary": hsl( 210, 90%, 50% ),
-  "success": hsl( 150, 50%, 50% ),
-  "error": hsl( 10, 70%, 60% ),
-  "focus": hsla( 210, 50%, 50%, .5 ),
+  "default": hsla(210, 20%, 80%, 0.35),
+  "primary": hsl(252, 0%, 10%),
+  "secondary": hsl(210, 90%, 50%),
+  "success": hsl(150, 50%, 50%),
+  "error": hsl(10, 70%, 60%),
+  "focus": hsla(210, 50%, 50%, 0.5),
   "font": unquote("96, 92, 112"),
   "font-100": unquote("98, 95, 107"),
   "font-400": unquote("91, 87, 102"),
@@ -63,9 +63,3 @@ $dark-mode_colors: (
   "default-900": #d1cddf,
   "default-900-rgb": unquote("209, 205, 223"),
 ) !default;
-
-@mixin build-variables( $vars ) {
-  @each $key, $color in $vars {
-    --#{ $key }-color: #{ $color };
-  }
-}

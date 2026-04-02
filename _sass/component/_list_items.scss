@@ -5,21 +5,12 @@
     list-style: none;
     font-size: var( --font-size-100 );
     letter-spacing: .075rem;
-    padding: initial;
-    padding: map-get( $spacings, "500" );
+    padding: $padding;
     flex-wrap: wrap;
     justify-content: start;
     font-weight: 400;
     color: var(--color);
-    margin-bottom: map-get( $spacings, "500" );
     max-width: 960px;
-    @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
-      margin: map-get( $spacings, "800" );
-      padding: (
-        map-get( $spacings, "500" ) 
-        0
-      );
-    }
     & h3 {
       color: var( --header_font-color );
       font-size: 0.75rem;
