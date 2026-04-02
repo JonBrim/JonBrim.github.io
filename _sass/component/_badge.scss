@@ -1,42 +1,39 @@
-$badge_background-color:        transparent !default;
-$badge_background-color_hover:  var( --default-200-color ) !default;
-$badge_font-color:              var( --link_font-color ) !default; 
-$badge_font-color_hover:        var( --link_font-color_hover ) !default;
+$badge_background-color: transparent !default;
+$badge_background-color_hover: var(--default-200-color) !default;
+$badge_font-color: var(--link_font-color) !default;
+$badge_font-color_hover: var(--link_font-color_hover) !default;
 
 .badge {
-    font-size: .8rem;
-    padding: (
-        #{ map-get( $spacings, "100" ) }
-        #{ map-get( $spacings, "400" ) }
-    );
-    background-color: $badge_background-color;
-    border: 1px solid rgb( var( --default-300-rgb-color ) );
-    border-radius: 2rem;
-    color: $badge_font-color;
-    text-decoration: none;
-    display: inline-flex;
+  font-size: 0.8rem;
+  padding: (#{map-get($spacings, "100")} #{map-get($spacings, "400")});
+  background-color: $badge_background-color;
+  border: 1px solid rgb(var(--default-300-rgb-color));
+  border-radius: 2rem;
+  color: $badge_font-color;
+  text-decoration: none;
+  display: inline-flex;
 }
 
 a.badge {
-    transition: 
-        background-color $transition-duration $transition-easing,
-        color $transition-duration $transition-easing;
-    &:hover,
-    &:focus {
-        background-color: $badge_background-color_hover;
-        color: $badge_font-color_hover;
-    }
+  transition:
+    background-color $transition-duration $transition-easing,
+    color $transition-duration $transition-easing;
+  &:hover,
+  &:focus {
+    background-color: $badge_background-color_hover;
+    color: $badge_font-color_hover;
+  }
 }
 
 .badge_content {
-    display: flex;
-    gap: #{ map-get( $spacings, "200" ) };
-    justify-content: center;
-    align-items: center;
-    img,
-    svg {
-        max-height: 1rem;
-        max-width: 1rem;
-        fill: $badge_font-color;
-    }
+  display: flex;
+  gap: #{map-get($spacings, "200")};
+  justify-content: center;
+  align-items: center;
+  img,
+  svg {
+    max-height: 1rem;
+    max-width: 1rem;
+    fill: $badge_font-color;
+  }
 }

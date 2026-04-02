@@ -1,51 +1,50 @@
 .list_items {
+  display: flex;
+  flex-direction: row;
+  gap: map-get($spacings, "500");
+  list-style: none;
+  font-size: var(--font-size-100);
+  letter-spacing: 0.075rem;
+  padding: $padding;
+  flex-wrap: wrap;
+  justify-content: start;
+  font-weight: 400;
+  color: var(--color);
+  max-width: 960px;
+  & h3 {
+    color: var(--header_font-color);
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  & li {
     display: flex;
-    flex-direction: row;
-    gap: map-get( $spacings, "500" );
-    list-style: none;
-    font-size: var( --font-size-100 );
-    letter-spacing: .075rem;
-    padding: $padding;
-    flex-wrap: wrap;
-    justify-content: start;
-    font-weight: 400;
-    color: var(--color);
-    max-width: 960px;
-    & h3 {
-      color: var( --header_font-color );
-      font-size: 0.75rem;
-      font-weight: 600;
-    }
-    & li {
-      display: flex;
-    }
-    & ul {
-      display: flex;
-      flex-direction: column;
-      list-style: none;
-      padding: initial;
-      gap: map-get( $spacings, "100" );
-      &.columns {
-        column-count: 3;
-        @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
-        column-count: 5;
-        }
-        gap: map-get( $spacings, "400" );
-      }
-      li {
-        gap: map-get( $spacings, "200" );
-        align-items: center;
-      }
-    }
-
   }
-
-  .list_item {
-    flex: 1 1 25%;
+  & ul {
+    display: flex;
     flex-direction: column;
-    gap: map-get( $spacings, "200" );
-    img {
-        max-height: 1rem;
-        max-width: 1rem;
+    list-style: none;
+    padding: initial;
+    gap: map-get($spacings, "100");
+    &.columns {
+      column-count: 3;
+      @media ( min-width: #{ map-get( $breakpoints, "large" ) } ) {
+        column-count: 5;
+      }
+      gap: map-get($spacings, "400");
+    }
+    li {
+      gap: map-get($spacings, "200");
+      align-items: center;
     }
   }
+}
+
+.list_item {
+  flex: 1 1 25%;
+  flex-direction: column;
+  gap: map-get($spacings, "200");
+  img {
+    max-height: 1rem;
+    max-width: 1rem;
+  }
+}

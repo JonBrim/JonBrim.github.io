@@ -1,21 +1,21 @@
 $grid-sizes: (
-  "full-width":     100%,
+  "full-width": 100%,
   "three-quarters": 75%,
-  "two-thirds":     66.66666666666667%,
-  "half":           50%,
-  "is-one-third":   33.33333333333333%,
-  "one-quarter":    25%
+  "two-thirds": 66.66666666666667%,
+  "half": 50%,
+  "is-one-third": 33.33333333333333%,
+  "one-quarter": 25%,
 );
 
 @mixin grid {
   display: flex;
-  padding: var( --grid_container );
-  justify-content: var( --grid_justify-content );
-  align-items: var( --grid_align-items );
-  flex-wrap: var( --grid_flex-wrap );
+  padding: var(--grid_container);
+  justify-content: var(--grid_justify-content);
+  align-items: var(--grid_align-items);
+  flex-wrap: var(--grid_flex-wrap);
   & > {
     * {
-      margin: var( --grid_gap );
+      margin: var(--grid_gap);
     }
     :first-child {
       margin-left: 0;
@@ -44,11 +44,11 @@ $grid-sizes: (
   .is- {
     @each $label, $size in $grid-sizes {
       &#{ $label } {
-        width: #{ $size };
+        width: #{$size};
       }
       &offset- {
         &#{ $label } {
-          margin-left: #{ $size };
+          margin-left: #{$size};
         }
       }
     }
@@ -56,5 +56,5 @@ $grid-sizes: (
 }
 
 .grid {
-//  @include grid;
+  //  @include grid;
 }

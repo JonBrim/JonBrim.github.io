@@ -1,4 +1,3 @@
-
 @import "colors.scss";
 @import "sizes.scss";
 @import "transitions.scss";
@@ -31,9 +30,11 @@ $breakpoints: (
   xxlarge: 1440px,
 ) !default;
 
-
-$padding: clamp(map-get( $spacings, "500" ), 3vw, map-get( $spacings, "900" )) !default;
-
+$padding: clamp(
+  map-get($spacings, "500"),
+  3vw,
+  map-get($spacings, "900")
+) !default;
 
 $shadow-color: rgb(var(--black-color));
 

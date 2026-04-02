@@ -33,11 +33,11 @@ $colors: (
 
 $dark-mode_colors: (
   "default": hsla(220, 3%, 22%, 0.35),
-  "primary": hsl( 252, 0%, 10% ),
-  "secondary": hsl( 210, 90%, 50% ),
-  "success": hsl( 150, 50%, 50% ),
-  "error": hsl( 10, 70%, 60% ),
-  "focus": hsla( 210, 50%, 50%, .5 ),
+  "primary": hsl(252, 0%, 10%),
+  "secondary": hsl(210, 90%, 50%),
+  "success": hsl(150, 50%, 50%),
+  "error": hsl(10, 70%, 60%),
+  "focus": hsla(210, 50%, 50%, 0.5),
   "font": unquote("139, 134, 162"),
   "font-100": unquote("117, 114, 129"),
   "font-400": unquote("152, 149, 163"),

@@ -1,106 +1,105 @@
-$post_sub-title_font-size:    var( --font-size-600 ) !default;
-$post_sub-title_font-weight:  400 !default;
-$post_sub-title_font-color:   rgb( var( --default-600-rgb-color ) ) !default;
-$post_sub-title_font-family:  $alt_font-family !default;
-$post_sub-title_line-height:  var( --sub-title_line-height ) !default;
+$post_sub-title_font-size: var(--font-size-600) !default;
+$post_sub-title_font-weight: 400 !default;
+$post_sub-title_font-color: rgb(var(--default-600-rgb-color)) !default;
+$post_sub-title_font-family: $alt_font-family !default;
+$post_sub-title_line-height: var(--sub-title_line-height) !default;
 
 .post {
-    &_header {
-        padding: $padding;
-        &_header_group {
-          @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
-              flex: 5 1 50%;
-          }
-        }
+  &_header {
+    padding: $padding;
+    &_header_group {
+      @media ( min-width: #{ map-get( $breakpoints, "large" ) } ) {
+        flex: 5 1 50%;
+      }
     }
-    &_title {
-        font-size: var( --font-size-900 );
-    }
-    &_sub-title  {
-        color: $page_sub-title_font-color;
-        font-weight: $page_sub-title_font-weight;
-        font-family: $page_sub-title_font-family;
-        font-size: $page_sub-title_font-size;
-        display: var( --display );
-        line-height: $page_sub-title_line-height;
+  }
+  &_title {
+    font-size: var(--font-size-900);
+  }
+  &_sub-title {
+    color: $page_sub-title_font-color;
+    font-weight: $page_sub-title_font-weight;
+    font-family: $page_sub-title_font-family;
+    font-size: $page_sub-title_font-size;
+    display: var(--display);
+    line-height: $page_sub-title_line-height;
+  }
+
+  &_content {
+    --layout-page_padding: 0;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 2;
+    margin-left: auto;
+    margin-right: auto;
+    flex: 1 1 100%;
+    padding: 1.5rem;
+
+    @include breakpoint(
+      (
+        xlarge: (
+          max-width: 75ch,
+        ),
+      ),
+      $breakpoints
+    );
+
+    img,
+    picture {
+      box-sizing: border-box;
+      width: 100%;
+      margin: 0;
     }
 
-    &_content {
-        --layout-page_padding: 0;
+    .text-wrapper {
+      display: flex;
+      width: 100%;
+      padding: 3rem 0;
+      background-color: #ececec;
+      flex-direction: column;
+      align-items: center;
+      @media ( min-width: #{ map-get( $breakpoints, "large" ) } ) {
+        padding: 12rem 0;
+      }
+    }
+  }
+  &_excerpts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 100%;
+    padding: 1.5rem;
+    list-style: none;
+    @media ( min-width: #{ map-get( $breakpoints, "large" ) } ) {
+      padding: 3rem 3rem;
+      flex: 1 1 33%;
+    }
+    &_wrapper {
+      max-width: none;
+      @include breakpoint(
+        (
+          xlarge: (
+            max-width: 75ch,
+          ),
+        ),
+        $breakpoints
+      );
+      a {
+        display: block;
+        width: fit-content;
+      }
+      &.columns {
+        max-width: 72rem;
         width: 100%;
-        display: flex;
-        flex-flow: row wrap;
-        margin: 0;
-        padding: 0;
-        position: relative;
-        z-index: 2;
-        margin-left: auto;
-        margin-right: auto;
-          flex: 1 1 100%;
-          padding: 1.5rem;
-
-            @include breakpoint( 
-              (
-                xlarge: (
-                  max-width: 75ch
-                ),
-              ),
-              $breakpoints
-            );
-        
-        
-        img,
-        picture {
-          box-sizing: border-box;
-          width: 100%;
-          margin: 0;
+        & > p {
+          columns: auto 24rem;
         }
-    
-        .text-wrapper {
-          display: flex;
-          width: 100%;
-          padding: 3rem 0;
-          background-color: #ececec;
-          flex-direction: column;
-          align-items: center;
-          @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
-            padding: 12rem 0;
-          }
-        }
+      }
     }
-    &_excerpts {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        flex: 1 1 100%;
-        padding: 1.5rem;
-        list-style: none;
-        @media( min-width: #{ map-get( $breakpoints, "large" ) } )  {
-            padding: 3rem 3rem;
-            flex: 1 1 33%;
-        }
-        &_wrapper {
-            max-width: none;
-            @include breakpoint( 
-            (
-                xlarge: (
-                max-width: 75ch
-                ),
-            ),
-            $breakpoints
-            );
-            a {
-                display: block;
-                width: fit-content;
-            }
-            &.columns {
-            max-width: 72rem;
-            width: 100%;
-            & > p {
-                columns: auto 24rem;
-            }
-            }
-        }
-    }
+  }
 }
