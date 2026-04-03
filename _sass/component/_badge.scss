@@ -4,8 +4,11 @@ $badge_font-color: var(--link_font-color) !default;
 $badge_font-color_hover: var(--link_font-color_hover) !default;
 
 .badge {
-  font-size: 0.8rem;
-  padding: (#{map-get($spacings, "100")} #{map-get($spacings, "400")});
+  font-size: var(--font-size-100);
+  padding: (
+    #{map.get($spacings, "100")} 
+    #{map.get($spacings, "400")}
+  );
   background-color: $badge_background-color;
   border: 1px solid rgb(var(--default-300-rgb-color));
   border-radius: 2rem;
@@ -27,7 +30,7 @@ a.badge {
 
 .badge_content {
   display: flex;
-  gap: #{map-get($spacings, "200")};
+  gap: #{map.get($spacings, "200")};
   justify-content: center;
   align-items: center;
   img,

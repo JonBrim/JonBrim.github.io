@@ -1,7 +1,6 @@
 .palette-container {
   display: flex;
   align-items: center;
-  //padding-top: 1.5rem;
   width: 100%;
   h2 {
     padding-left: 3rem;
@@ -19,7 +18,7 @@
   flex-direction: column-reverse;
   margin: 0;
   padding: 0;
-  font-size: 1rem;
+  font-size: var(--font-size-400);
   height: 100%;
   &.large {
     flex-grow: 10;
@@ -36,7 +35,7 @@
     height: 100%;
     min-height: 3rem;
     display: flex;
-    font-size: 0.9rem;
+    font-size: var(--font-size-100);
     padding: 0 0.5rem;
     align-items: center;
     position: relative;
@@ -49,7 +48,7 @@
       border-radius: 1rem;
       font-family: monospace;
       display: none;
-      @media ( min-width: #{ map-get( $breakpoints, "medium" ) } ) {
+      @media ( min-width: #{ map.get( $breakpoints, "medium" ) } ) {
         display: block;
       }
     }

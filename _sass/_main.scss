@@ -1,18 +1,24 @@
+@import "component/functions.scss";
 @import "colors.scss";
 @import "sizes.scss";
 @import "transitions.scss";
-@import "component/functions.scss";
 @import "component/padding.scss";
 
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
 
 $alt_font-family: "Lora", serif;
-$font-weight: 400 !default;
 $font-color: rgb(var(--font-400-color)) !default;
 $font-weights: (
   normal: 400,
   bold: 600,
 ) !default;
+$font-weight: #{map.get($font-weights, "normal")} !default;
+
+$header_font-weight: #{map.get($font-weights, "bold")} !default;
+$header_font-family: sans-serif !default;
+$header_font-color: rgb(var(--font-800-color)) !default;
+$header_margin: 0 !default;
+$header_font-line-height: 1 !default;
 
 $horizontal-spacing: 1rem;
 $vertical-spacing: 0.75rem;
@@ -31,9 +37,9 @@ $breakpoints: (
 ) !default;
 
 $padding: clamp(
-  map-get($spacings, "500"),
-  3vw,
-  map-get($spacings, "900")
+  map.get($spacings, "500"),
+  7vw,
+  map.get($spacings, "900")
 ) !default;
 
 $shadow-color: rgb(var(--black-color));
@@ -63,7 +69,7 @@ body {
   --font-color: #{$font-color};
   --font-size: 20px;
   --font-line-height: 1.5;
-  --font-weight: #{map-get($font-weights, "normal")};
+  --font-weight: #{map.get($font-weights, "normal")};
   --font-family: sans-serif;
   --text-align: left;
 
@@ -79,7 +85,7 @@ body {
 
   --display: block;
 
-  --header_font-weight: #{map-get($font-weights, "bold")};
+  --header_font-weight: #{map.get($font-weights, "bold")};
   --header_font-family: var(--font-family);
   --header_font-color: rgb(var(--font-800-color));
   --header_margin: 0;
@@ -88,7 +94,7 @@ body {
   --link_font-color: rgb(var(--font-800-color));
   --link_font-color_hover: rgb(var(--font-400-color));
 
-  --grid_gap: #{map-get($spacings, "400")};
+  --grid_gap: #{map.get($spacings, "400")};
   --grid_container: 1rem;
   --grid_flex-wrap: nowrap;
   --grid_justify-content: flex-start;
@@ -124,8 +130,6 @@ body {
 
   --background-color: rgb(var(--default-100-rgb-color));
 
-  --title_font-size: 2.5rem;
-  --sub-title_font-size: 1.75rem;
   --sub-title_line-height: var(--header_font-line-height);
 
   background-color: var(--background-color);
@@ -151,20 +155,15 @@ h3,
 h4,
 h5,
 h6 {
-  $font-color: var(--header_font-color);
-  $font-line-height: var(--header_font-line-height);
-  $margin: var(--header_margin);
-
-  --font-family: var(--header_font-family);
-  --font-weight: var(--header_font-weight);
-
-  color: $font-color;
-  line-height: $font-line-height;
-  margin: $margin;
+  color: var(--color, #{$header_font-color});
+  line-height: $header_font-line-height;
+  margin: $header_margin;
+  font-weight: $header_font-weight;
+  font-family: $header_font-family;
 }
 
 a {
-  $link-font-weight: #{map-get($font-weights, "bold")} !default;
+  $link-font-weight: #{map.get($font-weights, "bold")} !default;
   $link-font-family: var(--font-family) !default;
 
   --font-color: var(--link_font-color);
@@ -173,7 +172,7 @@ a {
   font-size: var(--font-size);
   font-family: $link-font-family;
   font-weight: $link-font-weight;
-  text-decoration: none;
+  text-decoration: underline dotted 1px;
   transition: color $transition-duration $transition-easing;
   &:hover {
     --font-color: var(--link_font-color_hover);
@@ -185,67 +184,23 @@ a {
   background: rgba(var(--default-400-rgb-color), 0.5);
 }
 
-@import "component/button.scss";
-@import "component/blockquote.scss";
-@import "grid/columns.scss";
-@import "layouts/navigation.scss";
-@import "component/icon.scss";
-@import "component/figure.scss";
-@import "component/post_link.scss";
-//
-@import "layouts/pages.scss";
-//@import "layouts/posts.scss";
-@import "layouts/home.scss";
-@import "component/badge.scss";
-@import "component/clients.scss";
-@import "component/palette.scss";
-@import "component/social.scss";
-@import "component/list_items.scss";
-@import "component/qualifications.scss";
-
 .section {
   position: relative;
   background-color: var(--background-color);
   z-index: 2;
 }
 
-.spacing-1 {
-  width: #{map-get($spacings, "100")};
-  height: #{map-get($spacings, "100")};
-  background-color: rgb(var(--font-400-color));
-}
-.spacing-2 {
-  width: #{map-get($spacings, "200")};
-  height: #{map-get($spacings, "200")};
-  background-color: rgb(var(--font-400-color));
-}
-.spacing-3 {
-  width: #{map-get($spacings, "300")};
-  height: #{map-get($spacings, "300")};
-  background-color: rgb(var(--font-400-color));
-}
-.spacing-4 {
-  width: #{map-get($spacings, "400")};
-  height: #{map-get($spacings, "400")};
-  background-color: rgb(var(--font-400-color));
-}
-.spacing-5 {
-  width: #{map-get($spacings, "500")};
-  height: #{map-get($spacings, "500")};
-  background-color: rgb(var(--font-400-color));
-}
-.spacing-6 {
-  width: #{map-get($spacings, "600")};
-  height: #{map-get($spacings, "600")};
-  background-color: rgb(var(--font-400-color));
-}
-.spacing-7 {
-  width: #{map-get($spacings, "700")};
-  height: #{map-get($spacings, "700")};
-  background-color: rgb(var(--font-400-color));
-}
-.spacing-8 {
-  width: #{map-get($spacings, "800")};
-  height: #{map-get($spacings, "800")};
-  background-color: rgb(var(--font-400-color));
-}
+@import "component/button.scss";
+@import "component/blockquote.scss";
+@import "component/icon.scss";
+@import "component/figure.scss";
+@import "component/post_link.scss";
+@import "component/badge.scss";
+@import "component/clients.scss";
+@import "component/palette.scss";
+@import "component/social.scss";
+@import "component/list_items.scss";
+@import "component/qualifications.scss";
+@import "layouts/pages.scss";
+@import "layouts/home.scss";
+@import "layouts/navigation.scss";

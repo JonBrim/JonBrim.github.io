@@ -1,5 +1,5 @@
 $post_sub-title_font-size: var(--font-size-600) !default;
-$post_sub-title_font-weight: 400 !default;
+$post_sub-title_font-weight: #{map.get($font-weights, "normal")} !default;
 $post_sub-title_font-color: rgb(var(--default-600-rgb-color)) !default;
 $post_sub-title_font-family: $alt_font-family !default;
 $post_sub-title_line-height: var(--sub-title_line-height) !default;
@@ -8,7 +8,7 @@ $post_sub-title_line-height: var(--sub-title_line-height) !default;
   &_header {
     padding: $padding;
     &_header_group {
-      @media ( min-width: #{ map-get( $breakpoints, "large" ) } ) {
+      @media ( min-width: #{ map.get( $breakpoints, "large" ) } ) {
         flex: 5 1 50%;
       }
     }
@@ -26,7 +26,6 @@ $post_sub-title_line-height: var(--sub-title_line-height) !default;
   }
 
   &_content {
-    --layout-page_padding: 0;
     width: 100%;
     display: flex;
     flex-flow: row wrap;
@@ -38,15 +37,7 @@ $post_sub-title_line-height: var(--sub-title_line-height) !default;
     margin-right: auto;
     flex: 1 1 100%;
     padding: 1.5rem;
-
-    @include breakpoint(
-      (
-        xlarge: (
-          max-width: 75ch,
-        ),
-      ),
-      $breakpoints
-    );
+    max-width: 75ch,
 
     img,
     picture {
@@ -62,7 +53,7 @@ $post_sub-title_line-height: var(--sub-title_line-height) !default;
       background-color: #ececec;
       flex-direction: column;
       align-items: center;
-      @media ( min-width: #{ map-get( $breakpoints, "large" ) } ) {
+      @media ( min-width: #{ map.get( $breakpoints, "large" ) } ) {
         padding: 12rem 0;
       }
     }
@@ -75,7 +66,7 @@ $post_sub-title_line-height: var(--sub-title_line-height) !default;
     flex: 1 1 100%;
     padding: 1.5rem;
     list-style: none;
-    @media ( min-width: #{ map-get( $breakpoints, "large" ) } ) {
+    @media ( min-width: #{ map.get( $breakpoints, "large" ) } ) {
       padding: 3rem 3rem;
       flex: 1 1 33%;
     }

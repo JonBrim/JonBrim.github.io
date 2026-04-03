@@ -3,15 +3,15 @@ $button_back_icon_circle: true !default;
 $button_back_width: 3.5rem !default;
 $button_back_height: $button_back_width !default;
 $button_back_font-weight: $font-weight !default;
-$button_back_padding: map-get($spacings, "400") !default;
+$button_back_padding: map.get($spacings, "400") !default;
 
-$button_back_label_font-size: 0.85rem !default;
+$button_back_label_font-size: var(--font-size-200) !default;
 $button_back_label_margin: (
-  0 map-get($spacings, "400") 0 map-get($spacings, "200")
+  0 map.get($spacings, "400") 0 map.get($spacings, "200")
 ) !default;
 
 $button_back_label_sticky_margin: $button_back_label_margin !default;
-$button_back_label_sticky_font-weight: 600 !default;
+$button_back_label_sticky_font-weight: #{map.get($font-weights, "bold")} !default;
 $button_back_label_sticky_font-color: rgb(var(--white-color)) !default;
 $button_back_label_sticky_text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.65) !default;
 $button_back_label_sticky_background-color: rgb(0, 0, 0) !default;
@@ -33,7 +33,7 @@ $button_back_label_sticky_background-scrim: linear-gradient(
 $button_back_icon_background-color: rgb(var(--default-900-rgb-color)) !default;
 $button_back_icon_hover_background-color: rgb(
   var(--default-800-rgb-color)
-) !default; //darken( $button_back_icon_background-color, 10% ) !default;
+) !default;
 $button_back_icon_border-width: 1px !default;
 $button_back_icon_border-style: solid !default;
 $button_back_icon_border-color: rgba(
@@ -42,14 +42,13 @@ $button_back_icon_border-color: rgba(
 ) !default;
 $button_back_icon_box-shadow: 0 0 10px $shadow-color !default;
 $button_back_icon_border:
-  //border- width
-  $button_back_icon_border-width //border style
-  $button_back_icon_border-style //border color
+  $button_back_icon_border-width
+  $button_back_icon_border-style
   $button_back_icon_border-color !default;
 $button_back_icon_transition-duration: 0.75s;
 $button_back_icon_transition-easing: $transition-easing;
-$button_back_icon_transition: all //transition duration
-  $button_back_icon_transition-duration //transition easing
+$button_back_icon_transition: all
+  $button_back_icon_transition-duration
   $button_back_icon_transition-easing !default;
 
 .navigation {
@@ -60,7 +59,7 @@ $button_back_icon_transition: all //transition duration
   z-index: 10;
   align-items: center;
   background: $button_back_label_sticky_background-scrim;
-  padding: clamp(map-get($spacings, "200"), 3vw, map-get($spacings, "400"))
+  padding: clamp(map.get($spacings, "200"), 3vw, map.get($spacings, "400"))
     $padding;
   &::before {
     position: absolute;
@@ -83,7 +82,10 @@ $button_back_icon_transition: all //transition duration
     position: sticky;
   }
   &.is-sticky {
-    padding: clamp(map-get($spacings, "200"), 3vw, map-get($spacings, "400"))
+    padding: 
+      clamp(map.get($spacings, "200"), 
+      3vw, 
+      map.get($spacings, "400"))
       $padding;
     &:after {
       content: attr(data-title);

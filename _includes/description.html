@@ -2,15 +2,14 @@
 <section
     id="{{ include.headline | replace: ' ', '-' | downcase }}"
     class="text-block {{ include.class | default: '' }}"
-    style="background-color:{{ include.background-color | default: 'transparent' }}; color:{{ include.color | default: 'var(--font-color)' }}; {{ include.style | default: '' }}" 
->
+    style="background-color: {{ include.background-color | default: 'transparent' }}; color: {{ include.color | default: 'inherit' }};{% if include.style %} {{ include.style }}{% endif %}">
 {% else %}
 <section class="text-block {{ include.class | default: '' }}">
 {% endif %}
     <div class="text-block_wrapper">
         {% if include.headline %}
             <header>
-                <h2>{{ include.headline }}</h2>
+                <h2 style="--color: {{ include.header-color | default: 'inherit' }};">{{ include.headline }}</h2>
             </header>
         {% endif %}
         {% if include.bodycopy %}
