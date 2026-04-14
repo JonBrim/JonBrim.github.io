@@ -1,8 +1,0 @@
-@use "sass:map";
-@use "../variables";
-
-$padding: clamp(
-  map.get(variables.$spacings, "500"),
-  7vw,
-  map.get(variables.$spacings, "900")
-) !default;
