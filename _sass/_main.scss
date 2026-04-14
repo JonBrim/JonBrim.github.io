@@ -38,12 +38,6 @@ $breakpoints: (
   xxlarge: 1440px,
 ) !default;
 
-$padding: clamp(
-  map.get(sizes.$spacings, "500"),
-  7vw,
-  map.get(sizes.$spacings, "900")
-) !default;
-
 $shadow-color: rgb(var(--black-color));
 
 html {

@@ -2,6 +2,7 @@
 @use "../main";
 @use "../sizes";
 @use "../component/functions";
+@use "../component/padding";
 
 $page_sub-title_font-size: var(--font-size-600) !default;
 $page_sub-title_font-weight: #{map.get(main.$font-weights, "normal")} !default;
@@ -11,7 +12,7 @@ $page_sub-title_line-height: var(--sub-title_line-height) !default;
 
 .page {
   &_header {
-    padding: main.$padding;
+    padding: padding.$padding;
   }
   &_title {
     font-size: var(--font-size-900);
@@ -65,7 +66,7 @@ $page_sub-title_line-height: var(--sub-title_line-height) !default;
       justify-content: center;
       align-items: center;
       flex: 1 1 100%;
-      padding: main.$padding;
+      padding: padding.$padding;
       @media ( min-width: #{ map.get( main.$breakpoints, "large" ) } ) {
         flex: 1 1 33%;
 
@@ -99,7 +100,7 @@ $page_sub-title_line-height: var(--sub-title_line-height) !default;
 
     & > p {
       width: min(100% - calc(map.get(sizes.$spacings, "500") * 2), 75ch);
-      padding: main.$padding;
+      padding: padding.$padding;
     }
     img,
     picture {
@@ -111,7 +112,7 @@ $page_sub-title_line-height: var(--sub-title_line-height) !default;
     .text-wrapper {
       display: flex;
       width: 100%;
-      padding: main.$padding;
+      padding: padding.$padding;
       background-color: rgb(var(--default-100-rgb-color));
       flex-direction: column;
       align-items: center;
@@ -198,7 +199,7 @@ $page_sub-title_line-height: var(--sub-title_line-height) !default;
       &_centered {
         &.shadow {
           figure {
-            padding: main.$padding;
+            padding: padding.$padding;
             img {
               box-shadow: var(--box-shadow-depth-9);
             }
@@ -209,7 +210,7 @@ $page_sub-title_line-height: var(--sub-title_line-height) !default;
   }
   &_footer {
     background-color: rgb(var(--black-color));
-    padding: main.$padding;
+    padding: padding.$padding;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -228,6 +229,6 @@ $page_sub-title_line-height: var(--sub-title_line-height) !default;
   &_static {
     max-width: 70ch;
     margin: 0 auto;
-    padding: main.$padding;
+    padding: padding.$padding;
   }
 }

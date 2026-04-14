@@ -1,6 +1,7 @@
 @use "sass:map";
 @use "../sizes";
 @use "../main";
+@use "../component/padding";
 
 $button_back_icon_circle: true !default;
 
@@ -64,7 +65,7 @@ $button_back_icon_transition: all
   align-items: center;
   background: $button_back_label_sticky_background-scrim;
   padding: clamp(map.get(sizes.$spacings, "200"), 3vw, map.get(sizes.$spacings, "400"))
-    main.$padding;
+    padding.$padding;
   &::before {
     position: absolute;
     content: "";
@@ -90,7 +91,7 @@ $button_back_icon_transition: all
       clamp(map.get(sizes.$spacings, "200"), 
       3vw, 
       map.get(sizes.$spacings, "400"))
-      main.$padding;
+      padding.$padding;
     &:after {
       content: attr(data-title);
       display: inline-flex;

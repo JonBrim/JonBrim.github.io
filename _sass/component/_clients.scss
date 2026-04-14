@@ -1,6 +1,7 @@
 @use "sass:map";
 @use "../sizes.scss";
 @use "../main.scss";
+@use "padding";
 
 .clients {
   --grid_gap: clamp(#{map.get(sizes.$spacings, "500")}, 2vw, #{map.get(sizes.$spacings, "800")});
@@ -11,7 +12,7 @@
   align-items: center;
   flex-wrap: wrap;
   background-color: rgba(var(--default-900-rgb-color), 0.04);
-  padding: main.$padding;
+  padding: padding.$padding;
   h2 {
     display: flex;
     justify-content: center;
