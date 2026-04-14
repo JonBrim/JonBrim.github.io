@@ -1,8 +1,24 @@
 ---
 ---
 
-@use "sass:map";
-@use "sass:string";
-@use "sass:color";
+@use "colors.scss";
+@use "sizes.scss";
+@use "transitions.scss";
+@use "component/functions.scss";
+@use "component/padding.scss";
+@use "main";
 
-@import "main";
+@use "component/button.scss";
+@use "component/blockquote.scss";
+@use "component/icon.scss";
+@use "component/figure.scss";
+@use "component/post_link.scss";
+@use "component/badge.scss";
+@use "component/clients.scss";
+@use "component/palette.scss";
+@use "component/social.scss";
+@use "component/list_items.scss";
+@use "component/qualifications.scss";
+@use "layouts/pages.scss";
+@use "layouts/home.scss";
+@use "layouts/navigation.scss";

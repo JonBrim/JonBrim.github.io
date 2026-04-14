@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "../main.scss";
+
 .palette-container {
   display: flex;
   align-items: center;
@@ -48,14 +51,14 @@
       border-radius: 1rem;
       font-family: monospace;
       display: none;
-      @media ( min-width: #{ map.get( $breakpoints, "medium" ) } ) {
+      @media ( min-width: #{ map.get( main.$breakpoints, "medium" ) } ) {
         display: block;
       }
     }
     &:hover {
       &:after {
         opacity: 1;
-        transition: opacity $transition-duration $transition-easing;
+        transition: opacity main.$transition-duration main.$transition-easing;
       }
     }
   }

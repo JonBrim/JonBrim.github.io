@@ -1,5 +1,9 @@
+@use "sass:map";
+@use "../sizes.scss";
+@use "../main.scss";
+
 .clients {
-  --grid_gap: clamp(#{map.get($spacings, "500")}, 2vw, #{map.get($spacings, "800")});
+  --grid_gap: clamp(#{map.get(sizes.$spacings, "500")}, 2vw, #{map.get(sizes.$spacings, "800")});
   z-index: 1;
   display: flex;
   flex-direction: column;
@@ -7,7 +11,7 @@
   align-items: center;
   flex-wrap: wrap;
   background-color: rgba(var(--default-900-rgb-color), 0.04);
-  padding: $padding;
+  padding: main.$padding;
   h2 {
     display: flex;
     justify-content: center;
@@ -25,13 +29,13 @@
       width: auto;
       display: flex;
       align-items: center;
-      padding: map.get($spacings, "400");
+      padding: map.get(sizes.$spacings, "400");
       flex-direction: column;
       justify-content: center;
       img {
         width: 5rem;
         display: flex;
-        transition: filter $transition-duration $transition-easing;
+        transition: filter main.$transition-duration main.$transition-easing;
         filter: grayscale(100%);
       }
       &:hover,

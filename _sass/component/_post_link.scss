@@ -1,3 +1,9 @@
+@use "sass:color";
+@use "sass:map";
+@use "../main.scss";
+@use "figure.scss";
+
+
 .page_link {
   margin: 0;
   padding: 0;
@@ -8,12 +14,12 @@
   img {
     margin: 0;
     filter: blur(5px);
-    transition: filter $transition-duration $transition-easing;
+    transition: filter main.$transition-duration main.$transition-easing;
   }
   .scrim {
     --background-color: rgba(var(--black-color), 0.35);
     --font-color: rgb(var(--white-color));
-    --text-shadow: #{$figure_scrim_text-shadow};
+    --text-shadow: #{figure.$figure_scrim_text-shadow};
     --scrim-opacity: 1;
     color: var(--font-color);
     text-shadow: var(--text-shadow);
@@ -28,7 +34,7 @@
     height: 100%;
     padding: var(--padding);
     background-color: var(--background-color);
-    transition: background-color $transition-duration $transition-easing;
+    transition: background-color main.$transition-duration main.$transition-easing;
   }
 
   .title,
@@ -36,7 +42,7 @@
     opacity: var(--scrim-opacity);
     transform: translateY(0);
     transition:
-      opacity $transition-duration $transition-easing,
+      opacity main.$transition-duration main.$transition-easing,
       transform 0.15s ease-in-out;
     color: inherit;
     text-align: center;
@@ -47,14 +53,14 @@
     transition-delay: 0.075s;
   }
   .sub-title {
-    font-weight: #{map.get($font-weights, "normal")};
+    font-weight: #{map.get(main.$font-weights, "normal")};
   }
 
   &:focus,
   &:focus-visible {
     border: transparent;
     .scrim {
-      box-shadow: inset 0px 0px 30px #{$figure_scrim_background-color};
+      box-shadow: inset 0px 0px 30px #{figure.$figure_scrim_background-color};
     }
   }
 
@@ -66,7 +72,7 @@
     .scrim {
       --scrim-opacity: 0;
       --background-color: #{color.adjust(
-          $figure_scrim_background-color,
+          figure.$figure_scrim_background-color,
           $alpha: -1
         )};
     }

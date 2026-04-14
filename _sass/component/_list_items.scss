@@ -1,14 +1,18 @@
+@use "sass:map";
+@use "../sizes.scss";
+@use "../main.scss";
+
 .list_items {
   display: flex;
   flex-direction: row;
-  gap: map.get($spacings, "500");
+  gap: map.get(sizes.$spacings, "500");
   list-style: none;
   font-size: var(--font-size-100);
   letter-spacing: 0.075rem;
-  padding: $padding;
+  padding: main.$padding;
   flex-wrap: wrap;
   justify-content: start;
-  font-weight: #{map.get($font-weights, "normal")};
+  font-weight: #{map.get(main.$font-weights, "normal")};
   color: var(--color);
   max-width: 700px;
   margin: inherit;
@@ -24,16 +28,16 @@
     flex-direction: column;
     list-style: none;
     padding: initial;
-    gap: map.get($spacings, "100");
+    gap: map.get(sizes.$spacings, "100");
     &.columns {
       column-count: 3;
-      gap: map.get($spacings, "400");
-      @media ( min-width: #{ map.get( $breakpoints, "large" ) } ) {
+      gap: map.get(sizes.$spacings, "400");
+      @media ( min-width: #{ map.get( main.$breakpoints, "large" ) } ) {
         column-count: 5;
       }
     }
     li {
-      gap: map.get($spacings, "200");
+      gap: map.get(sizes.$spacings, "200");
       align-items: center;
     }
   }
@@ -42,7 +46,7 @@
 .list_item {
   flex: 1 1 clamp(150px, 5vw, 320px);
   flex-direction: column;
-  gap: map.get($spacings, "200");
+  gap: map.get(sizes.$spacings, "200");
   img {
     max-height: 1rem;
     max-width: 1rem;

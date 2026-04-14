@@ -1,8 +1,10 @@
-@import "component/functions.scss";
-@import "colors.scss";
-@import "sizes.scss";
-@import "transitions.scss";
-@import "component/padding.scss";
+
+@use "sass:map";
+@use "colors.scss";
+@use "sizes.scss";
+@use "transitions.scss";
+@use "component/functions.scss";
+@use "component/padding.scss";
 
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
 
@@ -37,9 +39,9 @@ $breakpoints: (
 ) !default;
 
 $padding: clamp(
-  map.get($spacings, "500"),
+  map.get(sizes.$spacings, "500"),
   7vw,
-  map.get($spacings, "900")
+  map.get(sizes.$spacings, "900")
 ) !default;
 
 $shadow-color: rgb(var(--black-color));
@@ -59,9 +61,9 @@ body {
 }
 
 :root {
-  @include build-variables($colors);
+  @include functions.build-variables(colors.$colors);
   @media (prefers-color-scheme: dark) {
-    @include build-variables($dark-mode_colors);
+    @include functions.build-variables(colors.$dark-mode_colors);
   }
 }
 
@@ -94,7 +96,7 @@ body {
   --link_font-color: rgb(var(--font-800-color));
   --link_font-color_hover: rgb(var(--font-400-color));
 
-  --grid_gap: #{map.get($spacings, "400")};
+  --grid_gap: #{map.get(sizes.$spacings, "400")};
   --grid_container: 1rem;
   --grid_flex-wrap: nowrap;
   --grid_justify-content: flex-start;
@@ -189,18 +191,3 @@ a {
   background-color: var(--background-color);
   z-index: 2;
 }
-
-@import "component/button.scss";
-@import "component/blockquote.scss";
-@import "component/icon.scss";
-@import "component/figure.scss";
-@import "component/post_link.scss";
-@import "component/badge.scss";
-@import "component/clients.scss";
-@import "component/palette.scss";
-@import "component/social.scss";
-@import "component/list_items.scss";
-@import "component/qualifications.scss";
-@import "layouts/pages.scss";
-@import "layouts/home.scss";
-@import "layouts/navigation.scss";

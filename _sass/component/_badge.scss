@@ -1,3 +1,7 @@
+@use "sass:map";
+@use "../sizes.scss";
+@use "../main.scss";
+
 $badge_background-color: transparent !default;
 $badge_background-color_hover: var(--default-200-color) !default;
 $badge_font-color: var(--link_font-color) !default;
@@ -6,8 +10,8 @@ $badge_font-color_hover: var(--link_font-color_hover) !default;
 .badge {
   font-size: var(--font-size-100);
   padding: (
-    #{map.get($spacings, "100")} 
-    #{map.get($spacings, "400")}
+    #{map.get(sizes.$spacings, "100")} 
+    #{map.get(sizes.$spacings, "400")}
   );
   background-color: $badge_background-color;
   border: 1px solid rgb(var(--default-300-rgb-color));
@@ -19,8 +23,8 @@ $badge_font-color_hover: var(--link_font-color_hover) !default;
 
 a.badge {
   transition:
-    background-color $transition-duration $transition-easing,
-    color $transition-duration $transition-easing;
+    background-color main.$transition-duration main.$transition-easing,
+    color main.$transition-duration main.$transition-easing;
   &:hover,
   &:focus {
     background-color: $badge_background-color_hover;
@@ -30,7 +34,7 @@ a.badge {
 
 .badge_content {
   display: flex;
-  gap: #{map.get($spacings, "200")};
+  gap: #{map.get(sizes.$spacings, "200")};
   justify-content: center;
   align-items: center;
   img,

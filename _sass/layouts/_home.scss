@@ -1,13 +1,16 @@
+@use "sass:map";
+@use "../main";
+
 .home {
   display: flex;
   justify-items: stretch;
   flex-wrap: wrap;
-  @media ( min-width: #{ map.get( $breakpoints, "medium" ) } ) {
+  @media ( min-width: #{ map.get( main.$breakpoints, "medium" ) } ) {
     & > .page_link {
       flex: 1 3 50%;
     }
   }
-  @media ( min-width: #{ map.get( $breakpoints, "large" ) } ) {
+  @media ( min-width: #{ map.get( main.$breakpoints, "large" ) } ) {
     & > .page_link {
       flex: 1 3 40%;
       &:nth-child(4n + 1) {

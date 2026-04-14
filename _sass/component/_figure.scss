@@ -1,3 +1,7 @@
+@use "sass:color";
+@use "sass:map";
+@use "../main.scss";
+
 $figure_background-color: hsl(252, 5%, 95%) !default;
 $figure_scrim_background-color: color.adjust(black, $alpha: -0.6) !default;
 $figure_scrim_font-color: hsl(252, 5%, 80%) !default;
@@ -9,7 +13,7 @@ $figure_scrim_background: linear-gradient(
 ) !default;
 $figure_scrim_text-shadow: 0 0 0.75rem rgb(var(--black-color)) !default;
 $figure_scrim_font-style: italic !default;
-$figure_scrim_font-weight: #{map.get($font-weights, "normal")} !default;
+$figure_scrim_font-weight: #{map.get(main.$font-weights, "normal")} !default;
 $figure_scrim_padding: 1rem !default;
 
 img {

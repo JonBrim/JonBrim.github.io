@@ -1,12 +1,17 @@
+@use "sass:map";
+@use "../main";
+@use "../sizes";
+@use "../component/functions";
+
 $page_sub-title_font-size: var(--font-size-600) !default;
-$page_sub-title_font-weight: #{map.get($font-weights, "normal")} !default;
+$page_sub-title_font-weight: #{map.get(main.$font-weights, "normal")} !default;
 $page_sub-title_font-color: rgb(var(--font-100-color)) !default;
-$page_sub-title_font-family: $alt_font-family !default;
+$page_sub-title_font-family: main.$alt_font-family !default;
 $page_sub-title_line-height: var(--sub-title_line-height) !default;
 
 .page {
   &_header {
-    padding: $padding;
+    padding: main.$padding;
   }
   &_title {
     font-size: var(--font-size-900);
@@ -36,10 +41,10 @@ $page_sub-title_line-height: var(--sub-title_line-height) !default;
     figure {
       flex: 1 1 100%;
     }
-    @media ( min-width: #{ map.get( $breakpoints, "large" ) } ) {
+    @media ( min-width: #{ map.get( main.$breakpoints, "large" ) } ) {
       video,
       figure {
-        flex: 1 1 #{map.get($breakpoints, "medium")};
+        flex: 1 1 #{map.get(main.$breakpoints, "medium")};
       }
       .narrow {
         flex-basis: 33%;
@@ -60,8 +65,8 @@ $page_sub-title_line-height: var(--sub-title_line-height) !default;
       justify-content: center;
       align-items: center;
       flex: 1 1 100%;
-      padding: $padding;
-      @media ( min-width: #{ map.get( $breakpoints, "large" ) } ) {
+      padding: main.$padding;
+      @media ( min-width: #{ map.get( main.$breakpoints, "large" ) } ) {
         flex: 1 1 33%;
 
         &.narrow {
@@ -87,14 +92,14 @@ $page_sub-title_line-height: var(--sub-title_line-height) !default;
           }
         }
         li {
-          margin-bottom: map.get($spacings, "400");
+          margin-bottom: map.get(sizes.$spacings, "400");
         }
       }
     }
 
     & > p {
-      width: min(100% - calc(map.get($spacings, "500") * 2), 75ch);
-      padding: $padding;
+      width: min(100% - calc(map.get(sizes.$spacings, "500") * 2), 75ch);
+      padding: main.$padding;
     }
     img,
     picture {
@@ -106,7 +111,7 @@ $page_sub-title_line-height: var(--sub-title_line-height) !default;
     .text-wrapper {
       display: flex;
       width: 100%;
-      padding: $padding;
+      padding: main.$padding;
       background-color: rgb(var(--default-100-rgb-color));
       flex-direction: column;
       align-items: center;
@@ -119,7 +124,7 @@ $page_sub-title_line-height: var(--sub-title_line-height) !default;
       flex-wrap: wrap;
       margin: 0;
       padding: 0;
-      @media ( min-width: #{ map.get( $breakpoints, "medium" ) } ) {
+      @media ( min-width: #{ map.get( main.$breakpoints, "medium" ) } ) {
         & > * {
           flex: 1 1 33%;
         }
@@ -144,22 +149,17 @@ $page_sub-title_line-height: var(--sub-title_line-height) !default;
         align-items: center;
         width: 100%;
         padding: clamp(
-          map.get($spacings, "400"),
+          map.get(sizes.$spacings, "400"),
           3vw,
-          map.get($spacings, "800")
+          map.get(sizes.$spacings, "800")
         );
         &_wrapper {
-          @include breakpoint(
-            (
-              small: (
-                max-width: none,
-              ),
-              medium: (
-                max-width: 24rem,
-              ),
-            ),
-            $breakpoints
-          );
+          @media ( min-width: #{ map.get( main.$breakpoints, "small" ) } ) {
+            max-width: none;
+          }
+          @media ( min-width: #{ map.get( main.$breakpoints, "medium" ) } ) {
+            max-width: 24rem;
+          }
           &.columns {
             max-width: 72rem;
             width: 100%;
@@ -173,42 +173,32 @@ $page_sub-title_line-height: var(--sub-title_line-height) !default;
         display: flex;
         justify-content: center;
         flex-direction: column;
-        @include breakpoint(
-          (
-            small: (
-              width: 100%,
-            ),
-            large: (
-              margin-left: auto,
-              margin-right: auto,
-              align-items: center,
-            ),
-          ),
-          $breakpoints
-        );
+        @media ( min-width: #{ map.get( main.$breakpoints, "small" ) } ) {
+          width: 100%,
+        }
+        @media ( min-width: #{ map.get( main.$breakpoints, "large" ) } ) {
+          margin-left: auto;
+          margin-right: auto;
+          align-items: center;
+        }
         figure {
           width: 100%;
           flex: 1 1 auto;
           justify-content: center;
           img {
-            @include breakpoint(
-              (
-                small: (
-                  width: 100%,
-                ),
-                large: (
-                  width: 50%,
-                ),
-              ),
-              $breakpoints
-            );
+            @media ( min-width: #{ map.get( main.$breakpoints, "small" ) } ) {
+              width: 100%;
+            }
+            @media ( min-width: #{ map.get( main.$breakpoints, "large" ) } ) {
+              width: 50%;
+            }
           }
         }
       }
       &_centered {
         &.shadow {
           figure {
-            padding: $padding;
+            padding: main.$padding;
             img {
               box-shadow: var(--box-shadow-depth-9);
             }
@@ -219,7 +209,7 @@ $page_sub-title_line-height: var(--sub-title_line-height) !default;
   }
   &_footer {
     background-color: rgb(var(--black-color));
-    padding: $padding;
+    padding: main.$padding;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -238,6 +228,6 @@ $page_sub-title_line-height: var(--sub-title_line-height) !default;
   &_static {
     max-width: 70ch;
     margin: 0 auto;
-    padding: $padding;
+    padding: main.$padding;
   }
 }

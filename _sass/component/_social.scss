@@ -1,7 +1,11 @@
+@use "sass:map";
+@use "../sizes.scss";
+@use "../main.scss";
+
 $social_list_gap: 1rem !default;
 $social_list_border: 1px dotted rgb(var(--default-300-rgb-color)) !default;
 $social_list_margin: clamp(2rem, 5vw, 4rem) 0 !default;
-$social_list_padding: clamp(map.get($spacings, "200"), 3vw, map.get($spacings, "500")) 0px !default;
+$social_list_padding: clamp(map.get(sizes.$spacings, "200"), 3vw, map.get(sizes.$spacings, "500")) 0px !default;
 $social_item_padding: 0 0.5rem 0 0 !default;
 $social_item_gap: 0.65rem !default;
 $social_item_radius: 1rem !default;
@@ -28,7 +32,7 @@ $social_item_icon_background-color_hover: rgba(
   justify-content: space-around;
   padding: $social_list_padding;
   margin: $social_list_margin;
-  @media ( min-width: #{ map.get( $breakpoints, "medium" ) } ) {
+  @media ( min-width: #{ map.get( main.$breakpoints, "medium" ) } ) {
     justify-content: space-between;
   }
 }
@@ -57,7 +61,7 @@ $social_item_icon_background-color_hover: rgba(
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background-color $transition-duration $transition-easing;
+    transition: background-color main.$transition-duration main.$transition-easing;
   }
   svg {
     height: $social_item_icon_size;
