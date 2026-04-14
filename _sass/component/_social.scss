@@ -1,11 +1,11 @@
 @use "sass:map";
-@use "../sizes.scss";
+@use "../variables.scss";
 @use "../main.scss";
 
 $social_list_gap: 1rem !default;
 $social_list_border: 1px dotted rgb(var(--default-300-rgb-color)) !default;
 $social_list_margin: clamp(2rem, 5vw, 4rem) 0 !default;
-$social_list_padding: clamp(map.get(sizes.$spacings, "200"), 3vw, map.get(sizes.$spacings, "500")) 0px !default;
+$social_list_padding: clamp(map.get(variables.$spacings, "200"), 3vw, map.get(variables.$spacings, "500")) 0px !default;
 $social_item_padding: 0 0.5rem 0 0 !default;
 $social_item_gap: 0.65rem !default;
 $social_item_radius: 1rem !default;

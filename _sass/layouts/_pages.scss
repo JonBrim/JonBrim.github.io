@@ -1,6 +1,6 @@
 @use "sass:map";
 @use "../main";
-@use "../sizes";
+@use "../variables";
 @use "../component/functions";
 @use "../component/padding";
 
@@ -93,13 +93,13 @@ $page_sub-title_line-height: var(--sub-title_line-height) !default;
           }
         }
         li {
-          margin-bottom: map.get(sizes.$spacings, "400");
+          margin-bottom: map.get(variables.$spacings, "400");
         }
       }
     }
 
     & > p {
-      width: min(100% - calc(map.get(sizes.$spacings, "500") * 2), 75ch);
+      width: min(100% - calc(map.get(variables.$spacings, "500") * 2), 75ch);
       padding: padding.$padding;
     }
     img,
@@ -150,9 +150,9 @@ $page_sub-title_line-height: var(--sub-title_line-height) !default;
         align-items: center;
         width: 100%;
         padding: clamp(
-          map.get(sizes.$spacings, "400"),
+          map.get(variables.$spacings, "400"),
           3vw,
-          map.get(sizes.$spacings, "800")
+          map.get(variables.$spacings, "800")
         );
         &_wrapper {
           @media ( min-width: #{ map.get( main.$breakpoints, "small" ) } ) {

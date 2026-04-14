@@ -1,5 +1,5 @@
 @use "sass:map";
-@use "../sizes";
+@use "../variables";
 @use "../main";
 @use "../component/padding";
 
@@ -8,11 +8,11 @@ $button_back_icon_circle: true !default;
 $button_back_width: 3.5rem !default;
 $button_back_height: $button_back_width !default;
 $button_back_font-weight: main.$font-weight !default;
-$button_back_padding: map.get(sizes.$spacings, "400") !default;
+$button_back_padding: map.get(variables.$spacings, "400") !default;
 
 $button_back_label_font-size: var(--font-size-200) !default;
 $button_back_label_margin: (
-  0 map.get(sizes.$spacings, "400") 0 map.get(sizes.$spacings, "200")
+  0 map.get(variables.$spacings, "400") 0 map.get(variables.$spacings, "200")
 ) !default;
 
 $button_back_label_sticky_margin: $button_back_label_margin !default;
@@ -64,7 +64,7 @@ $button_back_icon_transition: all
   z-index: 10;
   align-items: center;
   background: $button_back_label_sticky_background-scrim;
-  padding: clamp(map.get(sizes.$spacings, "200"), 3vw, map.get(sizes.$spacings, "400"))
+  padding: clamp(map.get(variables.$spacings, "200"), 3vw, map.get(variables.$spacings, "400"))
     padding.$padding;
   &::before {
     position: absolute;
@@ -88,9 +88,9 @@ $button_back_icon_transition: all
   }
   &.is-sticky {
     padding: 
-      clamp(map.get(sizes.$spacings, "200"), 
+      clamp(map.get(variables.$spacings, "200"), 
       3vw, 
-      map.get(sizes.$spacings, "400"))
+      map.get(variables.$spacings, "400"))
       padding.$padding;
     &:after {
       content: attr(data-title);

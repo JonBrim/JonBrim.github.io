@@ -1,7 +1,6 @@
 
 @use "sass:map";
-@use "colors.scss";
-@use "sizes.scss";
+@use "variables.scss";
 @use "transitions.scss";
 @use "component/functions.scss";
 @use "component/padding.scss";
@@ -21,9 +20,6 @@ $header_font-family: sans-serif !default;
 $header_font-color: rgb(var(--font-800-color)) !default;
 $header_margin: 0 !default;
 $header_font-line-height: 1 !default;
-
-$horizontal-spacing: 1rem;
-$vertical-spacing: 0.75rem;
 
 $border-color: rgba(var(--default-900-rgb-color), 0.1);
 
@@ -55,9 +51,9 @@ body {
 }
 
 :root {
-  @include functions.build-variables(colors.$colors);
+  @include functions.build-variables(variables.$colors);
   @media (prefers-color-scheme: dark) {
-    @include functions.build-variables(colors.$dark-mode_colors);
+    @include functions.build-variables(variables.$dark-mode_colors);
   }
 }
 
@@ -90,7 +86,7 @@ body {
   --link_font-color: rgb(var(--font-800-color));
   --link_font-color_hover: rgb(var(--font-400-color));
 
-  --grid_gap: #{map.get(sizes.$spacings, "400")};
+  --grid_gap: #{map.get(variables.$spacings, "400")};
   --grid_container: 1rem;
   --grid_flex-wrap: nowrap;
   --grid_justify-content: flex-start;
@@ -98,10 +94,6 @@ body {
 
   --margin: 0;
   --padding: 0;
-
-  --layout-page_padding: 0 $horizontal-spacing $horizontal-spacing
-    $horizontal-spacing;
-  --layout-page_margin: 8rem;
 
   --fill_color: none;
   --stroke_color: rgb(var(--default-100-rgb-color));
