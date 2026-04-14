@@ -1,4 +1,4 @@
-@use "../component/padding";
+@use "../variables";
 
 $post_sub-title_font-size: var(--font-size-600) !default;
 $post_sub-title_font-weight: #{map.get($font-weights, "normal")} !default;
@@ -8,7 +8,7 @@ $post_sub-title_line-height: var(--sub-title_line-height) !default;
 
 .post {
   &_header {
-    padding: padding.$padding;
+    padding: variables.$padding;
     &_header_group {
       @media ( min-width: #{ map.get( $breakpoints, "large" ) } ) {
         flex: 5 1 50%;

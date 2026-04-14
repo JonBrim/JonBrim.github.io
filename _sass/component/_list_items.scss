@@ -1,7 +1,6 @@
 @use "sass:map";
-@use "../variables.scss";
-@use "../main.scss";
-@use "padding";
+@use "../variables";
+@use "../main";
 
 .list_items {
   display: flex;
@@ -10,7 +9,7 @@
   list-style: none;
   font-size: var(--font-size-100);
   letter-spacing: 0.075rem;
-  padding: padding.$padding;
+  padding: variables.$padding;
   flex-wrap: wrap;
   justify-content: start;
   font-weight: #{map.get(main.$font-weights, "normal")};
