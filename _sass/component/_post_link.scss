@@ -1,7 +1,7 @@
 @use "sass:color";
 @use "sass:map";
-@use "../main.scss";
-@use "figure.scss";
+@use "../variables";
+@use "figure";
 
 
 .page_link {
@@ -14,7 +14,7 @@
   img {
     margin: 0;
     filter: blur(5px);
-    transition: filter main.$transition-duration main.$transition-easing;
+    transition: filter variables.$transition-duration variables.$transition-easing;
   }
   .scrim {
     --background-color: rgba(var(--black-color), 0.35);
@@ -34,7 +34,7 @@
     height: 100%;
     padding: var(--padding);
     background-color: var(--background-color);
-    transition: background-color main.$transition-duration main.$transition-easing;
+    transition: background-color variables.$transition-duration variables.$transition-easing;
   }
 
   .title,
@@ -42,7 +42,7 @@
     opacity: var(--scrim-opacity);
     transform: translateY(0);
     transition:
-      opacity main.$transition-duration main.$transition-easing,
+      opacity variables.$transition-duration variables.$transition-easing,
       transform 0.15s ease-in-out;
     color: inherit;
     text-align: center;
@@ -53,7 +53,7 @@
     transition-delay: 0.075s;
   }
   .sub-title {
-    font-weight: #{map.get(main.$font-weights, "normal")};
+    font-weight: #{map.get(variables.$font-weights, "normal")};
   }
 
   &:focus,

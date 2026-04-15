@@ -46,6 +46,7 @@ $font-weights: (
   normal: 400,
   bold: 600,
 ) !default;
+$font-weight: #{map.get($font-weights, "normal")} !default;
 
 $colors: (
   "default": hsla(210, 20%, 80%, 0.35),
@@ -112,6 +113,9 @@ $dark-mode_colors: (
   "default-900": #d1cddf,
   "default-900-rgb": string.unquote("209, 205, 223"),
 ) !default;
+
+$shadow-color: rgb(var(--black-color));
+$border-color: rgba(var(--default-900-rgb-color), 0.1);
 
 $transition-duration: 0.25s;
 $transition-easing: ease-in-out;

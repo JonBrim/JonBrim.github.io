@@ -1,6 +1,5 @@
 @use "sass:map";
 @use "../variables";
-@use "../main";
 
 .list_items {
   display: flex;
@@ -12,7 +11,7 @@
   padding: variables.$padding;
   flex-wrap: wrap;
   justify-content: start;
-  font-weight: #{map.get(main.$font-weights, "normal")};
+  font-weight: #{map.get(variables.$font-weights, "normal")};
   color: var(--color);
   max-width: 700px;
   margin: inherit;
@@ -32,7 +31,7 @@
     &.columns {
       column-count: 3;
       gap: map.get(variables.$spacings, "400");
-      @media ( min-width: #{ map.get( main.$breakpoints, "large" ) } ) {
+      @media ( min-width: #{ map.get( variables.$breakpoints, "large" ) } ) {
         column-count: 5;
       }
     }

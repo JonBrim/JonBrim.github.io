@@ -1,5 +1,5 @@
 @use "sass:map";
-@use "../main.scss";
+@use "../variables";
 
 .palette-container {
   display: flex;
@@ -51,14 +51,14 @@
       border-radius: 1rem;
       font-family: monospace;
       display: none;
-      @media ( min-width: #{ map.get( main.$breakpoints, "medium" ) } ) {
+      @media ( min-width: #{ map.get( variables.$breakpoints, "medium" ) } ) {
         display: block;
       }
     }
     &:hover {
       &:after {
         opacity: 1;
-        transition: opacity main.$transition-duration main.$transition-easing;
+        transition: opacity variables.$transition-duration variables.$transition-easing;
       }
     }
   }

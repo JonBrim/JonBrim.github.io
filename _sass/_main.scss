@@ -8,32 +8,13 @@
 
 $alt_font-family: "Lora", serif;
 $font-color: rgb(var(--font-400-color)) !default;
-$font-weights: (
-  normal: 400,
-  bold: 600,
-) !default;
-$font-weight: #{map.get($font-weights, "normal")} !default;
 
-$header_font-weight: #{map.get($font-weights, "bold")} !default;
+$header_font-weight: #{map.get(variables.$font-weights, "bold")} !default;
 $header_font-family: sans-serif !default;
 $header_font-color: rgb(var(--font-800-color)) !default;
 $header_margin: 0 !default;
 $header_font-line-height: 1 !default;
 
-$border-color: rgba(var(--default-900-rgb-color), 0.1);
-
-$transition-duration: 0.25s;
-$transition-easing: ease-in-out;
-
-$breakpoints: (
-  small: 0px,
-  medium: 640px,
-  large: 1024px,
-  xlarge: 1200px,
-  xxlarge: 1440px,
-) !default;
-
-$shadow-color: rgb(var(--black-color));
 
 html {
   scroll-behavior: smooth;
@@ -44,7 +25,7 @@ html {
 }
 
 body {
-  animation: fadeInAnimation 0.75s $transition-easing;
+  animation: fadeInAnimation 0.75s variables.$transition-easing;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
@@ -60,7 +41,7 @@ body {
   --font-color: #{$font-color};
   --font-size: 20px;
   --font-line-height: 1.5;
-  --font-weight: #{map.get($font-weights, "normal")};
+  --font-weight: #{map.get(variables.$font-weights, "normal")};
   --font-family: sans-serif;
   --text-align: left;
 
@@ -76,7 +57,7 @@ body {
 
   --display: block;
 
-  --header_font-weight: #{map.get($font-weights, "bold")};
+  --header_font-weight: #{map.get(variables.$font-weights, "bold")};
   --header_font-family: var(--font-family);
   --header_font-color: rgb(var(--font-800-color));
   --header_margin: 0;
@@ -97,7 +78,7 @@ body {
   --fill_color: none;
   --stroke_color: rgb(var(--default-100-rgb-color));
 
-  --border-color: #{$border-color};
+  --border-color: #{variables.$border-color};
 
   --box-shadow-depth-0:
     0 0px 1px hsla(190, 0%, 35%, 0.1), 0 0px 4px hsla(190, 0%, 35%, 0.1),
@@ -150,7 +131,7 @@ h6 {
 }
 
 a {
-  $link-font-weight: #{map.get($font-weights, "bold")} !default;
+  $link-font-weight: #{map.get(variables.$font-weights, "bold")} !default;
   $link-font-family: var(--font-family) !default;
 
   --font-color: var(--link_font-color);
@@ -160,7 +141,7 @@ a {
   font-family: $link-font-family;
   font-weight: $link-font-weight;
   text-decoration: underline dotted 1px;
-  transition: color $transition-duration $transition-easing;
+  transition: color variables.$transition-duration variables.$transition-easing;
   &:hover {
     --font-color: var(--link_font-color_hover);
   }

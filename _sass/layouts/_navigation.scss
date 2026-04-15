@@ -1,12 +1,11 @@
 @use "sass:map";
 @use "../variables";
-@use "../main";
 
 $button_back_icon_circle: true !default;
 
 $button_back_width: 3.5rem !default;
 $button_back_height: $button_back_width !default;
-$button_back_font-weight: main.$font-weight !default;
+$button_back_font-weight: variables.$font-weight !default;
 $button_back_padding: map.get(variables.$spacings, "400") !default;
 
 $button_back_label_font-size: var(--font-size-200) !default;
@@ -15,7 +14,7 @@ $button_back_label_margin: (
 ) !default;
 
 $button_back_label_sticky_margin: $button_back_label_margin !default;
-$button_back_label_sticky_font-weight: #{map.get(main.$font-weights, "bold")} !default;
+$button_back_label_sticky_font-weight: #{map.get(variables.$font-weights, "bold")} !default;
 $button_back_label_sticky_font-color: rgb(var(--white-color)) !default;
 $button_back_label_sticky_text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.65) !default;
 $button_back_label_sticky_background-color: rgb(0, 0, 0) !default;
@@ -44,13 +43,13 @@ $button_back_icon_border-color: rgba(
   var(--default-100-rgb-color),
   0.1
 ) !default;
-$button_back_icon_box-shadow: 0 0 10px main.$shadow-color !default;
+$button_back_icon_box-shadow: 0 0 10px variables.$shadow-color !default;
 $button_back_icon_border:
   $button_back_icon_border-width
   $button_back_icon_border-style
   $button_back_icon_border-color !default;
 $button_back_icon_transition-duration: 0.75s;
-$button_back_icon_transition-easing: main.$transition-easing;
+$button_back_icon_transition-easing: variables.$transition-easing;
 $button_back_icon_transition: all
   $button_back_icon_transition-duration
   $button_back_icon_transition-easing !default;
@@ -96,7 +95,7 @@ $button_back_icon_transition: all
       display: inline-flex;
       font-weight: $button_back_label_sticky_font-weight;
       animation-name: fade-down;
-      animation-duration: main.$transition-duration;
+      animation-duration: variables.$transition-duration;
       color: $button_back_label_sticky_font-color;
       text-shadow: $button_back_label_sticky_text-shadow;
       margin: $button_back_label_sticky_margin;
@@ -116,8 +115,8 @@ $button_back_icon_transition: all
   text-decoration: none;
   outline: none;
   transition:
-    color main.$transition-duration main.$transition-easing,
-    background-color main.$transition-duration main.$transition-easing;
+    color variables.$transition-duration variables.$transition-easing,
+    background-color variables.$transition-duration variables.$transition-easing;
   &:hover,
   &:focus {
     .icon {

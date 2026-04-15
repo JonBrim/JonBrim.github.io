@@ -1,6 +1,5 @@
 @use "sass:map";
-@use "../variables.scss";
-@use "../main.scss";
+@use "../variables";
 
 $social_list_gap: 1rem !default;
 $social_list_border: 1px dotted rgb(var(--default-300-rgb-color)) !default;
@@ -32,7 +31,7 @@ $social_item_icon_background-color_hover: rgba(
   justify-content: space-around;
   padding: $social_list_padding;
   margin: $social_list_margin;
-  @media ( min-width: #{ map.get( main.$breakpoints, "medium" ) } ) {
+  @media ( min-width: #{ map.get( variables.$breakpoints, "medium" ) } ) {
     justify-content: space-between;
   }
 }
@@ -61,7 +60,7 @@ $social_item_icon_background-color_hover: rgba(
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background-color main.$transition-duration main.$transition-easing;
+    transition: background-color variables.$transition-duration variables.$transition-easing;
   }
   svg {
     height: $social_item_icon_size;

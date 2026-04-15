@@ -1,6 +1,5 @@
 @use "sass:map";
 @use "../variables.scss";
-@use "../main.scss";
 
 $badge_background-color: transparent !default;
 $badge_background-color_hover: var(--default-200-color) !default;
@@ -23,8 +22,8 @@ $badge_font-color_hover: var(--link_font-color_hover) !default;
 
 a.badge {
   transition:
-    background-color main.$transition-duration main.$transition-easing,
-    color main.$transition-duration main.$transition-easing;
+    background-color variables.$transition-duration variables.$transition-easing,
+    color variables.$transition-duration variables.$transition-easing;
   &:hover,
   &:focus {
     background-color: $badge_background-color_hover;

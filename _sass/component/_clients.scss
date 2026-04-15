@@ -1,6 +1,5 @@
 @use "sass:map";
 @use "../variables";
-@use "../main";
 
 .clients {
   --grid_gap: clamp(#{map.get(variables.$spacings, "500")}, 2vw, #{map.get(variables.$spacings, "800")});
@@ -35,7 +34,7 @@
       img {
         width: 5rem;
         display: flex;
-        transition: filter main.$transition-duration main.$transition-easing;
+        transition: filter variables.$transition-duration variables.$transition-easing;
         filter: grayscale(100%);
       }
       &:hover,
