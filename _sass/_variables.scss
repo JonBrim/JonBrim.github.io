@@ -47,6 +47,7 @@ $font-weights: (
   bold: 600,
 ) !default;
 $font-weight: #{map.get($font-weights, "normal")} !default;
+$font-color: rgb(var(--font-400-color)) !default;
 
 $colors: (
   "default": hsla(210, 20%, 80%, 0.35),

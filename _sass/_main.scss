@@ -6,8 +6,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
 
-$alt_font-family: "Lora", serif;
-$font-color: rgb(var(--font-400-color)) !default;
+
 
 $header_font-weight: #{map.get(variables.$font-weights, "bold")} !default;
 $header_font-family: sans-serif !default;
@@ -38,7 +37,7 @@ body {
 }
 
 body {
-  --font-color: #{$font-color};
+  --font-color: #{variables.$font-color};
   --font-size: 20px;
   --font-line-height: 1.5;
   --font-weight: #{map.get(variables.$font-weights, "normal")};
@@ -102,7 +101,7 @@ body {
 
   background-color: var(--background-color);
   overflow-x: hidden;
-  color: $font-color;
+  color: variables.$font-color;
 
   --font-size: var(--font-size-400);
   font: {
