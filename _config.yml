@@ -39,7 +39,8 @@ collections:
     permalink: /project/:path/
 
 sass:
-  style: expanded       # You can use 'expanded' for development and 'compressed' for production
+  sass_dir: _sass
+  style: compressed      # You can use 'expanded' for development and 'compressed' for production
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
