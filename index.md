@@ -12,7 +12,7 @@ title: "Jon Brim"
       UI/UX Engineer
     </span>
     <p>
-      Hi I'm Jon. I'm experienced in creating impactful visual products in a variety of media, platforms, and devices. I love collaborating with product and development teams to design and iterate new features, explore innovative technologies, tackle challenging problems, and provide the best possible experience to users.
+      Hi, I'm Jon. I'm experienced in creating impactful visual products in a variety of media, platforms, and devices. I love collaborating with product and development teams to design and iterate new features, explore innovative technologies, tackle challenging problems, and provide the best possible experience to users.
     </p>
     <ul class="social_list">
       {% if site.linkedin %}
